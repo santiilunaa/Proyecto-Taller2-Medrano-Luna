@@ -23,6 +23,8 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblBienvenido = New System.Windows.Forms.Label()
+        Me.lblPrincip = New System.Windows.Forms.Label()
         Me.btnCerrPrinc = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.btnClientes = New System.Windows.Forms.Button()
@@ -31,15 +33,30 @@ Partial Class Form1
         Me.btnReport = New System.Windows.Forms.Button()
         Me.btnBkp = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lblPrincip = New System.Windows.Forms.Label()
+        Me.pnlAdmin = New System.Windows.Forms.Panel()
+        Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.pnlGerente = New System.Windows.Forms.Panel()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.pnlVendedor = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlAdmin.SuspendLayout()
+        Me.pnlGerente.SuspendLayout()
+        Me.pnlVendedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.lblBienvenido)
         Me.Panel1.Controls.Add(Me.lblPrincip)
         Me.Panel1.Controls.Add(Me.btnCerrPrinc)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -47,6 +64,25 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1003, 32)
         Me.Panel1.TabIndex = 1
+        '
+        'lblBienvenido
+        '
+        Me.lblBienvenido.AutoSize = True
+        Me.lblBienvenido.Location = New System.Drawing.Point(22, 9)
+        Me.lblBienvenido.Name = "lblBienvenido"
+        Me.lblBienvenido.Size = New System.Drawing.Size(63, 13)
+        Me.lblBienvenido.TabIndex = 11
+        Me.lblBienvenido.Text = "Bienvenido:"
+        '
+        'lblPrincip
+        '
+        Me.lblPrincip.AutoSize = True
+        Me.lblPrincip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrincip.Location = New System.Drawing.Point(488, 9)
+        Me.lblPrincip.Name = "lblPrincip"
+        Me.lblPrincip.Size = New System.Drawing.Size(46, 17)
+        Me.lblPrincip.TabIndex = 4
+        Me.lblPrincip.Text = "Inicio"
         '
         'btnCerrPrinc
         '
@@ -175,38 +211,230 @@ Partial Class Form1
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'Panel2
+        'pnlAdmin
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Controls.Add(Me.btnSalir)
-        Me.Panel2.Controls.Add(Me.btnUsuarios)
-        Me.Panel2.Controls.Add(Me.btnClientes)
-        Me.Panel2.Controls.Add(Me.btnProduc)
-        Me.Panel2.Controls.Add(Me.btnVentas)
-        Me.Panel2.Controls.Add(Me.btnReport)
-        Me.Panel2.Controls.Add(Me.btnBkp)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 32)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(143, 555)
-        Me.Panel2.TabIndex = 11
+        Me.pnlAdmin.BackColor = System.Drawing.Color.White
+        Me.pnlAdmin.Controls.Add(Me.btnSalir)
+        Me.pnlAdmin.Controls.Add(Me.btnUsuarios)
+        Me.pnlAdmin.Controls.Add(Me.btnClientes)
+        Me.pnlAdmin.Controls.Add(Me.btnProduc)
+        Me.pnlAdmin.Controls.Add(Me.btnVentas)
+        Me.pnlAdmin.Controls.Add(Me.btnReport)
+        Me.pnlAdmin.Controls.Add(Me.btnBkp)
+        Me.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlAdmin.Location = New System.Drawing.Point(0, 32)
+        Me.pnlAdmin.Name = "pnlAdmin"
+        Me.pnlAdmin.Size = New System.Drawing.Size(143, 555)
+        Me.pnlAdmin.TabIndex = 11
+        Me.pnlAdmin.Visible = False
         '
-        'lblPrincip
+        'pnlContenedor
         '
-        Me.lblPrincip.AutoSize = True
-        Me.lblPrincip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrincip.Location = New System.Drawing.Point(488, 9)
-        Me.lblPrincip.Name = "lblPrincip"
-        Me.lblPrincip.Size = New System.Drawing.Size(46, 17)
-        Me.lblPrincip.TabIndex = 4
-        Me.lblPrincip.Text = "Inicio"
+        Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlContenedor.Location = New System.Drawing.Point(143, 32)
+        Me.pnlContenedor.Name = "pnlContenedor"
+        Me.pnlContenedor.Size = New System.Drawing.Size(860, 555)
+        Me.pnlContenedor.TabIndex = 13
+        '
+        'pnlGerente
+        '
+        Me.pnlGerente.BackColor = System.Drawing.Color.White
+        Me.pnlGerente.Controls.Add(Me.Button9)
+        Me.pnlGerente.Controls.Add(Me.Button14)
+        Me.pnlGerente.Controls.Add(Me.Button15)
+        Me.pnlGerente.Controls.Add(Me.Button16)
+        Me.pnlGerente.Controls.Add(Me.Button17)
+        Me.pnlGerente.Controls.Add(Me.Button18)
+        Me.pnlGerente.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlGerente.Location = New System.Drawing.Point(143, 32)
+        Me.pnlGerente.Name = "pnlGerente"
+        Me.pnlGerente.Size = New System.Drawing.Size(165, 555)
+        Me.pnlGerente.TabIndex = 13
+        Me.pnlGerente.Visible = False
+        '
+        'Button18
+        '
+        Me.Button18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button18.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button18.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button18.FlatAppearance.BorderSize = 0
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button18.Location = New System.Drawing.Point(30, 262)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(135, 50)
+        Me.Button18.TabIndex = 9
+        Me.Button18.Text = "BackUP"
+        Me.Button18.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button18.UseVisualStyleBackColor = False
+        '
+        'Button17
+        '
+        Me.Button17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button17.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button17.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button17.FlatAppearance.BorderSize = 0
+        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button17.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button17.Location = New System.Drawing.Point(30, 206)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(135, 50)
+        Me.Button17.TabIndex = 8
+        Me.Button17.Text = "Reportes"
+        Me.Button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button17.UseVisualStyleBackColor = False
+        '
+        'Button16
+        '
+        Me.Button16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button16.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button16.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button16.FlatAppearance.BorderSize = 0
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button16.Location = New System.Drawing.Point(30, 150)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(135, 50)
+        Me.Button16.TabIndex = 7
+        Me.Button16.Text = "Ventas"
+        Me.Button16.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button16.UseVisualStyleBackColor = False
+        '
+        'Button15
+        '
+        Me.Button15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button15.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button15.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button15.FlatAppearance.BorderSize = 0
+        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button15.Location = New System.Drawing.Point(30, 94)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(135, 50)
+        Me.Button15.TabIndex = 6
+        Me.Button15.Text = "Productos"
+        Me.Button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button15.UseVisualStyleBackColor = False
+        '
+        'Button14
+        '
+        Me.Button14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button14.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button14.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button14.FlatAppearance.BorderSize = 0
+        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button14.Location = New System.Drawing.Point(30, 38)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(135, 50)
+        Me.Button14.TabIndex = 5
+        Me.Button14.Text = "Clientes"
+        Me.Button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button14.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button9.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(30, 486)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(135, 50)
+        Me.Button9.TabIndex = 10
+        Me.Button9.Text = "Salir"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'pnlVendedor
+        '
+        Me.pnlVendedor.BackColor = System.Drawing.Color.White
+        Me.pnlVendedor.Controls.Add(Me.Button1)
+        Me.pnlVendedor.Controls.Add(Me.Button2)
+        Me.pnlVendedor.Controls.Add(Me.Button3)
+        Me.pnlVendedor.Controls.Add(Me.Button4)
+        Me.pnlVendedor.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlVendedor.Location = New System.Drawing.Point(308, 32)
+        Me.pnlVendedor.Name = "pnlVendedor"
+        Me.pnlVendedor.Size = New System.Drawing.Size(174, 555)
+        Me.pnlVendedor.TabIndex = 12
+        Me.pnlVendedor.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(37, 150)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(139, 50)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Ventas"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(39, 486)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(135, 50)
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "Salir"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(37, 94)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(135, 50)
+        Me.Button3.TabIndex = 5
+        Me.Button3.Text = "Clientes"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(37, 38)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(135, 50)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "Facturas"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1003, 587)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.pnlVendedor)
+        Me.Controls.Add(Me.pnlGerente)
+        Me.Controls.Add(Me.pnlContenedor)
+        Me.Controls.Add(Me.pnlAdmin)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
@@ -214,7 +442,9 @@ Partial Class Form1
         Me.Text = "Principal"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
+        Me.pnlAdmin.ResumeLayout(False)
+        Me.pnlGerente.ResumeLayout(False)
+        Me.pnlVendedor.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -228,6 +458,20 @@ Partial Class Form1
     Friend WithEvents btnReport As Button
     Friend WithEvents btnBkp As Button
     Friend WithEvents btnSalir As Button
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pnlAdmin As Panel
     Friend WithEvents lblPrincip As Label
+    Friend WithEvents pnlContenedor As Panel
+    Friend WithEvents lblBienvenido As Label
+    Friend WithEvents pnlGerente As Panel
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button14 As Button
+    Friend WithEvents Button15 As Button
+    Friend WithEvents Button16 As Button
+    Friend WithEvents Button17 As Button
+    Friend WithEvents Button18 As Button
+    Friend WithEvents pnlVendedor As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class
