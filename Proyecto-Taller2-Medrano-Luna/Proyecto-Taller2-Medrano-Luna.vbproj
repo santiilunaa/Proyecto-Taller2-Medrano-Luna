@@ -73,30 +73,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarProducto.Designer.vb">
-      <DependentUpon>AgregarProducto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AgregarProducto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\AgregarUsuario.Designer.vb">
-      <DependentUpon>AgregarUsuario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Usuarios\AgregarUsuario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Clientes.Designer.vb">
-      <DependentUpon>Clientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Clientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Factura.Designer.vb">
-      <DependentUpon>Factura.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Factura.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -104,15 +80,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="FormBkp.Designer.vb">
       <DependentUpon>FormBkp.vb</DependentUpon>
     </Compile>
     <Compile Include="FormBkp.vb">
       <SubType>Form</SubType>
     </Compile>
-=======
->>>>>>> Stashed changes
     <Compile Include="FormReportes.Designer.vb">
       <DependentUpon>FormReportes.vb</DependentUpon>
     </Compile>
@@ -140,7 +113,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="Productos.Designer.vb">
       <DependentUpon>Productos.vb</DependentUpon>
     </Compile>
@@ -151,49 +123,16 @@
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.vb">
-=======
-    <Compile Include="Productos\Productos.Designer.vb">
-      <DependentUpon>Productos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Productos\Productos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\Usuarios.Designer.vb">
-      <DependentUpon>Usuarios.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Usuarios\Usuarios.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventas.Designer.vb">
-      <DependentUpon>Ventas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ventas.vb">
->>>>>>> Stashed changes
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBkp.resx">
       <DependentUpon>FormBkp.vb</DependentUpon>
     </EmbeddedResource>
-=======
-    <EmbeddedResource Include="AgregarProducto.resx">
-      <DependentUpon>AgregarProducto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clientes.resx">
-      <DependentUpon>Clientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Factura.resx">
-      <DependentUpon>Factura.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
->>>>>>> Stashed changes
     <EmbeddedResource Include="FormReportes.resx">
       <DependentUpon>FormReportes.vb</DependentUpon>
     </EmbeddedResource>
@@ -206,36 +145,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </EmbeddedResource>
-=======
-    <EmbeddedResource Include="obj\Debug\Proyecto_Taller2_Medrano_Luna.FormBkp.resources" />
-    <EmbeddedResource Include="obj\Debug\Proyecto_Taller2_Medrano_Luna.Productos.resources" />
-    <EmbeddedResource Include="obj\Debug\Proyecto_Taller2_Medrano_Luna.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\Proyecto_Taller2_Medrano_Luna.Usuarios.resources" />
-    <EmbeddedResource Include="Productos\Productos.resx">
-      <DependentUpon>Productos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\AgregarUsuario.resx">
-      <DependentUpon>AgregarUsuario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Usuarios.resx">
-      <DependentUpon>Usuarios.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventas.resx">
-      <DependentUpon>Ventas.vb</DependentUpon>
-    </EmbeddedResource>
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Proyecto-Taller2-Medrano-Luna.exe.config" />
-    <None Include="bin\Debug\Proyecto-Taller2-Medrano-Luna.vshost.exe.config" />
-    <None Include="bin\Debug\Proyecto-Taller2-Medrano-Luna.vshost.exe.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -246,24 +163,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\Proyecto-Taller2-Medrano-Luna.vbproj.GenerateResource.Cache" />
-    <None Include="obj\Debug\Proyecto-Taller2-Medrano-Luna.vbprojResolveAssemblyReference.cache" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\Proyecto-Taller2-Medrano-Luna.exe" />
-    <Content Include="bin\Debug\Proyecto-Taller2-Medrano-Luna.pdb" />
-    <Content Include="bin\Debug\Proyecto-Taller2-Medrano-Luna.vshost.exe" />
-    <Content Include="bin\Debug\Proyecto-Taller2-Medrano-Luna.xml" />
-    <Content Include="obj\Debug\Proyecto-Taller2-Medrano-Luna.exe" />
-    <Content Include="obj\Debug\Proyecto-Taller2-Medrano-Luna.pdb" />
-    <Content Include="obj\Debug\Proyecto-Taller2-Medrano-Luna.vbproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Proyecto-Taller2-Medrano-Luna.xml" />
-    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
