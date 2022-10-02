@@ -386,9 +386,9 @@ Partial Class Form1
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(39, 486)
+        Me.Button2.Location = New System.Drawing.Point(47, 486)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(135, 50)
+        Me.Button2.Size = New System.Drawing.Size(127, 50)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Salir"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
