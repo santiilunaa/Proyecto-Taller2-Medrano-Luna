@@ -36,12 +36,12 @@ Partial Class Form1
         Me.pnlAdmin = New System.Windows.Forms.Panel()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.pnlGerente = New System.Windows.Forms.Panel()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button18 = New System.Windows.Forms.Button()
         Me.pnlVendedor = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -252,69 +252,21 @@ Partial Class Form1
         Me.pnlGerente.TabIndex = 13
         Me.pnlGerente.Visible = False
         '
-        'Button18
+        'Button9
         '
-        Me.Button18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button18.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button18.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button18.FlatAppearance.BorderSize = 0
-        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button18.Location = New System.Drawing.Point(30, 262)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(135, 50)
-        Me.Button18.TabIndex = 9
-        Me.Button18.Text = "BackUP"
-        Me.Button18.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button18.UseVisualStyleBackColor = False
-        '
-        'Button17
-        '
-        Me.Button17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button17.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button17.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button17.FlatAppearance.BorderSize = 0
-        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button17.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button17.Location = New System.Drawing.Point(30, 206)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(135, 50)
-        Me.Button17.TabIndex = 8
-        Me.Button17.Text = "Reportes"
-        Me.Button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button17.UseVisualStyleBackColor = False
-        '
-        'Button16
-        '
-        Me.Button16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button16.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button16.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button16.FlatAppearance.BorderSize = 0
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button16.Location = New System.Drawing.Point(30, 150)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(135, 50)
-        Me.Button16.TabIndex = 7
-        Me.Button16.Text = "Ventas"
-        Me.Button16.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button16.UseVisualStyleBackColor = False
-        '
-        'Button15
-        '
-        Me.Button15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button15.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button15.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button15.FlatAppearance.BorderSize = 0
-        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button15.Location = New System.Drawing.Point(30, 94)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(135, 50)
-        Me.Button15.TabIndex = 6
-        Me.Button15.Text = "Productos"
-        Me.Button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button15.UseVisualStyleBackColor = False
+        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button9.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(30, 486)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(135, 50)
+        Me.Button9.TabIndex = 10
+        Me.Button9.Text = "Salir"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button9.UseVisualStyleBackColor = False
         '
         'Button14
         '
@@ -332,21 +284,69 @@ Partial Class Form1
         Me.Button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button14.UseVisualStyleBackColor = False
         '
-        'Button9
+        'Button15
         '
-        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button9.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(30, 486)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(135, 50)
-        Me.Button9.TabIndex = 10
-        Me.Button9.Text = "Salir"
-        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button9.UseVisualStyleBackColor = False
+        Me.Button15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button15.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button15.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button15.FlatAppearance.BorderSize = 0
+        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button15.Location = New System.Drawing.Point(30, 94)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(135, 50)
+        Me.Button15.TabIndex = 6
+        Me.Button15.Text = "Productos"
+        Me.Button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button15.UseVisualStyleBackColor = False
+        '
+        'Button16
+        '
+        Me.Button16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button16.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button16.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button16.FlatAppearance.BorderSize = 0
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button16.Location = New System.Drawing.Point(30, 150)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(135, 50)
+        Me.Button16.TabIndex = 7
+        Me.Button16.Text = "Ventas"
+        Me.Button16.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button16.UseVisualStyleBackColor = False
+        '
+        'Button17
+        '
+        Me.Button17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button17.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button17.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button17.FlatAppearance.BorderSize = 0
+        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button17.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button17.Location = New System.Drawing.Point(30, 206)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(135, 50)
+        Me.Button17.TabIndex = 8
+        Me.Button17.Text = "Reportes"
+        Me.Button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button17.UseVisualStyleBackColor = False
+        '
+        'Button18
+        '
+        Me.Button18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button18.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button18.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button18.FlatAppearance.BorderSize = 0
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button18.Location = New System.Drawing.Point(30, 262)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(135, 50)
+        Me.Button18.TabIndex = 9
+        Me.Button18.Text = "BackUP"
+        Me.Button18.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button18.UseVisualStyleBackColor = False
         '
         'pnlVendedor
         '
@@ -402,7 +402,7 @@ Partial Class Form1
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(37, 94)
+        Me.Button3.Location = New System.Drawing.Point(39, 94)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(135, 50)
         Me.Button3.TabIndex = 5
@@ -418,7 +418,7 @@ Partial Class Form1
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(37, 38)
+        Me.Button4.Location = New System.Drawing.Point(39, 38)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(135, 50)
         Me.Button4.TabIndex = 7
