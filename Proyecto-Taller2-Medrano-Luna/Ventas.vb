@@ -1,3 +1,3 @@
-﻿Public Class FVentas
+﻿Public Class Ventas
 
 End Class

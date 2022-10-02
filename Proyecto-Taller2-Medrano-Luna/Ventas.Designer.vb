@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FVentas
+Partial Class Ventas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -115,14 +115,14 @@ Partial Class FVentas
         Me.LVentas.TabIndex = 2
         Me.LVentas.Text = "Ventas Del Dia"
         '
-        'FVentas
+        'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(607, 441)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "FVentas"
+        Me.Name = "Ventas"
         Me.Text = "Ventas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
