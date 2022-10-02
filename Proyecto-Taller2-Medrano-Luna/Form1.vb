@@ -4,7 +4,6 @@
     Private Sub btnBkp_Click(sender As Object, e As EventArgs) Handles btnBkp.Click, Button18.Click
         AbrirFormHijo(New FormBkp())
 
-
     End Sub
 
     Private Sub btnCerrPrinc_Click(sender As Object, e As EventArgs) Handles btnCerrPrinc.Click
@@ -19,7 +18,24 @@
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
         AbrirFormHijo(New FormReportes())
 
+    End Sub
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+        AbrirFormHijo(New Usuarios())
 
+    End Sub
+
+    Private Sub btnProduc_Click(sender As Object, e As EventArgs) Handles btnProduc.Click
+        AbrirFormHijo(New Productos())
+
+    End Sub
+
+    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        AbrirFormHijo(New Clientes())
+
+    End Sub
+
+    Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
+        AbrirFormHijo(New Ventas())
     End Sub
 
     Private currentForm As Form = Nothing
@@ -51,4 +67,5 @@
             pnlGerente.Visible = True
         End If
     End Sub
+
 End Class
