@@ -35,7 +35,7 @@ Partial Class Usuarios
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.Id_Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvApellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,11 +45,13 @@ Partial Class Usuarios
         Me.dvgDireccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlAgregarUs = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LDirec = New System.Windows.Forms.Label()
         Me.txtDirec = New System.Windows.Forms.TextBox()
-        Me.txtTelef = New System.Windows.Forms.TextBox()
+        Me.txtTel = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtDNI = New System.Windows.Forms.TextBox()
         Me.txtApe = New System.Windows.Forms.TextBox()
@@ -62,13 +64,11 @@ Partial Class Usuarios
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BAgregar = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.pnlAgregarUs.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlAgregarUs.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -123,15 +123,15 @@ Partial Class Usuarios
         Me.btnEliminar.Text = "Eliminar "
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'dgvUsuarios
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.CornflowerBlue
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Usuario, Me.dgvNombre, Me.dgvApellido, Me.dgvDNI, Me.dvgEmail, Me.dvgTel, Me.dvgDireccion, Me.Usuario})
-        Me.DataGridView1.Location = New System.Drawing.Point(59, 122)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(683, 251)
-        Me.DataGridView1.TabIndex = 4
+        Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.CornflowerBlue
+        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Usuario, Me.dgvNombre, Me.dgvApellido, Me.dgvDNI, Me.dvgEmail, Me.dvgTel, Me.dvgDireccion, Me.Usuario})
+        Me.dgvUsuarios.Location = New System.Drawing.Point(59, 122)
+        Me.dgvUsuarios.Name = "dgvUsuarios"
+        Me.dgvUsuarios.Size = New System.Drawing.Size(683, 251)
+        Me.dgvUsuarios.TabIndex = 4
         '
         'Id_Usuario
         '
@@ -202,7 +202,7 @@ Partial Class Usuarios
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.pnlAgregarUs)
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Controls.Add(Me.dgvUsuarios)
         Me.Panel1.Controls.Add(Me.btnEliminar)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -214,13 +214,15 @@ Partial Class Usuarios
         Me.Panel1.Size = New System.Drawing.Size(800, 460)
         Me.Panel1.TabIndex = 5
         '
-        'TextBox1
+        'PictureBox1
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(139, 66)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(505, 23)
-        Me.TextBox1.TabIndex = 5
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(102, 66)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(31, 23)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
         '
         'pnlAgregarUs
         '
@@ -229,7 +231,7 @@ Partial Class Usuarios
         Me.pnlAgregarUs.Controls.Add(Me.Panel2)
         Me.pnlAgregarUs.Controls.Add(Me.LDirec)
         Me.pnlAgregarUs.Controls.Add(Me.txtDirec)
-        Me.pnlAgregarUs.Controls.Add(Me.txtTelef)
+        Me.pnlAgregarUs.Controls.Add(Me.txtTel)
         Me.pnlAgregarUs.Controls.Add(Me.txtEmail)
         Me.pnlAgregarUs.Controls.Add(Me.txtDNI)
         Me.pnlAgregarUs.Controls.Add(Me.txtApe)
@@ -248,6 +250,24 @@ Partial Class Usuarios
         Me.pnlAgregarUs.TabIndex = 6
         Me.pnlAgregarUs.Visible = False
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(294, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(5, 393)
+        Me.Panel3.TabIndex = 16
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 393)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(299, 5)
+        Me.Panel2.TabIndex = 15
+        '
         'LDirec
         '
         Me.LDirec.AutoSize = True
@@ -265,12 +285,12 @@ Partial Class Usuarios
         Me.txtDirec.Size = New System.Drawing.Size(101, 20)
         Me.txtDirec.TabIndex = 13
         '
-        'txtTelef
+        'txtTel
         '
-        Me.txtTelef.Location = New System.Drawing.Point(128, 220)
-        Me.txtTelef.Name = "txtTelef"
-        Me.txtTelef.Size = New System.Drawing.Size(101, 20)
-        Me.txtTelef.TabIndex = 12
+        Me.txtTel.Location = New System.Drawing.Point(128, 220)
+        Me.txtTel.Name = "txtTel"
+        Me.txtTel.Size = New System.Drawing.Size(101, 20)
+        Me.txtTel.TabIndex = 12
         '
         'txtEmail
         '
@@ -386,33 +406,13 @@ Partial Class Usuarios
         Me.BAgregar.Text = "Agregar"
         Me.BAgregar.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'TextBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(102, 66)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(31, 23)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 393)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(299, 5)
-        Me.Panel2.TabIndex = 15
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(294, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(5, 393)
-        Me.Panel3.TabIndex = 16
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(139, 66)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(505, 23)
+        Me.TextBox1.TabIndex = 5
         '
         'Usuarios
         '
@@ -423,12 +423,12 @@ Partial Class Usuarios
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Usuarios"
         Me.Text = "Usuarios"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAgregarUs.ResumeLayout(False)
         Me.pnlAgregarUs.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -438,7 +438,7 @@ Partial Class Usuarios
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnEliminar As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvUsuarios As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Id_Usuario As DataGridViewTextBoxColumn
     Friend WithEvents dgvNombre As DataGridViewTextBoxColumn
@@ -453,7 +453,7 @@ Partial Class Usuarios
     Friend WithEvents pnlAgregarUs As Panel
     Friend WithEvents LDirec As Label
     Friend WithEvents txtDirec As TextBox
-    Friend WithEvents txtTelef As TextBox
+    Friend WithEvents txtTel As TextBox
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtDNI As TextBox
     Friend WithEvents txtApe As TextBox
