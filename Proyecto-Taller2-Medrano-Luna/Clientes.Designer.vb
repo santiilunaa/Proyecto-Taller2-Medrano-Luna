@@ -235,7 +235,7 @@ Partial Class Clientes
         '
         Me.LBuscar.AutoSize = True
         Me.LBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBuscar.Location = New System.Drawing.Point(130, 64)
+        Me.LBuscar.Location = New System.Drawing.Point(94, 75)
         Me.LBuscar.Name = "LBuscar"
         Me.LBuscar.Size = New System.Drawing.Size(103, 16)
         Me.LBuscar.TabIndex = 7
@@ -244,7 +244,7 @@ Partial Class Clientes
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(236, 61)
+        Me.txtBuscar.Location = New System.Drawing.Point(203, 72)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(351, 22)
         Me.txtBuscar.TabIndex = 6

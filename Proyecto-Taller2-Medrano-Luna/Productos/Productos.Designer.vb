@@ -33,7 +33,7 @@ Partial Class Productos
         Me.LNombrePro = New System.Windows.Forms.Label()
         Me.txtStock = New System.Windows.Forms.TextBox()
         Me.txtCat = New System.Windows.Forms.TextBox()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.txtNom = New System.Windows.Forms.TextBox()
         Me.txtPVent = New System.Windows.Forms.TextBox()
         Me.txtPCos = New System.Windows.Forms.TextBox()
         Me.btnGuardarP = New System.Windows.Forms.Button()
@@ -50,6 +50,7 @@ Partial Class Productos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.LProductos = New System.Windows.Forms.Label()
+        Me.BBorrar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.pnlAgregar.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +75,7 @@ Partial Class Productos
         '
         Me.pnlAgregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.pnlAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAgregar.Controls.Add(Me.BBorrar)
         Me.pnlAgregar.Controls.Add(Me.txtStockMin)
         Me.pnlAgregar.Controls.Add(Me.LStockMin)
         Me.pnlAgregar.Controls.Add(Me.LStock)
@@ -83,7 +85,7 @@ Partial Class Productos
         Me.pnlAgregar.Controls.Add(Me.LNombrePro)
         Me.pnlAgregar.Controls.Add(Me.txtStock)
         Me.pnlAgregar.Controls.Add(Me.txtCat)
-        Me.pnlAgregar.Controls.Add(Me.txtNombre)
+        Me.pnlAgregar.Controls.Add(Me.txtNom)
         Me.pnlAgregar.Controls.Add(Me.txtPVent)
         Me.pnlAgregar.Controls.Add(Me.txtPCos)
         Me.pnlAgregar.Controls.Add(Me.btnGuardarP)
@@ -176,12 +178,12 @@ Partial Class Productos
         Me.txtCat.Size = New System.Drawing.Size(100, 20)
         Me.txtCat.TabIndex = 8
         '
-        'txtNombre
+        'txtNom
         '
-        Me.txtNombre.Location = New System.Drawing.Point(137, 96)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(100, 20)
-        Me.txtNombre.TabIndex = 7
+        Me.txtNom.Location = New System.Drawing.Point(137, 96)
+        Me.txtNom.Name = "txtNom"
+        Me.txtNom.Size = New System.Drawing.Size(100, 20)
+        Me.txtNom.TabIndex = 7
         '
         'txtPVent
         '
@@ -203,7 +205,7 @@ Partial Class Productos
         Me.btnGuardarP.FlatAppearance.BorderSize = 0
         Me.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardarP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarP.Location = New System.Drawing.Point(40, 347)
+        Me.btnGuardarP.Location = New System.Drawing.Point(21, 347)
         Me.btnGuardarP.Name = "btnGuardarP"
         Me.btnGuardarP.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardarP.TabIndex = 1
@@ -216,7 +218,7 @@ Partial Class Productos
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(187, 347)
+        Me.btnCancelar.Location = New System.Drawing.Point(203, 347)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 2
@@ -328,6 +330,19 @@ Partial Class Productos
         Me.LProductos.TabIndex = 0
         Me.LProductos.Text = "Productos"
         '
+        'BBorrar
+        '
+        Me.BBorrar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BBorrar.FlatAppearance.BorderSize = 0
+        Me.BBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBorrar.Location = New System.Drawing.Point(112, 347)
+        Me.BBorrar.Name = "BBorrar"
+        Me.BBorrar.Size = New System.Drawing.Size(75, 23)
+        Me.BBorrar.TabIndex = 17
+        Me.BBorrar.Text = "Borrar"
+        Me.BBorrar.UseVisualStyleBackColor = False
+        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -366,7 +381,7 @@ Partial Class Productos
     Friend WithEvents LNombrePro As Label
     Friend WithEvents txtStock As TextBox
     Friend WithEvents txtCat As TextBox
-    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents txtNom As TextBox
     Friend WithEvents txtPVent As TextBox
     Friend WithEvents txtPCos As TextBox
     Friend WithEvents btnGuardarP As Button
@@ -374,4 +389,5 @@ Partial Class Productos
     Friend WithEvents Label1 As Label
     Friend WithEvents txtStockMin As TextBox
     Friend WithEvents LStockMin As Label
+    Friend WithEvents BBorrar As Button
 End Class

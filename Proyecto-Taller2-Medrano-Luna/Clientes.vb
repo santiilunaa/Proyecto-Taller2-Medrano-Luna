@@ -17,9 +17,16 @@ Public Class Clientes
             connection.Open()
             Dim Existe As Boolean = Convert.ToInt32(comando.ExecuteScalar) > 0
 
+
             If (txtDni.Text = "") Or (txtNom.Text = "") Or (txtApe.Text = "") Or (txtEmail.Text = "") Or (txtDomic.Text = "") Or (txtTelef.Text = "") Then
                 MsgBox("Debe completar todos los campos", 0 + 0 + 64, "Alerta")
+            ElseIf IsNumeric(txtNom.Text) Or IsNumeric(txtApe.Text) Or IsNumeric(txtEmail.Text) Or IsNumeric(txtDomic.Text) Then
+                MsgBox("Complete con valores alfabeticos en nombre, apellido, email y domicilio por favor", MsgBoxStyle.Critical, "Error")
+
+            ElseIf Not IsNumeric(txtDni.Text) Or Not IsNumeric(txtTelef.Text) Then
+                MsgBox("solo valores numéricos en dni y telefono por favor", MsgBoxStyle.Critical, "Error")
             Else
+
                 If Existe Then
                     MsgBox("El dni ingresado ya existe", vbCritical, "Error")
                 Else
@@ -85,4 +92,6 @@ Public Class Clientes
         End Try
 
     End Sub
+
+    
 End Class

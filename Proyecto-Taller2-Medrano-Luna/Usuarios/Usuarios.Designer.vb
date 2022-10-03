@@ -53,9 +53,9 @@ Partial Class Usuarios
         Me.txtDirec = New System.Windows.Forms.TextBox()
         Me.txtTel = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.txtDNI = New System.Windows.Forms.TextBox()
+        Me.txtDni = New System.Windows.Forms.TextBox()
         Me.txtApe = New System.Windows.Forms.TextBox()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.txtNom = New System.Windows.Forms.TextBox()
         Me.LTelef = New System.Windows.Forms.Label()
         Me.LEmail = New System.Windows.Forms.Label()
         Me.LDNI = New System.Windows.Forms.Label()
@@ -65,6 +65,7 @@ Partial Class Usuarios
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BAgregar = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.BBorrar = New System.Windows.Forms.Button()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -227,15 +228,16 @@ Partial Class Usuarios
         'pnlAgregarUs
         '
         Me.pnlAgregarUs.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlAgregarUs.Controls.Add(Me.BBorrar)
         Me.pnlAgregarUs.Controls.Add(Me.Panel3)
         Me.pnlAgregarUs.Controls.Add(Me.Panel2)
         Me.pnlAgregarUs.Controls.Add(Me.LDirec)
         Me.pnlAgregarUs.Controls.Add(Me.txtDirec)
         Me.pnlAgregarUs.Controls.Add(Me.txtTel)
         Me.pnlAgregarUs.Controls.Add(Me.txtEmail)
-        Me.pnlAgregarUs.Controls.Add(Me.txtDNI)
+        Me.pnlAgregarUs.Controls.Add(Me.txtDni)
         Me.pnlAgregarUs.Controls.Add(Me.txtApe)
-        Me.pnlAgregarUs.Controls.Add(Me.txtNombre)
+        Me.pnlAgregarUs.Controls.Add(Me.txtNom)
         Me.pnlAgregarUs.Controls.Add(Me.LTelef)
         Me.pnlAgregarUs.Controls.Add(Me.LEmail)
         Me.pnlAgregarUs.Controls.Add(Me.LDNI)
@@ -299,12 +301,12 @@ Partial Class Usuarios
         Me.txtEmail.Size = New System.Drawing.Size(100, 20)
         Me.txtEmail.TabIndex = 11
         '
-        'txtDNI
+        'txtDni
         '
-        Me.txtDNI.Location = New System.Drawing.Point(128, 147)
-        Me.txtDNI.Name = "txtDNI"
-        Me.txtDNI.Size = New System.Drawing.Size(100, 20)
-        Me.txtDNI.TabIndex = 10
+        Me.txtDni.Location = New System.Drawing.Point(128, 147)
+        Me.txtDni.Name = "txtDni"
+        Me.txtDni.Size = New System.Drawing.Size(100, 20)
+        Me.txtDni.TabIndex = 10
         '
         'txtApe
         '
@@ -313,12 +315,12 @@ Partial Class Usuarios
         Me.txtApe.Size = New System.Drawing.Size(101, 20)
         Me.txtApe.TabIndex = 9
         '
-        'txtNombre
+        'txtNom
         '
-        Me.txtNombre.Location = New System.Drawing.Point(128, 75)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(101, 20)
-        Me.txtNombre.TabIndex = 8
+        Me.txtNom.Location = New System.Drawing.Point(128, 75)
+        Me.txtNom.Name = "txtNom"
+        Me.txtNom.Size = New System.Drawing.Size(101, 20)
+        Me.txtNom.TabIndex = 8
         '
         'LTelef
         '
@@ -386,7 +388,7 @@ Partial Class Usuarios
         Me.BCancelar.FlatAppearance.BorderSize = 0
         Me.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BCancelar.Location = New System.Drawing.Point(180, 343)
+        Me.BCancelar.Location = New System.Drawing.Point(201, 343)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(75, 23)
         Me.BCancelar.TabIndex = 1
@@ -399,7 +401,7 @@ Partial Class Usuarios
         Me.BAgregar.FlatAppearance.BorderSize = 0
         Me.BAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BAgregar.Location = New System.Drawing.Point(46, 343)
+        Me.BAgregar.Location = New System.Drawing.Point(18, 343)
         Me.BAgregar.Name = "BAgregar"
         Me.BAgregar.Size = New System.Drawing.Size(75, 23)
         Me.BAgregar.TabIndex = 0
@@ -413,6 +415,19 @@ Partial Class Usuarios
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(505, 23)
         Me.TextBox1.TabIndex = 5
+        '
+        'BBorrar
+        '
+        Me.BBorrar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BBorrar.FlatAppearance.BorderSize = 0
+        Me.BBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBorrar.Location = New System.Drawing.Point(109, 343)
+        Me.BBorrar.Name = "BBorrar"
+        Me.BBorrar.Size = New System.Drawing.Size(75, 23)
+        Me.BBorrar.TabIndex = 17
+        Me.BBorrar.Text = "Borrar"
+        Me.BBorrar.UseVisualStyleBackColor = False
         '
         'Usuarios
         '
@@ -455,9 +470,9 @@ Partial Class Usuarios
     Friend WithEvents txtDirec As TextBox
     Friend WithEvents txtTel As TextBox
     Friend WithEvents txtEmail As TextBox
-    Friend WithEvents txtDNI As TextBox
+    Friend WithEvents txtDni As TextBox
     Friend WithEvents txtApe As TextBox
-    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents txtNom As TextBox
     Friend WithEvents LTelef As Label
     Friend WithEvents LEmail As Label
     Friend WithEvents LDNI As Label
@@ -468,4 +483,5 @@ Partial Class Usuarios
     Friend WithEvents BAgregar As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents BBorrar As Button
 End Class
