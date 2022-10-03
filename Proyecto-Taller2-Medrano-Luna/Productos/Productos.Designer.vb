@@ -24,8 +24,10 @@ Partial Class Productos
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlAgregar = New System.Windows.Forms.Panel()
+        Me.txtStockMin = New System.Windows.Forms.TextBox()
+        Me.LStockMin = New System.Windows.Forms.Label()
         Me.LStock = New System.Windows.Forms.Label()
-        Me.LPrecCom = New System.Windows.Forms.Label()
+        Me.LPrecCos = New System.Windows.Forms.Label()
         Me.LPrecioVen = New System.Windows.Forms.Label()
         Me.LCategoria = New System.Windows.Forms.Label()
         Me.LNombrePro = New System.Windows.Forms.Label()
@@ -72,8 +74,10 @@ Partial Class Productos
         '
         Me.pnlAgregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.pnlAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAgregar.Controls.Add(Me.txtStockMin)
+        Me.pnlAgregar.Controls.Add(Me.LStockMin)
         Me.pnlAgregar.Controls.Add(Me.LStock)
-        Me.pnlAgregar.Controls.Add(Me.LPrecCom)
+        Me.pnlAgregar.Controls.Add(Me.LPrecCos)
         Me.pnlAgregar.Controls.Add(Me.LPrecioVen)
         Me.pnlAgregar.Controls.Add(Me.LCategoria)
         Me.pnlAgregar.Controls.Add(Me.LNombrePro)
@@ -85,37 +89,51 @@ Partial Class Productos
         Me.pnlAgregar.Controls.Add(Me.btnGuardarP)
         Me.pnlAgregar.Controls.Add(Me.btnCancelar)
         Me.pnlAgregar.Controls.Add(Me.Label1)
-        Me.pnlAgregar.Location = New System.Drawing.Point(321, 18)
+        Me.pnlAgregar.Location = New System.Drawing.Point(237, 43)
         Me.pnlAgregar.Name = "pnlAgregar"
         Me.pnlAgregar.Size = New System.Drawing.Size(299, 393)
         Me.pnlAgregar.TabIndex = 6
         Me.pnlAgregar.Visible = False
         '
+        'txtStockMin
+        '
+        Me.txtStockMin.Location = New System.Drawing.Point(137, 276)
+        Me.txtStockMin.Name = "txtStockMin"
+        Me.txtStockMin.Size = New System.Drawing.Size(100, 20)
+        Me.txtStockMin.TabIndex = 16
+        '
+        'LStockMin
+        '
+        Me.LStockMin.AutoSize = True
+        Me.LStockMin.Location = New System.Drawing.Point(46, 279)
+        Me.LStockMin.Name = "LStockMin"
+        Me.LStockMin.Size = New System.Drawing.Size(55, 13)
+        Me.LStockMin.TabIndex = 15
+        Me.LStockMin.Text = "Stock Min"
+        '
         'LStock
         '
         Me.LStock.AutoSize = True
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LStock.Location = New System.Drawing.Point(37, 257)
+        Me.LStock.Location = New System.Drawing.Point(46, 242)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(40, 13)
         Me.LStock.TabIndex = 14
         Me.LStock.Text = "Stock"
         '
-        'LPrecCom
+        'LPrecCos
         '
-        Me.LPrecCom.AutoSize = True
-        Me.LPrecCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPrecCom.Location = New System.Drawing.Point(37, 210)
-        Me.LPrecCom.Name = "LPrecCom"
-        Me.LPrecCom.Size = New System.Drawing.Size(89, 13)
-        Me.LPrecCom.TabIndex = 13
-        Me.LPrecCom.Text = "Precio Compra"
+        Me.LPrecCos.AutoSize = True
+        Me.LPrecCos.Location = New System.Drawing.Point(46, 171)
+        Me.LPrecCos.Name = "LPrecCos"
+        Me.LPrecCos.Size = New System.Drawing.Size(67, 13)
+        Me.LPrecCos.TabIndex = 13
+        Me.LPrecCos.Text = "Precio Costo"
         '
         'LPrecioVen
         '
         Me.LPrecioVen.AutoSize = True
-        Me.LPrecioVen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPrecioVen.Location = New System.Drawing.Point(37, 176)
+        Me.LPrecioVen.Location = New System.Drawing.Point(46, 206)
         Me.LPrecioVen.Name = "LPrecioVen"
         Me.LPrecioVen.Size = New System.Drawing.Size(80, 13)
         Me.LPrecioVen.TabIndex = 12
@@ -124,8 +142,7 @@ Partial Class Productos
         'LCategoria
         '
         Me.LCategoria.AutoSize = True
-        Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCategoria.Location = New System.Drawing.Point(37, 138)
+        Me.LCategoria.Location = New System.Drawing.Point(46, 135)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(63, 13)
         Me.LCategoria.TabIndex = 11
@@ -134,8 +151,7 @@ Partial Class Productos
         'LNombrePro
         '
         Me.LNombrePro.AutoSize = True
-        Me.LNombrePro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LNombrePro.Location = New System.Drawing.Point(37, 101)
+        Me.LNombrePro.Location = New System.Drawing.Point(46, 99)
         Me.LNombrePro.Name = "LNombrePro"
         Me.LNombrePro.Size = New System.Drawing.Size(50, 13)
         Me.LNombrePro.TabIndex = 10
@@ -143,14 +159,14 @@ Partial Class Productos
         '
         'txtStock
         '
-        Me.txtStock.Location = New System.Drawing.Point(137, 252)
+        Me.txtStock.Location = New System.Drawing.Point(137, 239)
         Me.txtStock.Name = "txtStock"
         Me.txtStock.Size = New System.Drawing.Size(100, 20)
         Me.txtStock.TabIndex = 9
         '
         'txtCat
         '
-        Me.txtCat.Location = New System.Drawing.Point(137, 133)
+        Me.txtCat.Location = New System.Drawing.Point(137, 132)
         Me.txtCat.Name = "txtCat"
         Me.txtCat.Size = New System.Drawing.Size(100, 20)
         Me.txtCat.TabIndex = 8
@@ -164,14 +180,14 @@ Partial Class Productos
         '
         'txtPCom
         '
-        Me.txtPCom.Location = New System.Drawing.Point(137, 208)
+        Me.txtPCom.Location = New System.Drawing.Point(137, 203)
         Me.txtPCom.Name = "txtPCom"
         Me.txtPCom.Size = New System.Drawing.Size(100, 20)
         Me.txtPCom.TabIndex = 6
         '
         'txtPVent
         '
-        Me.txtPVent.Location = New System.Drawing.Point(137, 171)
+        Me.txtPVent.Location = New System.Drawing.Point(137, 168)
         Me.txtPVent.Name = "txtPVent"
         Me.txtPVent.Size = New System.Drawing.Size(100, 20)
         Me.txtPVent.TabIndex = 4
@@ -339,7 +355,7 @@ Partial Class Productos
     Friend WithEvents dgvStock As DataGridViewTextBoxColumn
     Friend WithEvents pnlAgregar As Panel
     Friend WithEvents LStock As Label
-    Friend WithEvents LPrecCom As Label
+    Friend WithEvents LPrecCos As Label
     Friend WithEvents LPrecioVen As Label
     Friend WithEvents LCategoria As Label
     Friend WithEvents LNombrePro As Label
@@ -351,4 +367,6 @@ Partial Class Productos
     Friend WithEvents btnGuardarP As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents txtStockMin As TextBox
+    Friend WithEvents LStockMin As Label
 End Class
