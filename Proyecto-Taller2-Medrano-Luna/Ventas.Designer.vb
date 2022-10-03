@@ -44,14 +44,14 @@ Partial Class Ventas
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(607, 441)
+        Me.Panel1.Size = New System.Drawing.Size(800, 460)
         Me.Panel1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(433, 298)
+        Me.Label1.Location = New System.Drawing.Point(525, 335)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(42, 16)
         Me.Label1.TabIndex = 4
@@ -61,9 +61,9 @@ Partial Class Ventas
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvProducto, Me.dgvCantidad, Me.dgvNombre, Me.dgvApellido, Me.dgvID_Cliente, Me.dgvSubTotal})
-        Me.DataGridView1.Location = New System.Drawing.Point(46, 112)
+        Me.DataGridView1.Location = New System.Drawing.Point(138, 149)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(514, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(524, 150)
         Me.DataGridView1.TabIndex = 3
         '
         'dgvProducto
@@ -109,7 +109,7 @@ Partial Class Ventas
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LVentas.AutoSize = True
         Me.LVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LVentas.Location = New System.Drawing.Point(188, 22)
+        Me.LVentas.Location = New System.Drawing.Point(280, 22)
         Me.LVentas.Name = "LVentas"
         Me.LVentas.Size = New System.Drawing.Size(230, 37)
         Me.LVentas.TabIndex = 2
@@ -119,7 +119,7 @@ Partial Class Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(607, 441)
+        Me.ClientSize = New System.Drawing.Size(800, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Ventas"
