@@ -125,6 +125,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Perfiles\MenuGerente.Designer.vb">
+      <DependentUpon>MenuGerente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Perfiles\MenuGerente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfiles\MenuVendedor.Designer.vb">
+      <DependentUpon>MenuVendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Perfiles\MenuVendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Productos\AgregarProducto.Designer.vb">
       <DependentUpon>AgregarProducto.vb</DependentUpon>
     </Compile>
@@ -180,6 +192,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfiles\MenuGerente.resx">
+      <DependentUpon>MenuGerente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfiles\MenuVendedor.resx">
+      <DependentUpon>MenuVendedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.vb</DependentUpon>

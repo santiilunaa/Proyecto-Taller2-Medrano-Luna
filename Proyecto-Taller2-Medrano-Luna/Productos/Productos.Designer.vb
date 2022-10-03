@@ -23,10 +23,20 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.LProductos = New System.Windows.Forms.Label()
+        Me.pnlAgregar = New System.Windows.Forms.Panel()
+        Me.LStock = New System.Windows.Forms.Label()
+        Me.LPrecCom = New System.Windows.Forms.Label()
+        Me.LPrecioVen = New System.Windows.Forms.Label()
+        Me.LCategoria = New System.Windows.Forms.Label()
+        Me.LNombrePro = New System.Windows.Forms.Label()
+        Me.txtStock = New System.Windows.Forms.TextBox()
+        Me.txtCat = New System.Windows.Forms.TextBox()
+        Me.txtProd = New System.Windows.Forms.TextBox()
+        Me.txtPCom = New System.Windows.Forms.TextBox()
+        Me.txtPVent = New System.Windows.Forms.TextBox()
+        Me.btnGuardarP = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.dgvIdProdu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,12 +44,18 @@ Partial Class Productos
         Me.dgvPrecioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvPrecioCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.LProductos = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.pnlAgregar.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.pnlAgregar)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.btnEliminar)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -48,56 +64,147 @@ Partial Class Productos
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(715, 396)
+        Me.Panel1.Size = New System.Drawing.Size(800, 460)
         Me.Panel1.TabIndex = 0
         '
-        'btnEliminar
+        'pnlAgregar
         '
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.Location = New System.Drawing.Point(159, 315)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(162, 34)
-        Me.btnEliminar.TabIndex = 4
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.pnlAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAgregar.Controls.Add(Me.LStock)
+        Me.pnlAgregar.Controls.Add(Me.LPrecCom)
+        Me.pnlAgregar.Controls.Add(Me.LPrecioVen)
+        Me.pnlAgregar.Controls.Add(Me.LCategoria)
+        Me.pnlAgregar.Controls.Add(Me.LNombrePro)
+        Me.pnlAgregar.Controls.Add(Me.txtStock)
+        Me.pnlAgregar.Controls.Add(Me.txtCat)
+        Me.pnlAgregar.Controls.Add(Me.txtProd)
+        Me.pnlAgregar.Controls.Add(Me.txtPCom)
+        Me.pnlAgregar.Controls.Add(Me.txtPVent)
+        Me.pnlAgregar.Controls.Add(Me.btnGuardarP)
+        Me.pnlAgregar.Controls.Add(Me.btnCancelar)
+        Me.pnlAgregar.Controls.Add(Me.Label1)
+        Me.pnlAgregar.Location = New System.Drawing.Point(251, 64)
+        Me.pnlAgregar.Name = "pnlAgregar"
+        Me.pnlAgregar.Size = New System.Drawing.Size(299, 393)
+        Me.pnlAgregar.TabIndex = 6
+        Me.pnlAgregar.Visible = False
         '
-        'btnModificar
+        'LStock
         '
-        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.Location = New System.Drawing.Point(403, 315)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(162, 34)
-        Me.btnModificar.TabIndex = 3
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.LStock.AutoSize = True
+        Me.LStock.Location = New System.Drawing.Point(47, 255)
+        Me.LStock.Name = "LStock"
+        Me.LStock.Size = New System.Drawing.Size(35, 13)
+        Me.LStock.TabIndex = 14
+        Me.LStock.Text = "Stock"
         '
-        'btnAgregar
+        'LPrecCom
         '
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(486, 64)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(162, 34)
-        Me.btnAgregar.TabIndex = 2
-        Me.btnAgregar.Text = "Agregar Producto"
-        Me.btnAgregar.UseVisualStyleBackColor = True
+        Me.LPrecCom.AutoSize = True
+        Me.LPrecCom.Location = New System.Drawing.Point(47, 208)
+        Me.LPrecCom.Name = "LPrecCom"
+        Me.LPrecCom.Size = New System.Drawing.Size(76, 13)
+        Me.LPrecCom.TabIndex = 13
+        Me.LPrecCom.Text = "Precio Compra"
         '
-        'LProductos
+        'LPrecioVen
         '
-        Me.LProductos.AutoSize = True
-        Me.LProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LProductos.Location = New System.Drawing.Point(289, 18)
-        Me.LProductos.Name = "LProductos"
-        Me.LProductos.Size = New System.Drawing.Size(137, 31)
-        Me.LProductos.TabIndex = 0
-        Me.LProductos.Text = "Productos"
+        Me.LPrecioVen.AutoSize = True
+        Me.LPrecioVen.Location = New System.Drawing.Point(47, 174)
+        Me.LPrecioVen.Name = "LPrecioVen"
+        Me.LPrecioVen.Size = New System.Drawing.Size(68, 13)
+        Me.LPrecioVen.TabIndex = 12
+        Me.LPrecioVen.Text = "Precio Venta"
+        '
+        'LCategoria
+        '
+        Me.LCategoria.AutoSize = True
+        Me.LCategoria.Location = New System.Drawing.Point(47, 136)
+        Me.LCategoria.Name = "LCategoria"
+        Me.LCategoria.Size = New System.Drawing.Size(54, 13)
+        Me.LCategoria.TabIndex = 11
+        Me.LCategoria.Text = "Categoría"
+        '
+        'LNombrePro
+        '
+        Me.LNombrePro.AutoSize = True
+        Me.LNombrePro.Location = New System.Drawing.Point(47, 99)
+        Me.LNombrePro.Name = "LNombrePro"
+        Me.LNombrePro.Size = New System.Drawing.Size(44, 13)
+        Me.LNombrePro.TabIndex = 10
+        Me.LNombrePro.Text = "Nombre"
+        '
+        'txtStock
+        '
+        Me.txtStock.Location = New System.Drawing.Point(137, 252)
+        Me.txtStock.Name = "txtStock"
+        Me.txtStock.Size = New System.Drawing.Size(100, 20)
+        Me.txtStock.TabIndex = 9
+        '
+        'txtCat
+        '
+        Me.txtCat.Location = New System.Drawing.Point(137, 133)
+        Me.txtCat.Name = "txtCat"
+        Me.txtCat.Size = New System.Drawing.Size(100, 20)
+        Me.txtCat.TabIndex = 8
+        '
+        'txtProd
+        '
+        Me.txtProd.Location = New System.Drawing.Point(137, 96)
+        Me.txtProd.Name = "txtProd"
+        Me.txtProd.Size = New System.Drawing.Size(100, 20)
+        Me.txtProd.TabIndex = 7
+        '
+        'txtPCom
+        '
+        Me.txtPCom.Location = New System.Drawing.Point(137, 208)
+        Me.txtPCom.Name = "txtPCom"
+        Me.txtPCom.Size = New System.Drawing.Size(100, 20)
+        Me.txtPCom.TabIndex = 6
+        '
+        'txtPVent
+        '
+        Me.txtPVent.Location = New System.Drawing.Point(137, 171)
+        Me.txtPVent.Name = "txtPVent"
+        Me.txtPVent.Size = New System.Drawing.Size(100, 20)
+        Me.txtPVent.TabIndex = 4
+        '
+        'btnGuardarP
+        '
+        Me.btnGuardarP.Location = New System.Drawing.Point(40, 347)
+        Me.btnGuardarP.Name = "btnGuardarP"
+        Me.btnGuardarP.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardarP.TabIndex = 1
+        Me.btnGuardarP.Text = "Guardar"
+        Me.btnGuardarP.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(187, 347)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 2
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(66, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(159, 24)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Agregar Producto"
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.CornflowerBlue
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvIdProdu, Me.dgvNombre, Me.dgvCategoria, Me.dgvPrecioVenta, Me.dgvPrecioCompra, Me.dgvStock})
-        Me.DataGridView1.Location = New System.Drawing.Point(98, 125)
+        Me.DataGridView1.Location = New System.Drawing.Point(26, 85)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(519, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(524, 312)
         Me.DataGridView1.TabIndex = 5
         '
         'dgvIdProdu
@@ -136,17 +243,59 @@ Partial Class Productos
         Me.dgvStock.Name = "dgvStock"
         Me.dgvStock.Width = 80
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(626, 363)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(162, 34)
+        Me.btnEliminar.TabIndex = 4
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(626, 310)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(162, 34)
+        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(626, 85)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(162, 34)
+        Me.btnAgregar.TabIndex = 2
+        Me.btnAgregar.Text = "Agregar Producto"
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'LProductos
+        '
+        Me.LProductos.AutoSize = True
+        Me.LProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LProductos.Location = New System.Drawing.Point(316, 18)
+        Me.LProductos.Name = "LProductos"
+        Me.LProductos.Size = New System.Drawing.Size(137, 31)
+        Me.LProductos.TabIndex = 0
+        Me.LProductos.Text = "Productos"
+        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(715, 396)
+        Me.ClientSize = New System.Drawing.Size(800, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Productos"
         Me.Text = "Productos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.pnlAgregar.ResumeLayout(False)
+        Me.pnlAgregar.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -164,4 +313,18 @@ Partial Class Productos
     Friend WithEvents dgvPrecioVenta As DataGridViewTextBoxColumn
     Friend WithEvents dgvPrecioCompra As DataGridViewTextBoxColumn
     Friend WithEvents dgvStock As DataGridViewTextBoxColumn
+    Friend WithEvents pnlAgregar As Panel
+    Friend WithEvents LStock As Label
+    Friend WithEvents LPrecCom As Label
+    Friend WithEvents LPrecioVen As Label
+    Friend WithEvents LCategoria As Label
+    Friend WithEvents LNombrePro As Label
+    Friend WithEvents txtStock As TextBox
+    Friend WithEvents txtCat As TextBox
+    Friend WithEvents txtProd As TextBox
+    Friend WithEvents txtPCom As TextBox
+    Friend WithEvents txtPVent As TextBox
+    Friend WithEvents btnGuardarP As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents Label1 As Label
 End Class
