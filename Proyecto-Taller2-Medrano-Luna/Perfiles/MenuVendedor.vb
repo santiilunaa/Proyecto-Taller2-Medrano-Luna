@@ -35,4 +35,5 @@
         AbrirFormHijo(New Ventas())
         lblPrincip.Text = "Ventas"
     End Sub
+
 End Class

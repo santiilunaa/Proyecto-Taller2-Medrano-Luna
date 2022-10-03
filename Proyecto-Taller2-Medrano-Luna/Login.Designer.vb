@@ -38,7 +38,7 @@ Partial Class Login
         '
         'pnlLogTop
         '
-        Me.pnlLogTop.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlLogTop.BackColor = System.Drawing.Color.LightCyan
         Me.pnlLogTop.Controls.Add(Me.Label1)
         Me.pnlLogTop.Controls.Add(Me.Button1)
         Me.pnlLogTop.Dock = System.Windows.Forms.DockStyle.Top

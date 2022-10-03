@@ -22,13 +22,14 @@ Partial Class Usuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Usuarios))
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -45,8 +46,29 @@ Partial Class Usuarios
         Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.pnlAgregarUs = New System.Windows.Forms.Panel()
+        Me.LDirec = New System.Windows.Forms.Label()
+        Me.txtDirec = New System.Windows.Forms.TextBox()
+        Me.txtTelef = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.txtDNI = New System.Windows.Forms.TextBox()
+        Me.txtApe = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.LTelef = New System.Windows.Forms.Label()
+        Me.LEmail = New System.Windows.Forms.Label()
+        Me.LDNI = New System.Windows.Forms.Label()
+        Me.LApe = New System.Windows.Forms.Label()
+        Me.LNom = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.BCancelar = New System.Windows.Forms.Button()
+        Me.BAgregar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.pnlAgregarUs.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -55,45 +77,55 @@ Partial Class Usuarios
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(336, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(153, 37)
+        Me.Label1.Size = New System.Drawing.Size(122, 30)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuarios "
         '
         'btnAgregar
         '
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnAgregar.FlatAppearance.BorderSize = 0
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.Location = New System.Drawing.Point(59, 397)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(128, 38)
+        Me.btnAgregar.Size = New System.Drawing.Size(138, 38)
         Me.btnAgregar.TabIndex = 1
         Me.btnAgregar.Text = "Agregar Usuario"
-        Me.btnAgregar.UseVisualStyleBackColor = True
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'btnModificar
         '
-        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar.Location = New System.Drawing.Point(477, 397)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(122, 38)
         Me.btnModificar.TabIndex = 2
         Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnEliminar
         '
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Location = New System.Drawing.Point(620, 397)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(122, 38)
         Me.btnEliminar.TabIndex = 3
         Me.btnEliminar.Text = "Eliminar "
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.CornflowerBlue
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Usuario, Me.dgvNombre, Me.dgvApellido, Me.dgvDNI, Me.dvgEmail, Me.dvgTel, Me.dvgDireccion, Me.Usuario})
         Me.DataGridView1.Location = New System.Drawing.Point(59, 122)
@@ -109,63 +141,66 @@ Partial Class Usuarios
         '
         'dgvNombre
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvNombre.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvNombre.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgvNombre.HeaderText = "Nombre"
         Me.dgvNombre.Name = "dgvNombre"
         Me.dgvNombre.Width = 80
         '
         'dgvApellido
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.dgvApellido.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.dgvApellido.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvApellido.HeaderText = "Apellido"
         Me.dgvApellido.Name = "dgvApellido"
         Me.dgvApellido.Width = 80
         '
         'dgvDNI
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgvDNI.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvDNI.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvDNI.HeaderText = "DNI"
         Me.dgvDNI.Name = "dgvDNI"
         Me.dgvDNI.Width = 80
         '
         'dvgEmail
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dvgEmail.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dvgEmail.DefaultCellStyle = DataGridViewCellStyle4
         Me.dvgEmail.HeaderText = "Email"
         Me.dvgEmail.Name = "dvgEmail"
         Me.dvgEmail.Width = 80
         '
         'dvgTel
         '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dvgTel.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dvgTel.DefaultCellStyle = DataGridViewCellStyle5
         Me.dvgTel.HeaderText = "Telefono"
         Me.dvgTel.Name = "dvgTel"
         Me.dvgTel.Width = 80
         '
         'dvgDireccion
         '
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dvgDireccion.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dvgDireccion.DefaultCellStyle = DataGridViewCellStyle6
         Me.dvgDireccion.HeaderText = "Direccion"
         Me.dvgDireccion.Name = "dvgDireccion"
         Me.dvgDireccion.Width = 80
         '
         'Usuario
         '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Usuario.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Usuario.DefaultCellStyle = DataGridViewCellStyle7
         Me.Usuario.HeaderText = "Usuario"
         Me.Usuario.Name = "Usuario"
         Me.Usuario.Width = 80
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.pnlAgregarUs)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.btnEliminar)
@@ -173,6 +208,7 @@ Partial Class Usuarios
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.btnAgregar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(800, 460)
@@ -186,6 +222,198 @@ Partial Class Usuarios
         Me.TextBox1.Size = New System.Drawing.Size(505, 23)
         Me.TextBox1.TabIndex = 5
         '
+        'pnlAgregarUs
+        '
+        Me.pnlAgregarUs.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlAgregarUs.Controls.Add(Me.Panel3)
+        Me.pnlAgregarUs.Controls.Add(Me.Panel2)
+        Me.pnlAgregarUs.Controls.Add(Me.LDirec)
+        Me.pnlAgregarUs.Controls.Add(Me.txtDirec)
+        Me.pnlAgregarUs.Controls.Add(Me.txtTelef)
+        Me.pnlAgregarUs.Controls.Add(Me.txtEmail)
+        Me.pnlAgregarUs.Controls.Add(Me.txtDNI)
+        Me.pnlAgregarUs.Controls.Add(Me.txtApe)
+        Me.pnlAgregarUs.Controls.Add(Me.txtNombre)
+        Me.pnlAgregarUs.Controls.Add(Me.LTelef)
+        Me.pnlAgregarUs.Controls.Add(Me.LEmail)
+        Me.pnlAgregarUs.Controls.Add(Me.LDNI)
+        Me.pnlAgregarUs.Controls.Add(Me.LApe)
+        Me.pnlAgregarUs.Controls.Add(Me.LNom)
+        Me.pnlAgregarUs.Controls.Add(Me.Label2)
+        Me.pnlAgregarUs.Controls.Add(Me.BCancelar)
+        Me.pnlAgregarUs.Controls.Add(Me.BAgregar)
+        Me.pnlAgregarUs.Location = New System.Drawing.Point(216, 37)
+        Me.pnlAgregarUs.Name = "pnlAgregarUs"
+        Me.pnlAgregarUs.Size = New System.Drawing.Size(299, 398)
+        Me.pnlAgregarUs.TabIndex = 6
+        Me.pnlAgregarUs.Visible = False
+        '
+        'LDirec
+        '
+        Me.LDirec.AutoSize = True
+        Me.LDirec.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDirec.Location = New System.Drawing.Point(43, 260)
+        Me.LDirec.Name = "LDirec"
+        Me.LDirec.Size = New System.Drawing.Size(61, 13)
+        Me.LDirec.TabIndex = 14
+        Me.LDirec.Text = "Direccion"
+        '
+        'txtDirec
+        '
+        Me.txtDirec.Location = New System.Drawing.Point(128, 257)
+        Me.txtDirec.Name = "txtDirec"
+        Me.txtDirec.Size = New System.Drawing.Size(101, 20)
+        Me.txtDirec.TabIndex = 13
+        '
+        'txtTelef
+        '
+        Me.txtTelef.Location = New System.Drawing.Point(128, 220)
+        Me.txtTelef.Name = "txtTelef"
+        Me.txtTelef.Size = New System.Drawing.Size(101, 20)
+        Me.txtTelef.TabIndex = 12
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(128, 188)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(100, 20)
+        Me.txtEmail.TabIndex = 11
+        '
+        'txtDNI
+        '
+        Me.txtDNI.Location = New System.Drawing.Point(128, 147)
+        Me.txtDNI.Name = "txtDNI"
+        Me.txtDNI.Size = New System.Drawing.Size(100, 20)
+        Me.txtDNI.TabIndex = 10
+        '
+        'txtApe
+        '
+        Me.txtApe.Location = New System.Drawing.Point(128, 110)
+        Me.txtApe.Name = "txtApe"
+        Me.txtApe.Size = New System.Drawing.Size(101, 20)
+        Me.txtApe.TabIndex = 9
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(128, 75)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(101, 20)
+        Me.txtNombre.TabIndex = 8
+        '
+        'LTelef
+        '
+        Me.LTelef.AutoSize = True
+        Me.LTelef.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTelef.Location = New System.Drawing.Point(43, 223)
+        Me.LTelef.Name = "LTelef"
+        Me.LTelef.Size = New System.Drawing.Size(57, 13)
+        Me.LTelef.TabIndex = 7
+        Me.LTelef.Text = "Telefono"
+        '
+        'LEmail
+        '
+        Me.LEmail.AutoSize = True
+        Me.LEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmail.Location = New System.Drawing.Point(43, 191)
+        Me.LEmail.Name = "LEmail"
+        Me.LEmail.Size = New System.Drawing.Size(37, 13)
+        Me.LEmail.TabIndex = 6
+        Me.LEmail.Text = "Email"
+        '
+        'LDNI
+        '
+        Me.LDNI.AutoSize = True
+        Me.LDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDNI.Location = New System.Drawing.Point(43, 150)
+        Me.LDNI.Name = "LDNI"
+        Me.LDNI.Size = New System.Drawing.Size(29, 13)
+        Me.LDNI.TabIndex = 5
+        Me.LDNI.Text = "DNI"
+        '
+        'LApe
+        '
+        Me.LApe.AutoSize = True
+        Me.LApe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LApe.Location = New System.Drawing.Point(43, 113)
+        Me.LApe.Name = "LApe"
+        Me.LApe.Size = New System.Drawing.Size(52, 13)
+        Me.LApe.TabIndex = 4
+        Me.LApe.Text = "Apellido"
+        '
+        'LNom
+        '
+        Me.LNom.AutoSize = True
+        Me.LNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LNom.Location = New System.Drawing.Point(43, 78)
+        Me.LNom.Name = "LNom"
+        Me.LNom.Size = New System.Drawing.Size(50, 13)
+        Me.LNom.TabIndex = 3
+        Me.LNom.Text = "Nombre"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(81, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(147, 24)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Agregar Usuario"
+        '
+        'BCancelar
+        '
+        Me.BCancelar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BCancelar.FlatAppearance.BorderSize = 0
+        Me.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCancelar.Location = New System.Drawing.Point(180, 343)
+        Me.BCancelar.Name = "BCancelar"
+        Me.BCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.BCancelar.TabIndex = 1
+        Me.BCancelar.Text = "Cancelar"
+        Me.BCancelar.UseVisualStyleBackColor = False
+        '
+        'BAgregar
+        '
+        Me.BAgregar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BAgregar.FlatAppearance.BorderSize = 0
+        Me.BAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BAgregar.Location = New System.Drawing.Point(46, 343)
+        Me.BAgregar.Name = "BAgregar"
+        Me.BAgregar.Size = New System.Drawing.Size(75, 23)
+        Me.BAgregar.TabIndex = 0
+        Me.BAgregar.Text = "Agregar"
+        Me.BAgregar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(102, 66)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(31, 23)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 393)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(299, 5)
+        Me.Panel2.TabIndex = 15
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(294, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(5, 393)
+        Me.Panel3.TabIndex = 16
+        '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -198,6 +426,9 @@ Partial Class Usuarios
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.pnlAgregarUs.ResumeLayout(False)
+        Me.pnlAgregarUs.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -218,4 +449,23 @@ Partial Class Usuarios
     Friend WithEvents dvgDireccion As DataGridViewTextBoxColumn
     Friend WithEvents Usuario As DataGridViewTextBoxColumn
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pnlAgregarUs As Panel
+    Friend WithEvents LDirec As Label
+    Friend WithEvents txtDirec As TextBox
+    Friend WithEvents txtTelef As TextBox
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents txtDNI As TextBox
+    Friend WithEvents txtApe As TextBox
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents LTelef As Label
+    Friend WithEvents LEmail As Label
+    Friend WithEvents LDNI As Label
+    Friend WithEvents LApe As Label
+    Friend WithEvents LNom As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents BCancelar As Button
+    Friend WithEvents BAgregar As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class
