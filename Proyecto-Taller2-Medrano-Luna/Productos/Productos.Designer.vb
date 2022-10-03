@@ -55,6 +55,7 @@ Partial Class Productos
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel1.Controls.Add(Me.pnlAgregar)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.btnEliminar)
@@ -69,6 +70,7 @@ Partial Class Productos
         '
         'pnlAgregar
         '
+        Me.pnlAgregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.pnlAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlAgregar.Controls.Add(Me.LStock)
         Me.pnlAgregar.Controls.Add(Me.LPrecCom)
@@ -83,7 +85,7 @@ Partial Class Productos
         Me.pnlAgregar.Controls.Add(Me.btnGuardarP)
         Me.pnlAgregar.Controls.Add(Me.btnCancelar)
         Me.pnlAgregar.Controls.Add(Me.Label1)
-        Me.pnlAgregar.Location = New System.Drawing.Point(251, 64)
+        Me.pnlAgregar.Location = New System.Drawing.Point(321, 18)
         Me.pnlAgregar.Name = "pnlAgregar"
         Me.pnlAgregar.Size = New System.Drawing.Size(299, 393)
         Me.pnlAgregar.TabIndex = 6
@@ -92,45 +94,50 @@ Partial Class Productos
         'LStock
         '
         Me.LStock.AutoSize = True
-        Me.LStock.Location = New System.Drawing.Point(47, 255)
+        Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LStock.Location = New System.Drawing.Point(37, 257)
         Me.LStock.Name = "LStock"
-        Me.LStock.Size = New System.Drawing.Size(35, 13)
+        Me.LStock.Size = New System.Drawing.Size(40, 13)
         Me.LStock.TabIndex = 14
         Me.LStock.Text = "Stock"
         '
         'LPrecCom
         '
         Me.LPrecCom.AutoSize = True
-        Me.LPrecCom.Location = New System.Drawing.Point(47, 208)
+        Me.LPrecCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LPrecCom.Location = New System.Drawing.Point(37, 210)
         Me.LPrecCom.Name = "LPrecCom"
-        Me.LPrecCom.Size = New System.Drawing.Size(76, 13)
+        Me.LPrecCom.Size = New System.Drawing.Size(89, 13)
         Me.LPrecCom.TabIndex = 13
         Me.LPrecCom.Text = "Precio Compra"
         '
         'LPrecioVen
         '
         Me.LPrecioVen.AutoSize = True
-        Me.LPrecioVen.Location = New System.Drawing.Point(47, 174)
+        Me.LPrecioVen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LPrecioVen.Location = New System.Drawing.Point(37, 176)
         Me.LPrecioVen.Name = "LPrecioVen"
-        Me.LPrecioVen.Size = New System.Drawing.Size(68, 13)
+        Me.LPrecioVen.Size = New System.Drawing.Size(80, 13)
         Me.LPrecioVen.TabIndex = 12
         Me.LPrecioVen.Text = "Precio Venta"
         '
         'LCategoria
         '
         Me.LCategoria.AutoSize = True
-        Me.LCategoria.Location = New System.Drawing.Point(47, 136)
+        Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCategoria.Location = New System.Drawing.Point(37, 138)
         Me.LCategoria.Name = "LCategoria"
-        Me.LCategoria.Size = New System.Drawing.Size(54, 13)
+        Me.LCategoria.Size = New System.Drawing.Size(63, 13)
         Me.LCategoria.TabIndex = 11
         Me.LCategoria.Text = "Categoría"
         '
         'LNombrePro
         '
         Me.LNombrePro.AutoSize = True
-        Me.LNombrePro.Location = New System.Drawing.Point(47, 99)
+        Me.LNombrePro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LNombrePro.Location = New System.Drawing.Point(37, 101)
         Me.LNombrePro.Name = "LNombrePro"
-        Me.LNombrePro.Size = New System.Drawing.Size(44, 13)
+        Me.LNombrePro.Size = New System.Drawing.Size(50, 13)
         Me.LNombrePro.TabIndex = 10
         Me.LNombrePro.Text = "Nombre"
         '
@@ -171,21 +178,29 @@ Partial Class Productos
         '
         'btnGuardarP
         '
+        Me.btnGuardarP.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnGuardarP.FlatAppearance.BorderSize = 0
+        Me.btnGuardarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardarP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarP.Location = New System.Drawing.Point(40, 347)
         Me.btnGuardarP.Name = "btnGuardarP"
         Me.btnGuardarP.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardarP.TabIndex = 1
         Me.btnGuardarP.Text = "Guardar"
-        Me.btnGuardarP.UseVisualStyleBackColor = True
+        Me.btnGuardarP.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
+        Me.btnCancelar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.Location = New System.Drawing.Point(187, 347)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 2
         Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -245,33 +260,42 @@ Partial Class Productos
         '
         'btnEliminar
         '
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Location = New System.Drawing.Point(626, 363)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(162, 34)
         Me.btnEliminar.TabIndex = 4
         Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'btnModificar
         '
-        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar.Location = New System.Drawing.Point(626, 310)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(162, 34)
         Me.btnModificar.TabIndex = 3
         Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnAgregar
         '
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnAgregar.FlatAppearance.BorderSize = 0
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.Location = New System.Drawing.Point(626, 85)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(162, 34)
         Me.btnAgregar.TabIndex = 2
         Me.btnAgregar.Text = "Agregar Producto"
-        Me.btnAgregar.UseVisualStyleBackColor = True
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'LProductos
         '

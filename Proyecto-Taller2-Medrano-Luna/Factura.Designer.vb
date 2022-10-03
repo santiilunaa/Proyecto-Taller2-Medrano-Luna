@@ -23,6 +23,8 @@ Partial Class Factura
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LTotal = New System.Windows.Forms.Label()
+        Me.LCliente = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -30,6 +32,8 @@ Partial Class Factura
         Me.elim = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.LTel = New System.Windows.Forms.Label()
         Me.LNom = New System.Windows.Forms.Label()
         Me.LApe = New System.Windows.Forms.Label()
@@ -39,6 +43,8 @@ Partial Class Factura
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LStock = New System.Windows.Forms.Label()
+        Me.Lcant = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -49,12 +55,8 @@ Partial Class Factura
         Me.LVendedor = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LFactura = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.LCliente = New System.Windows.Forms.Label()
-        Me.Lcant = New System.Windows.Forms.Label()
-        Me.LStock = New System.Windows.Forms.Label()
-        Me.LTotal = New System.Windows.Forms.Label()
+        Me.LSelCllien = New System.Windows.Forms.Label()
+        Me.LAgregarProd = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
@@ -64,6 +66,7 @@ Partial Class Factura
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel1.Controls.Add(Me.LTotal)
         Me.Panel1.Controls.Add(Me.LCliente)
         Me.Panel1.Controls.Add(Me.DataGridView1)
@@ -78,6 +81,26 @@ Partial Class Factura
         Me.Panel1.Size = New System.Drawing.Size(755, 467)
         Me.Panel1.TabIndex = 0
         '
+        'LTotal
+        '
+        Me.LTotal.AutoSize = True
+        Me.LTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTotal.Location = New System.Drawing.Point(626, 361)
+        Me.LTotal.Name = "LTotal"
+        Me.LTotal.Size = New System.Drawing.Size(36, 13)
+        Me.LTotal.TabIndex = 22
+        Me.LTotal.Text = "Total"
+        '
+        'LCliente
+        '
+        Me.LCliente.AutoSize = True
+        Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCliente.Location = New System.Drawing.Point(316, 361)
+        Me.LCliente.Name = "LCliente"
+        Me.LCliente.Size = New System.Drawing.Size(46, 13)
+        Me.LCliente.TabIndex = 21
+        Me.LCliente.Text = "Cliente"
+        '
         'DataGridView1
         '
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.MenuHighlight
@@ -86,7 +109,7 @@ Partial Class Factura
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.prod, Me.cant, Me.prec, Me.elim})
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.DataGridView1.Location = New System.Drawing.Point(305, 56)
+        Me.DataGridView1.Location = New System.Drawing.Point(304, 56)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -117,15 +140,20 @@ Partial Class Factura
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Location = New System.Drawing.Point(653, 425)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 10
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Text = "Confirmar"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.LSelCllien)
         Me.Panel4.Controls.Add(Me.Button5)
         Me.Panel4.Controls.Add(Me.Button4)
         Me.Panel4.Controls.Add(Me.LTel)
@@ -138,75 +166,106 @@ Partial Class Factura
         Me.Panel4.Controls.Add(Me.TextBox4)
         Me.Panel4.Location = New System.Drawing.Point(12, 56)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(286, 186)
+        Me.Panel4.Size = New System.Drawing.Size(286, 205)
         Me.Panel4.TabIndex = 6
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(161, 164)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 22
+        Me.Button5.Text = "Cancelar"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(36, 164)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 21
+        Me.Button4.Text = "Agregar"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'LTel
         '
         Me.LTel.AutoSize = True
-        Me.LTel.Location = New System.Drawing.Point(33, 102)
+        Me.LTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTel.Location = New System.Drawing.Point(24, 128)
         Me.LTel.Name = "LTel"
-        Me.LTel.Size = New System.Drawing.Size(49, 13)
+        Me.LTel.Size = New System.Drawing.Size(57, 13)
         Me.LTel.TabIndex = 20
         Me.LTel.Text = "Teléfono"
         '
         'LNom
         '
         Me.LNom.AutoSize = True
-        Me.LNom.Location = New System.Drawing.Point(33, 17)
+        Me.LNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LNom.Location = New System.Drawing.Point(24, 43)
         Me.LNom.Name = "LNom"
-        Me.LNom.Size = New System.Drawing.Size(44, 13)
+        Me.LNom.Size = New System.Drawing.Size(50, 13)
         Me.LNom.TabIndex = 19
         Me.LNom.Text = "Nombre"
         '
         'LApe
         '
         Me.LApe.AutoSize = True
-        Me.LApe.Location = New System.Drawing.Point(33, 43)
+        Me.LApe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LApe.Location = New System.Drawing.Point(24, 69)
         Me.LApe.Name = "LApe"
-        Me.LApe.Size = New System.Drawing.Size(44, 13)
+        Me.LApe.Size = New System.Drawing.Size(52, 13)
         Me.LApe.TabIndex = 18
         Me.LApe.Text = "Apellido"
         '
         'LDNI
         '
         Me.LDNI.AutoSize = True
-        Me.LDNI.Location = New System.Drawing.Point(33, 72)
+        Me.LDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDNI.Location = New System.Drawing.Point(24, 98)
         Me.LDNI.Name = "LDNI"
-        Me.LDNI.Size = New System.Drawing.Size(26, 13)
+        Me.LDNI.Size = New System.Drawing.Size(29, 13)
         Me.LDNI.TabIndex = 17
         Me.LDNI.Text = "DNI"
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(148, 43)
+        Me.TextBox7.Location = New System.Drawing.Point(139, 69)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
         Me.TextBox7.TabIndex = 16
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(148, 69)
+        Me.TextBox6.Location = New System.Drawing.Point(139, 95)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(100, 20)
         Me.TextBox6.TabIndex = 15
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(148, 95)
+        Me.TextBox5.Location = New System.Drawing.Point(139, 121)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
         Me.TextBox5.TabIndex = 14
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(148, 17)
+        Me.TextBox4.Location = New System.Drawing.Point(139, 43)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 20)
         Me.TextBox4.TabIndex = 13
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.LAgregarProd)
         Me.Panel3.Controls.Add(Me.LStock)
         Me.Panel3.Controls.Add(Me.Lcant)
         Me.Panel3.Controls.Add(Me.TextBox3)
@@ -215,58 +274,95 @@ Partial Class Factura
         Me.Panel3.Controls.Add(Me.LBusProd)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.Button2)
-        Me.Panel3.Location = New System.Drawing.Point(12, 248)
+        Me.Panel3.Location = New System.Drawing.Point(12, 283)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(286, 186)
+        Me.Panel3.Size = New System.Drawing.Size(286, 172)
         Me.Panel3.TabIndex = 5
+        '
+        'LStock
+        '
+        Me.LStock.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.LStock.AutoSize = True
+        Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LStock.Location = New System.Drawing.Point(3, 84)
+        Me.LStock.Name = "LStock"
+        Me.LStock.Size = New System.Drawing.Size(40, 13)
+        Me.LStock.TabIndex = 14
+        Me.LStock.Text = "Stock"
+        '
+        'Lcant
+        '
+        Me.Lcant.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Lcant.AutoSize = True
+        Me.Lcant.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lcant.Location = New System.Drawing.Point(127, 84)
+        Me.Lcant.Name = "Lcant"
+        Me.Lcant.Size = New System.Drawing.Size(57, 13)
+        Me.Lcant.TabIndex = 13
+        Me.Lcant.Text = "Cantidad"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(59, 58)
+        Me.TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TextBox3.Location = New System.Drawing.Point(59, 81)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(59, 20)
         Me.TextBox3.TabIndex = 12
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(183, 58)
+        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TextBox2.Location = New System.Drawing.Point(199, 81)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(75, 20)
         Me.TextBox2.TabIndex = 11
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(113, 17)
+        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TextBox1.Location = New System.Drawing.Point(113, 40)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 10
         '
         'LBusProd
         '
+        Me.LBusProd.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LBusProd.AutoSize = True
-        Me.LBusProd.Location = New System.Drawing.Point(3, 17)
+        Me.LBusProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBusProd.Location = New System.Drawing.Point(3, 40)
         Me.LBusProd.Name = "LBusProd"
-        Me.LBusProd.Size = New System.Drawing.Size(50, 13)
+        Me.LBusProd.Size = New System.Drawing.Size(58, 13)
         Me.LBusProd.TabIndex = 9
         Me.LBusProd.Text = "Producto"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(36, 150)
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(36, 142)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Text = "Agregar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(161, 150)
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(161, 142)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 8
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Text = "Cancelar"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -280,18 +376,20 @@ Partial Class Factura
         'LVendedor
         '
         Me.LVendedor.AutoSize = True
+        Me.LVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LVendedor.Location = New System.Drawing.Point(159, 9)
         Me.LVendedor.Name = "LVendedor"
-        Me.LVendedor.Size = New System.Drawing.Size(53, 13)
+        Me.LVendedor.Size = New System.Drawing.Size(61, 13)
         Me.LVendedor.TabIndex = 1
         Me.LVendedor.Text = "Vendedor"
         '
         'LFecha
         '
         Me.LFecha.AutoSize = True
+        Me.LFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LFecha.Location = New System.Drawing.Point(3, 9)
         Me.LFecha.Name = "LFecha"
-        Me.LFecha.Size = New System.Drawing.Size(40, 13)
+        Me.LFecha.Size = New System.Drawing.Size(46, 13)
         Me.LFecha.TabIndex = 0
         Me.LFecha.Text = "Fecha:"
         '
@@ -308,59 +406,25 @@ Partial Class Factura
         Me.LFactura.TabIndex = 3
         Me.LFactura.Text = "Factura"
         '
-        'Button4
+        'LSelCllien
         '
-        Me.Button4.Location = New System.Drawing.Point(36, 150)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 21
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.LSelCllien.AutoSize = True
+        Me.LSelCllien.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LSelCllien.Location = New System.Drawing.Point(110, 15)
+        Me.LSelCllien.Name = "LSelCllien"
+        Me.LSelCllien.Size = New System.Drawing.Size(46, 13)
+        Me.LSelCllien.TabIndex = 23
+        Me.LSelCllien.Text = "Cliente"
         '
-        'Button5
+        'LAgregarProd
         '
-        Me.Button5.Location = New System.Drawing.Point(161, 150)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 22
-        Me.Button5.Text = "Button5"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'LCliente
-        '
-        Me.LCliente.AutoSize = True
-        Me.LCliente.Location = New System.Drawing.Point(316, 361)
-        Me.LCliente.Name = "LCliente"
-        Me.LCliente.Size = New System.Drawing.Size(39, 13)
-        Me.LCliente.TabIndex = 21
-        Me.LCliente.Text = "Cliente"
-        '
-        'Lcant
-        '
-        Me.Lcant.AutoSize = True
-        Me.Lcant.Location = New System.Drawing.Point(127, 61)
-        Me.Lcant.Name = "Lcant"
-        Me.Lcant.Size = New System.Drawing.Size(49, 13)
-        Me.Lcant.TabIndex = 13
-        Me.Lcant.Text = "Cantidad"
-        '
-        'LStock
-        '
-        Me.LStock.AutoSize = True
-        Me.LStock.Location = New System.Drawing.Point(3, 61)
-        Me.LStock.Name = "LStock"
-        Me.LStock.Size = New System.Drawing.Size(35, 13)
-        Me.LStock.TabIndex = 14
-        Me.LStock.Text = "Stock"
-        '
-        'LTotal
-        '
-        Me.LTotal.AutoSize = True
-        Me.LTotal.Location = New System.Drawing.Point(626, 361)
-        Me.LTotal.Name = "LTotal"
-        Me.LTotal.Size = New System.Drawing.Size(31, 13)
-        Me.LTotal.TabIndex = 22
-        Me.LTotal.Text = "Total"
+        Me.LAgregarProd.AutoSize = True
+        Me.LAgregarProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAgregarProd.Location = New System.Drawing.Point(110, 14)
+        Me.LAgregarProd.Name = "LAgregarProd"
+        Me.LAgregarProd.Size = New System.Drawing.Size(106, 13)
+        Me.LAgregarProd.TabIndex = 24
+        Me.LAgregarProd.Text = "Agregar Producto"
         '
         'Factura
         '
@@ -417,4 +481,6 @@ Partial Class Factura
     Friend WithEvents Lcant As Label
     Friend WithEvents LTotal As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents LSelCllien As Label
+    Friend WithEvents LAgregarProd As Label
 End Class
