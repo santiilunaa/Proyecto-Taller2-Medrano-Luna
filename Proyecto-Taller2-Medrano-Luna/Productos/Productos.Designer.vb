@@ -22,8 +22,9 @@ Partial Class Productos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PProductos = New System.Windows.Forms.Panel()
         Me.pnlAgregar = New System.Windows.Forms.Panel()
+        Me.BBorrar = New System.Windows.Forms.Button()
         Me.txtStockMin = New System.Windows.Forms.TextBox()
         Me.LStockMin = New System.Windows.Forms.Label()
         Me.LStock = New System.Windows.Forms.Label()
@@ -50,26 +51,25 @@ Partial Class Productos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.LProductos = New System.Windows.Forms.Label()
-        Me.BBorrar = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
+        Me.PProductos.SuspendLayout()
         Me.pnlAgregar.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
+        'PProductos
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Panel1.Controls.Add(Me.pnlAgregar)
-        Me.Panel1.Controls.Add(Me.dgvProductos)
-        Me.Panel1.Controls.Add(Me.btnEliminar)
-        Me.Panel1.Controls.Add(Me.btnModificar)
-        Me.Panel1.Controls.Add(Me.btnAgregar)
-        Me.Panel1.Controls.Add(Me.LProductos)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 460)
-        Me.Panel1.TabIndex = 0
+        Me.PProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PProductos.Controls.Add(Me.pnlAgregar)
+        Me.PProductos.Controls.Add(Me.dgvProductos)
+        Me.PProductos.Controls.Add(Me.btnEliminar)
+        Me.PProductos.Controls.Add(Me.btnModificar)
+        Me.PProductos.Controls.Add(Me.btnAgregar)
+        Me.PProductos.Controls.Add(Me.LProductos)
+        Me.PProductos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PProductos.Location = New System.Drawing.Point(0, 0)
+        Me.PProductos.Name = "PProductos"
+        Me.PProductos.Size = New System.Drawing.Size(800, 460)
+        Me.PProductos.TabIndex = 0
         '
         'pnlAgregar
         '
@@ -91,11 +91,24 @@ Partial Class Productos
         Me.pnlAgregar.Controls.Add(Me.btnGuardarP)
         Me.pnlAgregar.Controls.Add(Me.btnCancelar)
         Me.pnlAgregar.Controls.Add(Me.Label1)
-        Me.pnlAgregar.Location = New System.Drawing.Point(237, 43)
+        Me.pnlAgregar.Location = New System.Drawing.Point(252, 34)
         Me.pnlAgregar.Name = "pnlAgregar"
         Me.pnlAgregar.Size = New System.Drawing.Size(299, 393)
         Me.pnlAgregar.TabIndex = 6
         Me.pnlAgregar.Visible = False
+        '
+        'BBorrar
+        '
+        Me.BBorrar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BBorrar.FlatAppearance.BorderSize = 0
+        Me.BBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBorrar.Location = New System.Drawing.Point(112, 347)
+        Me.BBorrar.Name = "BBorrar"
+        Me.BBorrar.Size = New System.Drawing.Size(75, 23)
+        Me.BBorrar.TabIndex = 17
+        Me.BBorrar.Text = "Borrar"
+        Me.BBorrar.UseVisualStyleBackColor = False
         '
         'txtStockMin
         '
@@ -240,9 +253,9 @@ Partial Class Productos
         Me.dgvProductos.BackgroundColor = System.Drawing.Color.CornflowerBlue
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvIdProdu, Me.dgvNombre, Me.dgvCategoria, Me.dgvPrecioVenta, Me.dgvPrecioCompra, Me.dgvStock})
-        Me.dgvProductos.Location = New System.Drawing.Point(26, 85)
+        Me.dgvProductos.Location = New System.Drawing.Point(59, 82)
         Me.dgvProductos.Name = "dgvProductos"
-        Me.dgvProductos.Size = New System.Drawing.Size(524, 312)
+        Me.dgvProductos.Size = New System.Drawing.Size(524, 329)
         Me.dgvProductos.TabIndex = 5
         '
         'dgvIdProdu
@@ -313,7 +326,7 @@ Partial Class Productos
         Me.btnAgregar.FlatAppearance.BorderSize = 0
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(626, 85)
+        Me.btnAgregar.Location = New System.Drawing.Point(626, 119)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(162, 34)
         Me.btnAgregar.TabIndex = 2
@@ -330,30 +343,17 @@ Partial Class Productos
         Me.LProductos.TabIndex = 0
         Me.LProductos.Text = "Productos"
         '
-        'BBorrar
-        '
-        Me.BBorrar.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.BBorrar.FlatAppearance.BorderSize = 0
-        Me.BBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBorrar.Location = New System.Drawing.Point(112, 347)
-        Me.BBorrar.Name = "BBorrar"
-        Me.BBorrar.Size = New System.Drawing.Size(75, 23)
-        Me.BBorrar.TabIndex = 17
-        Me.BBorrar.Text = "Borrar"
-        Me.BBorrar.UseVisualStyleBackColor = False
-        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 460)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PProductos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Productos"
         Me.Text = "Productos"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.PProductos.ResumeLayout(False)
+        Me.PProductos.PerformLayout()
         Me.pnlAgregar.ResumeLayout(False)
         Me.pnlAgregar.PerformLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -361,7 +361,7 @@ Partial Class Productos
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PProductos As Panel
     Friend WithEvents LProductos As Label
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button

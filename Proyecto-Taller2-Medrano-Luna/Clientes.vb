@@ -56,7 +56,7 @@ Public Class Clientes
                         Catch ex As Exception : MsgBox(ex.Message)
 
                         End Try
-
+                        Mostrar()
                     End If
                 End If
             End If
@@ -93,5 +93,11 @@ Public Class Clientes
 
     End Sub
 
-    
+    Private Sub BBorrar_Click(sender As Object, e As EventArgs) Handles BBorrar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub PClientes_Paint(sender As Object, e As PaintEventArgs) Handles PClientes.Paint
+
+    End Sub
 End Class

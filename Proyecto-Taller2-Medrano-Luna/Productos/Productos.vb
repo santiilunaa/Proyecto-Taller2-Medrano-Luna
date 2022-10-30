@@ -40,4 +40,5 @@
         txtStock.Clear()
         txtStockMin.Clear()
     End Sub
+
 End Class
