@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Factura
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,9 @@ Partial Class Factura
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PFactura = New System.Windows.Forms.Panel()
         Me.LTotal = New System.Windows.Forms.Label()
         Me.LCliente = New System.Windows.Forms.Label()
         Me.dgvFact = New System.Windows.Forms.DataGridView()
@@ -31,7 +31,7 @@ Partial Class Factura
         Me.prec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.elim = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PCliente = New System.Windows.Forms.Panel()
         Me.LSelCllien = New System.Windows.Forms.Label()
         Me.btnCanCli = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -43,7 +43,7 @@ Partial Class Factura
         Me.txtDNI = New System.Windows.Forms.TextBox()
         Me.txtTel = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PProducto = New System.Windows.Forms.Panel()
         Me.LPrecio = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.LAgregarProd = New System.Windows.Forms.Label()
@@ -59,29 +59,30 @@ Partial Class Factura
         Me.LVendedor = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LFactura = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
+        Me.BBuscarCli = New System.Windows.Forms.Button()
+        Me.PFactura.SuspendLayout()
         CType(Me.dgvFact, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.PCliente.SuspendLayout()
+        Me.PProducto.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'PFactura
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Panel1.Controls.Add(Me.LTotal)
-        Me.Panel1.Controls.Add(Me.LCliente)
-        Me.Panel1.Controls.Add(Me.dgvFact)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.LFactura)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(755, 467)
-        Me.Panel1.TabIndex = 0
+        Me.PFactura.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PFactura.Controls.Add(Me.LTotal)
+        Me.PFactura.Controls.Add(Me.LCliente)
+        Me.PFactura.Controls.Add(Me.dgvFact)
+        Me.PFactura.Controls.Add(Me.Button3)
+        Me.PFactura.Controls.Add(Me.PCliente)
+        Me.PFactura.Controls.Add(Me.PProducto)
+        Me.PFactura.Controls.Add(Me.Panel2)
+        Me.PFactura.Controls.Add(Me.LFactura)
+        Me.PFactura.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PFactura.Location = New System.Drawing.Point(0, 0)
+        Me.PFactura.Name = "PFactura"
+        Me.PFactura.Size = New System.Drawing.Size(755, 467)
+        Me.PFactura.TabIndex = 0
         '
         'LTotal
         '
@@ -89,9 +90,9 @@ Partial Class Factura
         Me.LTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTotal.Location = New System.Drawing.Point(626, 361)
         Me.LTotal.Name = "LTotal"
-        Me.LTotal.Size = New System.Drawing.Size(36, 13)
+        Me.LTotal.Size = New System.Drawing.Size(40, 13)
         Me.LTotal.TabIndex = 22
-        Me.LTotal.Text = "Total"
+        Me.LTotal.Text = "Total:"
         '
         'LCliente
         '
@@ -99,9 +100,9 @@ Partial Class Factura
         Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCliente.Location = New System.Drawing.Point(316, 361)
         Me.LCliente.Name = "LCliente"
-        Me.LCliente.Size = New System.Drawing.Size(46, 13)
+        Me.LCliente.Size = New System.Drawing.Size(50, 13)
         Me.LCliente.TabIndex = 21
-        Me.LCliente.Text = "Cliente"
+        Me.LCliente.Text = "Cliente:"
         '
         'dgvFact
         '
@@ -153,29 +154,30 @@ Partial Class Factura
         Me.Button3.Text = "Confirmar"
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'Panel4
+        'PCliente
         '
-        Me.Panel4.Controls.Add(Me.LSelCllien)
-        Me.Panel4.Controls.Add(Me.btnCanCli)
-        Me.Panel4.Controls.Add(Me.Button4)
-        Me.Panel4.Controls.Add(Me.LTel)
-        Me.Panel4.Controls.Add(Me.LNom)
-        Me.Panel4.Controls.Add(Me.LApe)
-        Me.Panel4.Controls.Add(Me.LDNI)
-        Me.Panel4.Controls.Add(Me.txtApe)
-        Me.Panel4.Controls.Add(Me.txtDNI)
-        Me.Panel4.Controls.Add(Me.txtTel)
-        Me.Panel4.Controls.Add(Me.txtNombre)
-        Me.Panel4.Location = New System.Drawing.Point(12, 56)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(286, 205)
-        Me.Panel4.TabIndex = 6
+        Me.PCliente.Controls.Add(Me.BBuscarCli)
+        Me.PCliente.Controls.Add(Me.LSelCllien)
+        Me.PCliente.Controls.Add(Me.btnCanCli)
+        Me.PCliente.Controls.Add(Me.Button4)
+        Me.PCliente.Controls.Add(Me.LTel)
+        Me.PCliente.Controls.Add(Me.LNom)
+        Me.PCliente.Controls.Add(Me.LApe)
+        Me.PCliente.Controls.Add(Me.LDNI)
+        Me.PCliente.Controls.Add(Me.txtApe)
+        Me.PCliente.Controls.Add(Me.txtDNI)
+        Me.PCliente.Controls.Add(Me.txtTel)
+        Me.PCliente.Controls.Add(Me.txtNombre)
+        Me.PCliente.Location = New System.Drawing.Point(12, 56)
+        Me.PCliente.Name = "PCliente"
+        Me.PCliente.Size = New System.Drawing.Size(286, 205)
+        Me.PCliente.TabIndex = 6
         '
         'LSelCllien
         '
         Me.LSelCllien.AutoSize = True
         Me.LSelCllien.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LSelCllien.Location = New System.Drawing.Point(110, 15)
+        Me.LSelCllien.Location = New System.Drawing.Point(65, 14)
         Me.LSelCllien.Name = "LSelCllien"
         Me.LSelCllien.Size = New System.Drawing.Size(46, 13)
         Me.LSelCllien.TabIndex = 23
@@ -275,23 +277,23 @@ Partial Class Factura
         Me.txtNombre.Size = New System.Drawing.Size(100, 20)
         Me.txtNombre.TabIndex = 13
         '
-        'Panel3
+        'PProducto
         '
-        Me.Panel3.Controls.Add(Me.LPrecio)
-        Me.Panel3.Controls.Add(Me.txtPrecio)
-        Me.Panel3.Controls.Add(Me.LAgregarProd)
-        Me.Panel3.Controls.Add(Me.LStock)
-        Me.Panel3.Controls.Add(Me.Lcant)
-        Me.Panel3.Controls.Add(Me.txtStock)
-        Me.Panel3.Controls.Add(Me.txtCant)
-        Me.Panel3.Controls.Add(Me.txtProd)
-        Me.Panel3.Controls.Add(Me.LBusProd)
-        Me.Panel3.Controls.Add(Me.btnGuardarPro)
-        Me.Panel3.Controls.Add(Me.btnCanProd)
-        Me.Panel3.Location = New System.Drawing.Point(12, 283)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(286, 172)
-        Me.Panel3.TabIndex = 5
+        Me.PProducto.Controls.Add(Me.LPrecio)
+        Me.PProducto.Controls.Add(Me.txtPrecio)
+        Me.PProducto.Controls.Add(Me.LAgregarProd)
+        Me.PProducto.Controls.Add(Me.LStock)
+        Me.PProducto.Controls.Add(Me.Lcant)
+        Me.PProducto.Controls.Add(Me.txtStock)
+        Me.PProducto.Controls.Add(Me.txtCant)
+        Me.PProducto.Controls.Add(Me.txtProd)
+        Me.PProducto.Controls.Add(Me.LBusProd)
+        Me.PProducto.Controls.Add(Me.btnGuardarPro)
+        Me.PProducto.Controls.Add(Me.btnCanProd)
+        Me.PProducto.Location = New System.Drawing.Point(12, 283)
+        Me.PProducto.Name = "PProducto"
+        Me.PProducto.Size = New System.Drawing.Size(286, 172)
+        Me.PProducto.TabIndex = 5
         '
         'LPrecio
         '
@@ -316,11 +318,11 @@ Partial Class Factura
         '
         Me.LAgregarProd.AutoSize = True
         Me.LAgregarProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAgregarProd.Location = New System.Drawing.Point(110, 14)
+        Me.LAgregarProd.Location = New System.Drawing.Point(114, 9)
         Me.LAgregarProd.Name = "LAgregarProd"
-        Me.LAgregarProd.Size = New System.Drawing.Size(106, 13)
+        Me.LAgregarProd.Size = New System.Drawing.Size(58, 13)
         Me.LAgregarProd.TabIndex = 24
-        Me.LAgregarProd.Text = "Agregar Producto"
+        Me.LAgregarProd.Text = "Producto"
         '
         'LStock
         '
@@ -373,7 +375,7 @@ Partial Class Factura
         Me.LBusProd.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LBusProd.AutoSize = True
         Me.LBusProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBusProd.Location = New System.Drawing.Point(3, 40)
+        Me.LBusProd.Location = New System.Drawing.Point(23, 43)
         Me.LBusProd.Name = "LBusProd"
         Me.LBusProd.Size = New System.Drawing.Size(58, 13)
         Me.LBusProd.TabIndex = 9
@@ -422,9 +424,9 @@ Partial Class Factura
         Me.LVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LVendedor.Location = New System.Drawing.Point(159, 9)
         Me.LVendedor.Name = "LVendedor"
-        Me.LVendedor.Size = New System.Drawing.Size(61, 13)
+        Me.LVendedor.Size = New System.Drawing.Size(65, 13)
         Me.LVendedor.TabIndex = 1
-        Me.LVendedor.Text = "Vendedor"
+        Me.LVendedor.Text = "Vendedor:"
         '
         'LFecha
         '
@@ -449,29 +451,42 @@ Partial Class Factura
         Me.LFactura.TabIndex = 3
         Me.LFactura.Text = "Factura"
         '
+        'BBuscarCli
+        '
+        Me.BBuscarCli.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BBuscarCli.FlatAppearance.BorderSize = 0
+        Me.BBuscarCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BBuscarCli.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscarCli.Location = New System.Drawing.Point(152, 9)
+        Me.BBuscarCli.Name = "BBuscarCli"
+        Me.BBuscarCli.Size = New System.Drawing.Size(98, 23)
+        Me.BBuscarCli.TabIndex = 24
+        Me.BBuscarCli.Text = "Buscar Cliente"
+        Me.BBuscarCli.UseVisualStyleBackColor = False
+        '
         'Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(755, 467)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PFactura)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Factura"
         Me.Text = "Factura"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.PFactura.ResumeLayout(False)
+        Me.PFactura.PerformLayout()
         CType(Me.dgvFact, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.PCliente.ResumeLayout(False)
+        Me.PCliente.PerformLayout()
+        Me.PProducto.ResumeLayout(False)
+        Me.PProducto.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PFactura As Panel
     Friend WithEvents LFactura As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents LVendedor As Label
@@ -481,8 +496,8 @@ Partial Class Factura
     Friend WithEvents prec As DataGridViewTextBoxColumn
     Friend WithEvents elim As DataGridViewImageColumn
     Friend WithEvents Button3 As Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents PCliente As Panel
+    Friend WithEvents PProducto As Panel
     Friend WithEvents LBusProd As Label
     Friend WithEvents btnGuardarPro As Button
     Friend WithEvents btnCanProd As Button
@@ -508,4 +523,5 @@ Partial Class Factura
     Friend WithEvents LAgregarProd As Label
     Friend WithEvents LPrecio As Label
     Friend WithEvents txtPrecio As TextBox
+    Friend WithEvents BBuscarCli As Button
 End Class
