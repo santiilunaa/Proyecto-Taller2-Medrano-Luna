@@ -31,7 +31,7 @@
     End Sub
 
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
-        AbrirFormHijo(New Clientes())
+        AbrirFormHijo(New FormClientes())
         lblPrincip.Text = "Clientes"
         btnBkp.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.White
@@ -61,7 +61,7 @@
     End Sub
 
     Private Sub btnProduc_Click(sender As Object, e As EventArgs) Handles btnProduc.Click
-        AbrirFormHijo(New Productos())
+        AbrirFormHijo(New FormProductos())
         lblPrincip.Text = "Productos"
         btnBkp.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.CornflowerBlue

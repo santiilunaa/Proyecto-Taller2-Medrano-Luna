@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e29e7a82d7c241c4a39bc1772c9a8ce0" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectoTallerModel.Categorias" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoTallerModel.Clientes" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoTallerModel.Perfiles" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoTallerModel.Productos" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoTallerModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoTallerModel.Usuarios" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoTallerModel.Ventas__detalle" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoTallerModel.Ventas_cabecera" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoTallerModel.FK_Productos_Categorias" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoTallerModel.FK_Ventas_cabecera_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoTallerModel.FK_Usuarios_Perfiles" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoTallerModel.FK_Ventas__detalle_Productos" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoTallerModel.FK_Ventas_cabecera_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoTallerModel.FK_Ventas__detalle_Ventas_cabecera" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
