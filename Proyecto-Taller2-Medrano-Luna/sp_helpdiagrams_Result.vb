@@ -10,16 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Clientes
-    Public Property id_cliente As Integer
-    Public Property dni As String
-    Public Property nombre As String
-    Public Property apellido As String
-    Public Property email As String
-    Public Property domicilio As String
-    Public Property telefono As String
-    Public Property eliminado As Nullable(Of Boolean)
-
-    Public Overridable Property Ventas_cabecera As ICollection(Of Ventas_cabecera) = New HashSet(Of Ventas_cabecera)
+Partial Public Class sp_helpdiagrams_Result
+    Public Property Database As String
+    Public Property Name As String
+    Public Property ID As Integer
+    Public Property Owner As String
+    Public Property OwnerID As Integer
 
 End Class

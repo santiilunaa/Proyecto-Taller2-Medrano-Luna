@@ -30,7 +30,7 @@
     End Sub
 
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
-        AbrirFormHijo(New Clientes())
+        AbrirFormHijo(New FormClientes())
         lblPrincip.Text = "Clientes"
         btnFacturas.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.White

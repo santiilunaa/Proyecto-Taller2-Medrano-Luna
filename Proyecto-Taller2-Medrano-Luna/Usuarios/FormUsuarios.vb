@@ -1,4 +1,4 @@
-﻿Public Class Usuarios
+﻿Public Class FormUsuarios
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         pnlAgregarUs.Visible = True
     End Sub

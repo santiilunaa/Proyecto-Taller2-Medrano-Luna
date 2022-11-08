@@ -10,7 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Clientes
+Partial Public Class MOSTRAR_CLIENTES_Result
     Public Property id_cliente As Integer
     Public Property dni As String
     Public Property nombre As String
@@ -18,8 +18,5 @@ Partial Public Class Clientes
     Public Property email As String
     Public Property domicilio As String
     Public Property telefono As String
-    Public Property eliminado As Nullable(Of Boolean)
-
-    Public Overridable Property Ventas_cabecera As ICollection(Of Ventas_cabecera) = New HashSet(Of Ventas_cabecera)
 
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class Productos
+﻿Public Class FormProductos
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         pnlAgregar.Visible = True
     End Sub
