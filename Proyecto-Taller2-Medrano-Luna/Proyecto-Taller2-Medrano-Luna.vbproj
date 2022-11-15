@@ -179,6 +179,7 @@
     <Compile Include="Perfiles\MenuVendedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Producto1.vb" />
     <Compile Include="Productos.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -203,6 +204,7 @@
     <Compile Include="sysdiagrams.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Usuario1.vb" />
     <Compile Include="Usuarios.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
