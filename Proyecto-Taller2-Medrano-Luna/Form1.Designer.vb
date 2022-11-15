@@ -40,9 +40,11 @@ Partial Class Form1
         Me.lblhora = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.pnlAdmin.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -236,6 +238,7 @@ Partial Class Form1
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlContenedor.Controls.Add(Me.PictureBox1)
         Me.pnlContenedor.Controls.Add(Me.lblhora)
         Me.pnlContenedor.Controls.Add(Me.lblFecha)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
@@ -269,6 +272,14 @@ Partial Class Form1
         'Timer1
         '
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(117, 61)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(576, 279)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -287,6 +298,7 @@ Partial Class Form1
         Me.pnlAdmin.ResumeLayout(False)
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -307,4 +319,5 @@ Partial Class Form1
     Friend WithEvents lblhora As Label
     Friend WithEvents lblFecha As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

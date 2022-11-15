@@ -22,6 +22,7 @@ Partial Class MenuGerente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuGerente))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblBienvenido = New System.Windows.Forms.Label()
@@ -35,8 +36,12 @@ Partial Class MenuGerente
         Me.btnProduc = New System.Windows.Forms.Button()
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.lblhora = New System.Windows.Forms.Label()
+        Me.lblFecha = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.pnlGerente.SuspendLayout()
+        Me.pnlContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -211,11 +216,35 @@ Partial Class MenuGerente
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlContenedor.Controls.Add(Me.lblhora)
+        Me.pnlContenedor.Controls.Add(Me.lblFecha)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(140, 32)
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(800, 460)
         Me.pnlContenedor.TabIndex = 15
+        '
+        'lblhora
+        '
+        Me.lblhora.AutoSize = True
+        Me.lblhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 29.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblhora.ForeColor = System.Drawing.Color.CornflowerBlue
+        Me.lblhora.Location = New System.Drawing.Point(33, 359)
+        Me.lblhora.Name = "lblhora"
+        Me.lblhora.Size = New System.Drawing.Size(103, 44)
+        Me.lblhora.TabIndex = 3
+        Me.lblhora.Text = "hora"
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecha.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblFecha.Location = New System.Drawing.Point(37, 403)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(95, 31)
+        Me.lblFecha.TabIndex = 2
+        Me.lblFecha.Text = "Fecha"
         '
         'MenuGerente
         '
@@ -231,6 +260,8 @@ Partial Class MenuGerente
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.pnlGerente.ResumeLayout(False)
+        Me.pnlContenedor.ResumeLayout(False)
+        Me.pnlContenedor.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -247,4 +278,7 @@ Partial Class MenuGerente
     Friend WithEvents btnReport As Button
     Friend WithEvents btnBkp As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents lblhora As Label
+    Friend WithEvents lblFecha As Label
 End Class
