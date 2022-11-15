@@ -23,13 +23,6 @@ Partial Class FormUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUsuarios))
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -37,8 +30,33 @@ Partial Class FormUsuarios
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlModifUs = New System.Windows.Forms.Panel()
+        Me.LUsua2 = New System.Windows.Forms.Label()
+        Me.txtTel2 = New System.Windows.Forms.TextBox()
+        Me.CBPerfil2 = New System.Windows.Forms.ComboBox()
+        Me.LPerfil2 = New System.Windows.Forms.Label()
+        Me.BBorrarModif = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.LContr2 = New System.Windows.Forms.Label()
+        Me.txtEmail2 = New System.Windows.Forms.TextBox()
+        Me.txtContr2 = New System.Windows.Forms.TextBox()
+        Me.txtUsua2 = New System.Windows.Forms.TextBox()
+        Me.txtApe2 = New System.Windows.Forms.TextBox()
+        Me.txtNom2 = New System.Windows.Forms.TextBox()
+        Me.txtDNI2 = New System.Windows.Forms.TextBox()
+        Me.LTel2 = New System.Windows.Forms.Label()
+        Me.LEmail2 = New System.Windows.Forms.Label()
+        Me.LApe2 = New System.Windows.Forms.Label()
+        Me.LNom2 = New System.Windows.Forms.Label()
+        Me.LDNI2 = New System.Windows.Forms.Label()
+        Me.LModif = New System.Windows.Forms.Label()
+        Me.BCancelModif = New System.Windows.Forms.Button()
+        Me.BGuardarModif = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlAgregarUs = New System.Windows.Forms.Panel()
+        Me.LUsua = New System.Windows.Forms.Label()
+        Me.txtTel = New System.Windows.Forms.TextBox()
         Me.CBPerfil = New System.Windows.Forms.ComboBox()
         Me.LPerfil = New System.Windows.Forms.Label()
         Me.BBorrar = New System.Windows.Forms.Button()
@@ -48,30 +66,22 @@ Partial Class FormUsuarios
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtContr = New System.Windows.Forms.TextBox()
         Me.txtUsua = New System.Windows.Forms.TextBox()
-        Me.txtDni = New System.Windows.Forms.TextBox()
         Me.txtApe = New System.Windows.Forms.TextBox()
         Me.txtNom = New System.Windows.Forms.TextBox()
+        Me.txtDNI = New System.Windows.Forms.TextBox()
         Me.LTelef = New System.Windows.Forms.Label()
         Me.LEmail = New System.Windows.Forms.Label()
-        Me.LDNI = New System.Windows.Forms.Label()
         Me.LApe = New System.Windows.Forms.Label()
         Me.LNom = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LDNI = New System.Windows.Forms.Label()
+        Me.LAgregar = New System.Windows.Forms.Label()
         Me.BCancelar = New System.Windows.Forms.Button()
-        Me.BAgregar = New System.Windows.Forms.Button()
+        Me.BGuardar = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.dgvPerfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvApellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dvgEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dvgTel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dvgDireccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtTel = New System.Windows.Forms.TextBox()
-        Me.LUsua = New System.Windows.Forms.Label()
+        Me.LblId = New System.Windows.Forms.Label()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.pnlModifUs.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAgregarUs.SuspendLayout()
         Me.SuspendLayout()
@@ -132,7 +142,6 @@ Partial Class FormUsuarios
         '
         Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.CornflowerBlue
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvPerfil, Me.dgvNombre, Me.dgvApellido, Me.dgvDNI, Me.dvgEmail, Me.dvgTel, Me.dvgDireccion, Me.Usuario})
         Me.dgvUsuarios.Location = New System.Drawing.Point(59, 122)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.Size = New System.Drawing.Size(683, 251)
@@ -141,6 +150,7 @@ Partial Class FormUsuarios
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.pnlModifUs)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.pnlAgregarUs)
         Me.Panel1.Controls.Add(Me.TextBox1)
@@ -156,10 +166,246 @@ Partial Class FormUsuarios
         Me.Panel1.Size = New System.Drawing.Size(800, 460)
         Me.Panel1.TabIndex = 5
         '
+        'pnlModifUs
+        '
+        Me.pnlModifUs.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlModifUs.Controls.Add(Me.LblId)
+        Me.pnlModifUs.Controls.Add(Me.LUsua2)
+        Me.pnlModifUs.Controls.Add(Me.txtTel2)
+        Me.pnlModifUs.Controls.Add(Me.CBPerfil2)
+        Me.pnlModifUs.Controls.Add(Me.LPerfil2)
+        Me.pnlModifUs.Controls.Add(Me.BBorrarModif)
+        Me.pnlModifUs.Controls.Add(Me.Panel5)
+        Me.pnlModifUs.Controls.Add(Me.Panel6)
+        Me.pnlModifUs.Controls.Add(Me.LContr2)
+        Me.pnlModifUs.Controls.Add(Me.txtEmail2)
+        Me.pnlModifUs.Controls.Add(Me.txtContr2)
+        Me.pnlModifUs.Controls.Add(Me.txtUsua2)
+        Me.pnlModifUs.Controls.Add(Me.txtApe2)
+        Me.pnlModifUs.Controls.Add(Me.txtNom2)
+        Me.pnlModifUs.Controls.Add(Me.txtDNI2)
+        Me.pnlModifUs.Controls.Add(Me.LTel2)
+        Me.pnlModifUs.Controls.Add(Me.LEmail2)
+        Me.pnlModifUs.Controls.Add(Me.LApe2)
+        Me.pnlModifUs.Controls.Add(Me.LNom2)
+        Me.pnlModifUs.Controls.Add(Me.LDNI2)
+        Me.pnlModifUs.Controls.Add(Me.LModif)
+        Me.pnlModifUs.Controls.Add(Me.BCancelModif)
+        Me.pnlModifUs.Controls.Add(Me.BGuardarModif)
+        Me.pnlModifUs.Location = New System.Drawing.Point(443, 26)
+        Me.pnlModifUs.Name = "pnlModifUs"
+        Me.pnlModifUs.Size = New System.Drawing.Size(299, 409)
+        Me.pnlModifUs.TabIndex = 23
+        Me.pnlModifUs.Visible = False
+        '
+        'LUsua2
+        '
+        Me.LUsua2.AutoSize = True
+        Me.LUsua2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LUsua2.Location = New System.Drawing.Point(50, 210)
+        Me.LUsua2.Name = "LUsua2"
+        Me.LUsua2.Size = New System.Drawing.Size(50, 13)
+        Me.LUsua2.TabIndex = 22
+        Me.LUsua2.Text = "Usuario"
+        '
+        'txtTel2
+        '
+        Me.txtTel2.Location = New System.Drawing.Point(128, 312)
+        Me.txtTel2.Name = "txtTel2"
+        Me.txtTel2.Size = New System.Drawing.Size(101, 20)
+        Me.txtTel2.TabIndex = 21
+        '
+        'CBPerfil2
+        '
+        Me.CBPerfil2.FormattingEnabled = True
+        Me.CBPerfil2.Location = New System.Drawing.Point(128, 66)
+        Me.CBPerfil2.Name = "CBPerfil2"
+        Me.CBPerfil2.Size = New System.Drawing.Size(101, 21)
+        Me.CBPerfil2.TabIndex = 19
+        '
+        'LPerfil2
+        '
+        Me.LPerfil2.AutoSize = True
+        Me.LPerfil2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LPerfil2.Location = New System.Drawing.Point(51, 69)
+        Me.LPerfil2.Name = "LPerfil2"
+        Me.LPerfil2.Size = New System.Drawing.Size(36, 13)
+        Me.LPerfil2.TabIndex = 18
+        Me.LPerfil2.Text = "Perfil"
+        '
+        'BBorrarModif
+        '
+        Me.BBorrarModif.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BBorrarModif.FlatAppearance.BorderSize = 0
+        Me.BBorrarModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BBorrarModif.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBorrarModif.Location = New System.Drawing.Point(110, 362)
+        Me.BBorrarModif.Name = "BBorrarModif"
+        Me.BBorrarModif.Size = New System.Drawing.Size(75, 23)
+        Me.BBorrarModif.TabIndex = 17
+        Me.BBorrarModif.Text = "Borrar"
+        Me.BBorrarModif.UseVisualStyleBackColor = False
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel5.Location = New System.Drawing.Point(294, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(5, 404)
+        Me.Panel5.TabIndex = 16
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel6.Location = New System.Drawing.Point(0, 404)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(299, 5)
+        Me.Panel6.TabIndex = 15
+        '
+        'LContr2
+        '
+        Me.LContr2.AutoSize = True
+        Me.LContr2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LContr2.Location = New System.Drawing.Point(37, 245)
+        Me.LContr2.Name = "LContr2"
+        Me.LContr2.Size = New System.Drawing.Size(71, 13)
+        Me.LContr2.TabIndex = 14
+        Me.LContr2.Text = "Contraseña"
+        '
+        'txtEmail2
+        '
+        Me.txtEmail2.Location = New System.Drawing.Point(128, 277)
+        Me.txtEmail2.Name = "txtEmail2"
+        Me.txtEmail2.Size = New System.Drawing.Size(101, 20)
+        Me.txtEmail2.TabIndex = 13
+        '
+        'txtContr2
+        '
+        Me.txtContr2.Location = New System.Drawing.Point(128, 242)
+        Me.txtContr2.Name = "txtContr2"
+        Me.txtContr2.Size = New System.Drawing.Size(101, 20)
+        Me.txtContr2.TabIndex = 12
+        '
+        'txtUsua2
+        '
+        Me.txtUsua2.Location = New System.Drawing.Point(128, 207)
+        Me.txtUsua2.Name = "txtUsua2"
+        Me.txtUsua2.Size = New System.Drawing.Size(100, 20)
+        Me.txtUsua2.TabIndex = 11
+        '
+        'txtApe2
+        '
+        Me.txtApe2.Location = New System.Drawing.Point(129, 171)
+        Me.txtApe2.Name = "txtApe2"
+        Me.txtApe2.Size = New System.Drawing.Size(100, 20)
+        Me.txtApe2.TabIndex = 10
+        '
+        'txtNom2
+        '
+        Me.txtNom2.Location = New System.Drawing.Point(128, 136)
+        Me.txtNom2.Name = "txtNom2"
+        Me.txtNom2.Size = New System.Drawing.Size(101, 20)
+        Me.txtNom2.TabIndex = 9
+        '
+        'txtDNI2
+        '
+        Me.txtDNI2.Location = New System.Drawing.Point(128, 101)
+        Me.txtDNI2.Name = "txtDNI2"
+        Me.txtDNI2.Size = New System.Drawing.Size(101, 20)
+        Me.txtDNI2.TabIndex = 8
+        '
+        'LTel2
+        '
+        Me.LTel2.AutoSize = True
+        Me.LTel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTel2.Location = New System.Drawing.Point(51, 315)
+        Me.LTel2.Name = "LTel2"
+        Me.LTel2.Size = New System.Drawing.Size(57, 13)
+        Me.LTel2.TabIndex = 7
+        Me.LTel2.Text = "Telefono"
+        '
+        'LEmail2
+        '
+        Me.LEmail2.AutoSize = True
+        Me.LEmail2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmail2.Location = New System.Drawing.Point(51, 280)
+        Me.LEmail2.Name = "LEmail2"
+        Me.LEmail2.Size = New System.Drawing.Size(37, 13)
+        Me.LEmail2.TabIndex = 6
+        Me.LEmail2.Text = "Email"
+        '
+        'LApe2
+        '
+        Me.LApe2.AutoSize = True
+        Me.LApe2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LApe2.Location = New System.Drawing.Point(50, 174)
+        Me.LApe2.Name = "LApe2"
+        Me.LApe2.Size = New System.Drawing.Size(52, 13)
+        Me.LApe2.TabIndex = 5
+        Me.LApe2.Text = "Apellido"
+        '
+        'LNom2
+        '
+        Me.LNom2.AutoSize = True
+        Me.LNom2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LNom2.Location = New System.Drawing.Point(50, 139)
+        Me.LNom2.Name = "LNom2"
+        Me.LNom2.Size = New System.Drawing.Size(50, 13)
+        Me.LNom2.TabIndex = 4
+        Me.LNom2.Text = "Nombre"
+        '
+        'LDNI2
+        '
+        Me.LDNI2.AutoSize = True
+        Me.LDNI2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDNI2.Location = New System.Drawing.Point(50, 104)
+        Me.LDNI2.Name = "LDNI2"
+        Me.LDNI2.Size = New System.Drawing.Size(29, 13)
+        Me.LDNI2.TabIndex = 3
+        Me.LDNI2.Text = "DNI"
+        '
+        'LModif
+        '
+        Me.LModif.AutoSize = True
+        Me.LModif.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LModif.Location = New System.Drawing.Point(81, 14)
+        Me.LModif.Name = "LModif"
+        Me.LModif.Size = New System.Drawing.Size(155, 24)
+        Me.LModif.TabIndex = 2
+        Me.LModif.Text = "Modificar Usuario"
+        '
+        'BCancelModif
+        '
+        Me.BCancelModif.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BCancelModif.FlatAppearance.BorderSize = 0
+        Me.BCancelModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BCancelModif.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCancelModif.Location = New System.Drawing.Point(201, 362)
+        Me.BCancelModif.Name = "BCancelModif"
+        Me.BCancelModif.Size = New System.Drawing.Size(75, 23)
+        Me.BCancelModif.TabIndex = 1
+        Me.BCancelModif.Text = "Cancelar"
+        Me.BCancelModif.UseVisualStyleBackColor = False
+        '
+        'BGuardarModif
+        '
+        Me.BGuardarModif.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BGuardarModif.FlatAppearance.BorderSize = 0
+        Me.BGuardarModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BGuardarModif.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGuardarModif.Location = New System.Drawing.Point(19, 362)
+        Me.BGuardarModif.Name = "BGuardarModif"
+        Me.BGuardarModif.Size = New System.Drawing.Size(75, 23)
+        Me.BGuardarModif.TabIndex = 0
+        Me.BGuardarModif.Text = "Guardar"
+        Me.BGuardarModif.UseVisualStyleBackColor = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(102, 66)
+        Me.PictureBox1.Location = New System.Drawing.Point(87, 66)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(31, 23)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -180,27 +426,43 @@ Partial Class FormUsuarios
         Me.pnlAgregarUs.Controls.Add(Me.txtEmail)
         Me.pnlAgregarUs.Controls.Add(Me.txtContr)
         Me.pnlAgregarUs.Controls.Add(Me.txtUsua)
-        Me.pnlAgregarUs.Controls.Add(Me.txtDni)
         Me.pnlAgregarUs.Controls.Add(Me.txtApe)
         Me.pnlAgregarUs.Controls.Add(Me.txtNom)
+        Me.pnlAgregarUs.Controls.Add(Me.txtDNI)
         Me.pnlAgregarUs.Controls.Add(Me.LTelef)
         Me.pnlAgregarUs.Controls.Add(Me.LEmail)
-        Me.pnlAgregarUs.Controls.Add(Me.LDNI)
         Me.pnlAgregarUs.Controls.Add(Me.LApe)
         Me.pnlAgregarUs.Controls.Add(Me.LNom)
-        Me.pnlAgregarUs.Controls.Add(Me.Label2)
+        Me.pnlAgregarUs.Controls.Add(Me.LDNI)
+        Me.pnlAgregarUs.Controls.Add(Me.LAgregar)
         Me.pnlAgregarUs.Controls.Add(Me.BCancelar)
-        Me.pnlAgregarUs.Controls.Add(Me.BAgregar)
-        Me.pnlAgregarUs.Location = New System.Drawing.Point(216, 26)
+        Me.pnlAgregarUs.Controls.Add(Me.BGuardar)
+        Me.pnlAgregarUs.Location = New System.Drawing.Point(124, 26)
         Me.pnlAgregarUs.Name = "pnlAgregarUs"
         Me.pnlAgregarUs.Size = New System.Drawing.Size(299, 409)
         Me.pnlAgregarUs.TabIndex = 6
         Me.pnlAgregarUs.Visible = False
         '
+        'LUsua
+        '
+        Me.LUsua.AutoSize = True
+        Me.LUsua.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LUsua.Location = New System.Drawing.Point(50, 210)
+        Me.LUsua.Name = "LUsua"
+        Me.LUsua.Size = New System.Drawing.Size(50, 13)
+        Me.LUsua.TabIndex = 22
+        Me.LUsua.Text = "Usuario"
+        '
+        'txtTel
+        '
+        Me.txtTel.Location = New System.Drawing.Point(128, 312)
+        Me.txtTel.Name = "txtTel"
+        Me.txtTel.Size = New System.Drawing.Size(101, 20)
+        Me.txtTel.TabIndex = 21
+        '
         'CBPerfil
         '
         Me.CBPerfil.FormattingEnabled = True
-        Me.CBPerfil.Items.AddRange(New Object() {"administrador", "gerente", "vendedor"})
         Me.CBPerfil.Location = New System.Drawing.Point(128, 66)
         Me.CBPerfil.Name = "CBPerfil"
         Me.CBPerfil.Size = New System.Drawing.Size(101, 21)
@@ -278,26 +540,26 @@ Partial Class FormUsuarios
         Me.txtUsua.Size = New System.Drawing.Size(100, 20)
         Me.txtUsua.TabIndex = 11
         '
-        'txtDni
-        '
-        Me.txtDni.Location = New System.Drawing.Point(129, 171)
-        Me.txtDni.Name = "txtDni"
-        Me.txtDni.Size = New System.Drawing.Size(100, 20)
-        Me.txtDni.TabIndex = 10
-        '
         'txtApe
         '
-        Me.txtApe.Location = New System.Drawing.Point(128, 136)
+        Me.txtApe.Location = New System.Drawing.Point(129, 171)
         Me.txtApe.Name = "txtApe"
-        Me.txtApe.Size = New System.Drawing.Size(101, 20)
-        Me.txtApe.TabIndex = 9
+        Me.txtApe.Size = New System.Drawing.Size(100, 20)
+        Me.txtApe.TabIndex = 10
         '
         'txtNom
         '
-        Me.txtNom.Location = New System.Drawing.Point(128, 101)
+        Me.txtNom.Location = New System.Drawing.Point(128, 136)
         Me.txtNom.Name = "txtNom"
         Me.txtNom.Size = New System.Drawing.Size(101, 20)
-        Me.txtNom.TabIndex = 8
+        Me.txtNom.TabIndex = 9
+        '
+        'txtDNI
+        '
+        Me.txtDNI.Location = New System.Drawing.Point(128, 101)
+        Me.txtDNI.Name = "txtDNI"
+        Me.txtDNI.Size = New System.Drawing.Size(101, 20)
+        Me.txtDNI.TabIndex = 8
         '
         'LTelef
         '
@@ -319,45 +581,45 @@ Partial Class FormUsuarios
         Me.LEmail.TabIndex = 6
         Me.LEmail.Text = "Email"
         '
-        'LDNI
-        '
-        Me.LDNI.AutoSize = True
-        Me.LDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LDNI.Location = New System.Drawing.Point(50, 174)
-        Me.LDNI.Name = "LDNI"
-        Me.LDNI.Size = New System.Drawing.Size(29, 13)
-        Me.LDNI.TabIndex = 5
-        Me.LDNI.Text = "DNI"
-        '
         'LApe
         '
         Me.LApe.AutoSize = True
         Me.LApe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LApe.Location = New System.Drawing.Point(50, 139)
+        Me.LApe.Location = New System.Drawing.Point(50, 174)
         Me.LApe.Name = "LApe"
         Me.LApe.Size = New System.Drawing.Size(52, 13)
-        Me.LApe.TabIndex = 4
+        Me.LApe.TabIndex = 5
         Me.LApe.Text = "Apellido"
         '
         'LNom
         '
         Me.LNom.AutoSize = True
         Me.LNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LNom.Location = New System.Drawing.Point(50, 104)
+        Me.LNom.Location = New System.Drawing.Point(50, 139)
         Me.LNom.Name = "LNom"
         Me.LNom.Size = New System.Drawing.Size(50, 13)
-        Me.LNom.TabIndex = 3
+        Me.LNom.TabIndex = 4
         Me.LNom.Text = "Nombre"
         '
-        'Label2
+        'LDNI
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(81, 14)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(147, 24)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Agregar Usuario"
+        Me.LDNI.AutoSize = True
+        Me.LDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDNI.Location = New System.Drawing.Point(50, 104)
+        Me.LDNI.Name = "LDNI"
+        Me.LDNI.Size = New System.Drawing.Size(29, 13)
+        Me.LDNI.TabIndex = 3
+        Me.LDNI.Text = "DNI"
+        '
+        'LAgregar
+        '
+        Me.LAgregar.AutoSize = True
+        Me.LAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAgregar.Location = New System.Drawing.Point(81, 14)
+        Me.LAgregar.Name = "LAgregar"
+        Me.LAgregar.Size = New System.Drawing.Size(147, 24)
+        Me.LAgregar.TabIndex = 2
+        Me.LAgregar.Text = "Agregar Usuario"
         '
         'BCancelar
         '
@@ -372,18 +634,18 @@ Partial Class FormUsuarios
         Me.BCancelar.Text = "Cancelar"
         Me.BCancelar.UseVisualStyleBackColor = False
         '
-        'BAgregar
+        'BGuardar
         '
-        Me.BAgregar.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.BAgregar.FlatAppearance.BorderSize = 0
-        Me.BAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BAgregar.Location = New System.Drawing.Point(19, 362)
-        Me.BAgregar.Name = "BAgregar"
-        Me.BAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.BAgregar.TabIndex = 0
-        Me.BAgregar.Text = "Agregar"
-        Me.BAgregar.UseVisualStyleBackColor = False
+        Me.BGuardar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BGuardar.FlatAppearance.BorderSize = 0
+        Me.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGuardar.Location = New System.Drawing.Point(19, 362)
+        Me.BGuardar.Name = "BGuardar"
+        Me.BGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.BGuardar.TabIndex = 0
+        Me.BGuardar.Text = "Guardar"
+        Me.BGuardar.UseVisualStyleBackColor = False
         '
         'TextBox1
         '
@@ -393,98 +655,29 @@ Partial Class FormUsuarios
         Me.TextBox1.Size = New System.Drawing.Size(505, 23)
         Me.TextBox1.TabIndex = 5
         '
-        'dgvPerfil
+        'LblId
         '
-        Me.dgvPerfil.HeaderText = "Perfil"
-        Me.dgvPerfil.Name = "dgvPerfil"
-        Me.dgvPerfil.Width = 80
+        Me.LblId.AutoSize = True
+        Me.LblId.Location = New System.Drawing.Point(31, 40)
+        Me.LblId.Name = "LblId"
+        Me.LblId.Size = New System.Drawing.Size(45, 13)
+        Me.LblId.TabIndex = 23
+        Me.LblId.Text = "Label2"
         '
-        'dgvNombre
-        '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvNombre.DefaultCellStyle = DataGridViewCellStyle8
-        Me.dgvNombre.HeaderText = "Nombre"
-        Me.dgvNombre.Name = "dgvNombre"
-        Me.dgvNombre.Width = 80
-        '
-        'dgvApellido
-        '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.dgvApellido.DefaultCellStyle = DataGridViewCellStyle9
-        Me.dgvApellido.HeaderText = "Apellido"
-        Me.dgvApellido.Name = "dgvApellido"
-        Me.dgvApellido.Width = 80
-        '
-        'dgvDNI
-        '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgvDNI.DefaultCellStyle = DataGridViewCellStyle10
-        Me.dgvDNI.HeaderText = "DNI"
-        Me.dgvDNI.Name = "dgvDNI"
-        Me.dgvDNI.Width = 80
-        '
-        'dvgEmail
-        '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dvgEmail.DefaultCellStyle = DataGridViewCellStyle11
-        Me.dvgEmail.HeaderText = "Email"
-        Me.dvgEmail.Name = "dvgEmail"
-        Me.dvgEmail.Width = 80
-        '
-        'dvgTel
-        '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dvgTel.DefaultCellStyle = DataGridViewCellStyle12
-        Me.dvgTel.HeaderText = "Telefono"
-        Me.dvgTel.Name = "dvgTel"
-        Me.dvgTel.Width = 80
-        '
-        'dvgDireccion
-        '
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dvgDireccion.DefaultCellStyle = DataGridViewCellStyle13
-        Me.dvgDireccion.HeaderText = "Direccion"
-        Me.dvgDireccion.Name = "dvgDireccion"
-        Me.dvgDireccion.Width = 80
-        '
-        'Usuario
-        '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Usuario.DefaultCellStyle = DataGridViewCellStyle14
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.Name = "Usuario"
-        Me.Usuario.Width = 80
-        '
-        'txtTel
-        '
-        Me.txtTel.Location = New System.Drawing.Point(128, 312)
-        Me.txtTel.Name = "txtTel"
-        Me.txtTel.Size = New System.Drawing.Size(101, 20)
-        Me.txtTel.TabIndex = 21
-        '
-        'LUsua
-        '
-        Me.LUsua.AutoSize = True
-        Me.LUsua.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LUsua.Location = New System.Drawing.Point(50, 210)
-        Me.LUsua.Name = "LUsua"
-        Me.LUsua.Size = New System.Drawing.Size(50, 13)
-        Me.LUsua.TabIndex = 22
-        Me.LUsua.Text = "Usuario"
-        '
-        'Usuarios
+        'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Usuarios"
+        Me.Name = "FormUsuarios"
         Me.Text = "Usuarios"
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.pnlModifUs.ResumeLayout(False)
+        Me.pnlModifUs.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAgregarUs.ResumeLayout(False)
         Me.pnlAgregarUs.PerformLayout()
@@ -506,30 +699,46 @@ Partial Class FormUsuarios
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtContr As TextBox
     Friend WithEvents txtUsua As TextBox
-    Friend WithEvents txtDni As TextBox
     Friend WithEvents txtApe As TextBox
     Friend WithEvents txtNom As TextBox
+    Friend WithEvents txtDNI As TextBox
     Friend WithEvents LTelef As Label
     Friend WithEvents LEmail As Label
-    Friend WithEvents LDNI As Label
     Friend WithEvents LApe As Label
     Friend WithEvents LNom As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LDNI As Label
+    Friend WithEvents LAgregar As Label
     Friend WithEvents BCancelar As Button
-    Friend WithEvents BAgregar As Button
+    Friend WithEvents BGuardar As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BBorrar As Button
     Friend WithEvents CBPerfil As ComboBox
     Friend WithEvents LPerfil As Label
-    Friend WithEvents dgvPerfil As DataGridViewTextBoxColumn
-    Friend WithEvents dgvNombre As DataGridViewTextBoxColumn
-    Friend WithEvents dgvApellido As DataGridViewTextBoxColumn
-    Friend WithEvents dgvDNI As DataGridViewTextBoxColumn
-    Friend WithEvents dvgEmail As DataGridViewTextBoxColumn
-    Friend WithEvents dvgTel As DataGridViewTextBoxColumn
-    Friend WithEvents dvgDireccion As DataGridViewTextBoxColumn
-    Friend WithEvents Usuario As DataGridViewTextBoxColumn
     Friend WithEvents LUsua As Label
     Friend WithEvents txtTel As TextBox
+    Friend WithEvents pnlModifUs As Panel
+    Friend WithEvents LUsua2 As Label
+    Friend WithEvents txtTel2 As TextBox
+    Friend WithEvents CBPerfil2 As ComboBox
+    Friend WithEvents LPerfil2 As Label
+    Friend WithEvents BBorrarModif As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents LContr2 As Label
+    Friend WithEvents txtEmail2 As TextBox
+    Friend WithEvents txtContr2 As TextBox
+    Friend WithEvents txtUsua2 As TextBox
+    Friend WithEvents txtApe2 As TextBox
+    Friend WithEvents txtNom2 As TextBox
+    Friend WithEvents txtDNI2 As TextBox
+    Friend WithEvents LTel2 As Label
+    Friend WithEvents LEmail2 As Label
+    Friend WithEvents LApe2 As Label
+    Friend WithEvents LNom2 As Label
+    Friend WithEvents LDNI2 As Label
+    Friend WithEvents LModif As Label
+    Friend WithEvents BCancelModif As Button
+    Friend WithEvents BGuardarModif As Button
+    Friend WithEvents LblId As Label
 End Class
