@@ -45,24 +45,38 @@ Partial Class FormProductos
         Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
-        Me.dgvIdProdu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvPrecioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvPrecioCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.LProductos = New System.Windows.Forms.Label()
+        Me.pnlModPRo = New System.Windows.Forms.Panel()
+        Me.CBCateg3 = New System.Windows.Forms.ComboBox()
+        Me.btnLimp2 = New System.Windows.Forms.Button()
+        Me.txtStockMin2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtStock2 = New System.Windows.Forms.TextBox()
+        Me.txtNom2 = New System.Windows.Forms.TextBox()
+        Me.txtPVent2 = New System.Windows.Forms.TextBox()
+        Me.txtPCos2 = New System.Windows.Forms.TextBox()
+        Me.btnGuarMod = New System.Windows.Forms.Button()
+        Me.btnCance2 = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblId = New System.Windows.Forms.Label()
         Me.PProductos.SuspendLayout()
         Me.pnlAgregar.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlModPRo.SuspendLayout()
         Me.SuspendLayout()
         '
         'PProductos
         '
         Me.PProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PProductos.Controls.Add(Me.pnlModPRo)
         Me.PProductos.Controls.Add(Me.pnlAgregar)
         Me.PProductos.Controls.Add(Me.Label2)
         Me.PProductos.Controls.Add(Me.LBuscar)
@@ -99,7 +113,7 @@ Partial Class FormProductos
         Me.pnlAgregar.Controls.Add(Me.btnGuardarP)
         Me.pnlAgregar.Controls.Add(Me.btnCancelar)
         Me.pnlAgregar.Controls.Add(Me.Label1)
-        Me.pnlAgregar.Location = New System.Drawing.Point(238, 36)
+        Me.pnlAgregar.Location = New System.Drawing.Point(12, 33)
         Me.pnlAgregar.Name = "pnlAgregar"
         Me.pnlAgregar.Size = New System.Drawing.Size(299, 393)
         Me.pnlAgregar.TabIndex = 6
@@ -297,47 +311,10 @@ Partial Class FormProductos
         '
         Me.dgvProductos.BackgroundColor = System.Drawing.Color.CornflowerBlue
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvIdProdu, Me.dgvNombre, Me.dgvCategoria, Me.dgvPrecioVenta, Me.dgvPrecioCompra, Me.dgvStock})
         Me.dgvProductos.Location = New System.Drawing.Point(27, 114)
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.Size = New System.Drawing.Size(571, 329)
         Me.dgvProductos.TabIndex = 5
-        '
-        'dgvIdProdu
-        '
-        Me.dgvIdProdu.HeaderText = "id_producto"
-        Me.dgvIdProdu.Name = "dgvIdProdu"
-        Me.dgvIdProdu.Width = 80
-        '
-        'dgvNombre
-        '
-        Me.dgvNombre.HeaderText = "Nombre"
-        Me.dgvNombre.Name = "dgvNombre"
-        Me.dgvNombre.Width = 80
-        '
-        'dgvCategoria
-        '
-        Me.dgvCategoria.HeaderText = "Categoria"
-        Me.dgvCategoria.Name = "dgvCategoria"
-        Me.dgvCategoria.Width = 80
-        '
-        'dgvPrecioVenta
-        '
-        Me.dgvPrecioVenta.HeaderText = "Precio_Venta"
-        Me.dgvPrecioVenta.Name = "dgvPrecioVenta"
-        Me.dgvPrecioVenta.Width = 80
-        '
-        'dgvPrecioCompra
-        '
-        Me.dgvPrecioCompra.HeaderText = "Precio_Compra"
-        Me.dgvPrecioCompra.Name = "dgvPrecioCompra"
-        Me.dgvPrecioCompra.Width = 80
-        '
-        'dgvStock
-        '
-        Me.dgvStock.HeaderText = "Stock"
-        Me.dgvStock.Name = "dgvStock"
-        Me.dgvStock.Width = 80
         '
         'btnEliminar
         '
@@ -388,6 +365,195 @@ Partial Class FormProductos
         Me.LProductos.TabIndex = 0
         Me.LProductos.Text = "Productos"
         '
+        'pnlModPRo
+        '
+        Me.pnlModPRo.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlModPRo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlModPRo.Controls.Add(Me.lblId)
+        Me.pnlModPRo.Controls.Add(Me.CBCateg3)
+        Me.pnlModPRo.Controls.Add(Me.btnLimp2)
+        Me.pnlModPRo.Controls.Add(Me.txtStockMin2)
+        Me.pnlModPRo.Controls.Add(Me.Label3)
+        Me.pnlModPRo.Controls.Add(Me.Label4)
+        Me.pnlModPRo.Controls.Add(Me.Label5)
+        Me.pnlModPRo.Controls.Add(Me.Label6)
+        Me.pnlModPRo.Controls.Add(Me.Label7)
+        Me.pnlModPRo.Controls.Add(Me.Label8)
+        Me.pnlModPRo.Controls.Add(Me.txtStock2)
+        Me.pnlModPRo.Controls.Add(Me.txtNom2)
+        Me.pnlModPRo.Controls.Add(Me.txtPVent2)
+        Me.pnlModPRo.Controls.Add(Me.txtPCos2)
+        Me.pnlModPRo.Controls.Add(Me.btnGuarMod)
+        Me.pnlModPRo.Controls.Add(Me.btnCance2)
+        Me.pnlModPRo.Controls.Add(Me.Label9)
+        Me.pnlModPRo.Location = New System.Drawing.Point(406, 33)
+        Me.pnlModPRo.Name = "pnlModPRo"
+        Me.pnlModPRo.Size = New System.Drawing.Size(299, 393)
+        Me.pnlModPRo.TabIndex = 24
+        Me.pnlModPRo.Visible = False
+        '
+        'CBCateg3
+        '
+        Me.CBCateg3.FormattingEnabled = True
+        Me.CBCateg3.Location = New System.Drawing.Point(137, 132)
+        Me.CBCateg3.Name = "CBCateg3"
+        Me.CBCateg3.Size = New System.Drawing.Size(101, 21)
+        Me.CBCateg3.TabIndex = 20
+        '
+        'btnLimp2
+        '
+        Me.btnLimp2.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnLimp2.FlatAppearance.BorderSize = 0
+        Me.btnLimp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimp2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimp2.Location = New System.Drawing.Point(112, 347)
+        Me.btnLimp2.Name = "btnLimp2"
+        Me.btnLimp2.Size = New System.Drawing.Size(75, 23)
+        Me.btnLimp2.TabIndex = 17
+        Me.btnLimp2.Text = "Borrar"
+        Me.btnLimp2.UseVisualStyleBackColor = False
+        '
+        'txtStockMin2
+        '
+        Me.txtStockMin2.Location = New System.Drawing.Point(137, 276)
+        Me.txtStockMin2.Name = "txtStockMin2"
+        Me.txtStockMin2.Size = New System.Drawing.Size(100, 20)
+        Me.txtStockMin2.TabIndex = 16
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(46, 279)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(64, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Stock Min"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(46, 242)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Stock"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(46, 171)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(79, 13)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Precio Costo"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(46, 206)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Precio Venta"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(46, 135)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(63, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Categoría"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(46, 99)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(50, 13)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Nombre"
+        '
+        'txtStock2
+        '
+        Me.txtStock2.Location = New System.Drawing.Point(137, 239)
+        Me.txtStock2.Name = "txtStock2"
+        Me.txtStock2.Size = New System.Drawing.Size(100, 20)
+        Me.txtStock2.TabIndex = 9
+        '
+        'txtNom2
+        '
+        Me.txtNom2.Location = New System.Drawing.Point(137, 96)
+        Me.txtNom2.Name = "txtNom2"
+        Me.txtNom2.Size = New System.Drawing.Size(100, 20)
+        Me.txtNom2.TabIndex = 7
+        '
+        'txtPVent2
+        '
+        Me.txtPVent2.Location = New System.Drawing.Point(137, 203)
+        Me.txtPVent2.Name = "txtPVent2"
+        Me.txtPVent2.Size = New System.Drawing.Size(100, 20)
+        Me.txtPVent2.TabIndex = 6
+        '
+        'txtPCos2
+        '
+        Me.txtPCos2.Location = New System.Drawing.Point(137, 168)
+        Me.txtPCos2.Name = "txtPCos2"
+        Me.txtPCos2.Size = New System.Drawing.Size(100, 20)
+        Me.txtPCos2.TabIndex = 4
+        '
+        'btnGuarMod
+        '
+        Me.btnGuarMod.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnGuarMod.FlatAppearance.BorderSize = 0
+        Me.btnGuarMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuarMod.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuarMod.Location = New System.Drawing.Point(21, 347)
+        Me.btnGuarMod.Name = "btnGuarMod"
+        Me.btnGuarMod.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuarMod.TabIndex = 1
+        Me.btnGuarMod.Text = "Guardar"
+        Me.btnGuarMod.UseVisualStyleBackColor = False
+        '
+        'btnCance2
+        '
+        Me.btnCance2.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnCance2.FlatAppearance.BorderSize = 0
+        Me.btnCance2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCance2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCance2.Location = New System.Drawing.Point(203, 347)
+        Me.btnCance2.Name = "btnCance2"
+        Me.btnCance2.Size = New System.Drawing.Size(75, 23)
+        Me.btnCance2.TabIndex = 2
+        Me.btnCance2.Text = "Cancelar"
+        Me.btnCance2.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(66, 23)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(167, 24)
+        Me.Label9.TabIndex = 3
+        Me.Label9.Text = "Modificar Producto"
+        '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblId.Location = New System.Drawing.Point(46, 61)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(50, 13)
+        Me.lblId.TabIndex = 21
+        Me.lblId.Text = "Nombre"
+        '
         'FormProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -402,6 +568,8 @@ Partial Class FormProductos
         Me.pnlAgregar.ResumeLayout(False)
         Me.pnlAgregar.PerformLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlModPRo.ResumeLayout(False)
+        Me.pnlModPRo.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -412,12 +580,6 @@ Partial Class FormProductos
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnAgregar As Button
     Friend WithEvents dgvProductos As DataGridView
-    Friend WithEvents dgvIdProdu As DataGridViewTextBoxColumn
-    Friend WithEvents dgvNombre As DataGridViewTextBoxColumn
-    Friend WithEvents dgvCategoria As DataGridViewTextBoxColumn
-    Friend WithEvents dgvPrecioVenta As DataGridViewTextBoxColumn
-    Friend WithEvents dgvPrecioCompra As DataGridViewTextBoxColumn
-    Friend WithEvents dgvStock As DataGridViewTextBoxColumn
     Friend WithEvents pnlAgregar As Panel
     Friend WithEvents LStock As Label
     Friend WithEvents LPrecCos As Label
@@ -439,4 +601,22 @@ Partial Class FormProductos
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents LBuscar As Label
+    Friend WithEvents pnlModPRo As Panel
+    Friend WithEvents CBCateg3 As ComboBox
+    Friend WithEvents btnLimp2 As Button
+    Friend WithEvents txtStockMin2 As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtStock2 As TextBox
+    Friend WithEvents txtNom2 As TextBox
+    Friend WithEvents txtPVent2 As TextBox
+    Friend WithEvents txtPCos2 As TextBox
+    Friend WithEvents btnGuarMod As Button
+    Friend WithEvents btnCance2 As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lblId As Label
 End Class

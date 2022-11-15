@@ -10,7 +10,7 @@ Public Class FormClientes
     End Sub
 
     Private Sub btnGuardarC_Click(sender As Object, e As EventArgs) Handles btnGuardarC.Click
-        Using connection As New SqlConnection("Data Source=DESKTOP-GQ798UG\SQLEXPRESS_INST;Initial Catalog=ProyectoTaller;Integrated Security=True")
+        Using connection As New SqlConnection("Data Source=SANTI\PROYECTO;Initial Catalog=ProyectoTaller;Integrated Security=True")
             Dim consultaSql As String = "SELECT COUNT(*) FROM Clientes WHERE (dni=@dni)"
             Dim comando As New SqlCommand(consultaSql, connection)
             comando.Parameters.AddWithValue("@dni", txtDni.Text)

@@ -1,4 +1,5 @@
 ﻿Public Class Producto1
+    Private id_producto As Integer
     Private id_categoria As Integer
     Private descripcion As String
     Private precio_costo As Integer
@@ -38,6 +39,10 @@
 
 #Region "Get"
 
+    Public Function getIdProd()
+        Return id_producto
+    End Function
+
     Public Function getCateg()
         Return id_categoria
     End Function
@@ -64,11 +69,15 @@
 #End Region
 
 #Region "Set"
-    Private Sub setCateg(ByVal p_categ As String)
+
+    Private Sub setIdProducto(ByRef p_id_producto As Integer)
+        id_producto = p_id_producto
+    End Sub
+    Private Sub setCateg(ByVal p_categ As Integer)
         id_categoria = p_categ
     End Sub
 
-    Private Sub setDescrip(ByVal p_descrip As Integer)
+    Private Sub setDescrip(ByVal p_descrip As String)
         descripcion = p_descrip
     End Sub
 
@@ -96,7 +105,7 @@
 
     Public Function mostrarProductos(ByVal grid As DataGridView)
         Try
-            Using mstr As New ProyectoTallerEntities
+            Using mstr As New ProyectoTallerEntities2
                 Dim objetoMostrar = (From q In mstr.Productos
                                      Select Categoria = q.id_categoria,
                                      Descripcion = q.descripcion,
@@ -115,7 +124,7 @@
 
     Public Function Verificar(ByVal p_dni As Integer)
         Try
-            Using verif As New ProyectoTallerEntities
+            Using verif As New ProyectoTallerEntities2
                 Dim objetoVerificar = (From q In verif.Usuarios
                                        Where q.dni = p_dni
                                        Select q).First
@@ -128,7 +137,7 @@
 
     Public Function Agregar()
         Try
-            Using Agg As New ProyectoTallerEntities
+            Using Agg As New ProyectoTallerEntities2
                 Dim datos As New Productos
                 With datos
                     .id_categoria = getCateg()
@@ -150,7 +159,7 @@
 
     Public Function Modificar(ByVal p_prod As Integer, ByVal p_categ As Integer, ByVal p_descrip As String, ByVal p_costo As Integer, ByVal p_venta As Integer, ByVal p_stock As Integer, ByVal p_stockmin As Integer)
         Try
-            Using modif As New ProyectoTallerEntities
+            Using modif As New ProyectoTallerEntities2
                 Dim objetoModificar = (From q In modif.Productos
                                        Where q.id_producto = p_prod
                                        Select q).First
@@ -172,7 +181,7 @@
 
     Public Function Borrar(ByVal p_prod As Integer)
         Try
-            Using borr As New ProyectoTallerEntities
+            Using borr As New ProyectoTallerEntities2
                 Dim objetoBorrar = (From q In borr.Productos
                                     Where q.id_producto = p_prod
                                     Select q).First()
@@ -188,7 +197,7 @@
 
     Public Function CargarBorrar(ByVal combo As ComboBox)
         Try
-            Using Base As New ProyectoTallerEntities
+            Using Base As New ProyectoTallerEntities2
                 ''Dim qLibros = (From q In Base.Usuarios Select New With {.idef = q.isbn, .nombrel = q.isbn & ": " & q.nombre}).ToList
 
                 ''combo.DataSource = qLibros
@@ -204,7 +213,7 @@
 
     Public Function ObtenerDatos(ByVal p_prod As Integer)
         Try
-            Using dts As New ProyectoTallerEntities
+            Using dts As New ProyectoTallerEntities2
                 Dim datos As Productos = (From q In dts.Productos Where (p_prod = q.id_producto) Select q).First()
 
                 setCateg(datos.id_categoria)
@@ -223,7 +232,7 @@
 
     Public Function MostrarProductos(ByVal p_id As Integer, ByVal grid As DataGridView)
         Try
-            Using Mostrar As New ProyectoTallerEntities
+            Using Mostrar As New ProyectoTallerEntities2
                 Dim objMostrar = (From q In Mostrar.Productos Where p_id = q.Categorias.id_categoria
                                   Select Categoria = q.id_categoria, Nombre = q.descripcion, Precio_Costo = q.precio_costo, Precio_Venta = q.precio_venta, Stock = q.stock, Stock_Min = q.stock_min).ToList
 
@@ -241,7 +250,7 @@
 
     Public Function MostrarCategorias(ByVal p_id As Integer, ByVal grid As DataGridView)
         Try
-            Using Mostrar As New ProyectoTallerEntities
+            Using Mostrar As New ProyectoTallerEntities2
                 Dim objMostrar = (From q In Mostrar.Usuarios Where p_id = q.Perfiles.id_perfil
                                   Select DNI = q.dni, Nombre = q.nombre, Apellido = q.apellido, Usuario = q.usuario,
                                   Contraseña = q.contraseña, Email = q.email, Telefono = q.telefono).ToList

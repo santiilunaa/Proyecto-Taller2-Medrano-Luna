@@ -116,7 +116,7 @@
 
     Public Function mostrarusuarios(ByVal grid As DataGridView)
         Try
-            Using mstr As New ProyectoTallerEntities
+            Using mstr As New ProyectoTallerEntities2
                 Dim objetoMostrar = (From q In mstr.Usuarios
                                      Select Perfil = q.id_perfil,
                                      DNI = q.dni,
@@ -137,7 +137,7 @@
 
     Public Function Verificar(ByVal p_dni As Integer)
         Try
-            Using verif As New ProyectoTallerEntities
+            Using verif As New ProyectoTallerEntities2
                 Dim objetoVerificar = (From q In verif.Usuarios
                                        Where q.dni = p_dni
                                        Select q).First
@@ -150,7 +150,7 @@
 
     Public Function Agregar()
         Try
-            Using Agg As New ProyectoTallerEntities
+            Using Agg As New ProyectoTallerEntities2
                 Dim datos As New Usuarios
                 With datos
                     .id_perfil = getPerfil()
@@ -174,7 +174,7 @@
 
     Public Function Modificar(ByVal p_id_usuario As Integer, ByVal p_perfil As Integer, ByVal p_dni As Integer, ByVal p_nombre As String, ByVal p_ape As String, ByVal p_usuario As String, ByVal p_contraseña As String, ByVal p_email As String, ByVal p_tel As Integer)
         Try
-            Using MDF As New ProyectoTallerEntities
+            Using MDF As New ProyectoTallerEntities2
                 Dim objetoModificar = (From q In MDF.Usuarios
                                        Where q.id_usuario = p_id_usuario
                                        Select q).First
@@ -197,7 +197,7 @@
 
     Public Function Borrar(ByVal p_dni As Integer)
         Try
-            Using borr As New ProyectoTallerEntities
+            Using borr As New ProyectoTallerEntities2
                 Dim objetoBorrar = (From q In borr.Usuarios
                                     Where q.dni = p_dni
                                     Select q).First()
@@ -213,7 +213,7 @@
 
     Public Function CargarBorrar(ByVal combo As ComboBox)
         Try
-            Using Base As New ProyectoTallerEntities
+            Using Base As New ProyectoTallerEntities2
                 ''Dim qLibros = (From q In Base.Usuarios Select New With {.idef = q.isbn, .nombrel = q.isbn & ": " & q.nombre}).ToList
 
                 ''combo.DataSource = qLibros
@@ -229,7 +229,7 @@
 
     Public Function ObtenerDatos(ByVal p_dni As Integer)
         Try
-            Using dts As New ProyectoTallerEntities
+            Using dts As New ProyectoTallerEntities2
                 Dim datos As Usuarios = (From q In dts.Usuarios Where (p_dni = q.dni) Select q).First()
 
                 setPerfil(datos.id_perfil)
@@ -250,7 +250,7 @@
 
     Public Function MostrarPerfiles(ByVal p_id As Integer, ByVal grid As DataGridView)
         Try
-            Using Mostrar As New ProyectoTallerEntities
+            Using Mostrar As New ProyectoTallerEntities2
                 Dim objMostrar = (From q In Mostrar.Usuarios Where p_id = q.Perfiles.id_perfil
                                   Select DNI = q.dni, Nombre = q.nombre, Apellido = q.apellido, Usuario = q.usuario,
                                   Contraseña = q.contraseña, Email = q.email, Telefono = q.telefono).ToList
