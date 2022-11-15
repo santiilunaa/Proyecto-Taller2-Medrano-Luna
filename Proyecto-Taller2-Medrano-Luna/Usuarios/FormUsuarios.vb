@@ -22,10 +22,10 @@ Public Class FormUsuarios
     End Sub
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         pnlModifUs.Visible = True
-        Using usua As New ProyectoTallerEntities
+        Using usua As New ProyectoTallerEntities2
             Dim usu As New Usuarios
             Dim id As String
-            ''Dim idUsuario As Integer
+
 
             id = dgvUsuarios.CurrentRow.Cells(0).Value.ToString()
             LblId.Text = Integer.Parse(id)
@@ -98,7 +98,7 @@ Public Class FormUsuarios
     Private Sub FormUsuarios_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         Mostrar()
         Try
-            Using perfiles As New ProyectoTallerEntities
+            Using perfiles As New ProyectoTallerEntities2
                 Dim objetoPerfil = (From q In perfiles.Perfiles
                                     Select q).ToList
 
@@ -112,7 +112,7 @@ Public Class FormUsuarios
         End Try
 
         Try
-            Using perfiles As New ProyectoTallerEntities
+            Using perfiles As New ProyectoTallerEntities2
                 Dim objetoPerfil = (From q In perfiles.Perfiles
                                     Select q).ToList
 
@@ -148,6 +148,7 @@ Public Class FormUsuarios
                     txtContr.Clear()
                     txtEmail.Clear()
                     txtTel.Clear()
+                    pnlModifUs.Visible = False
                 Else
                     MessageBox.Show("Error al Modificar el Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
