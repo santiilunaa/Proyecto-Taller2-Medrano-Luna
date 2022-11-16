@@ -26,17 +26,21 @@ Public Class FormUsuarios
             Dim usu As New Usuarios
             Dim id As String
 
+            Try
+                id = dgvUsuarios.CurrentRow.Cells(0).Value.ToString()
+                LblId.Text = Integer.Parse(id)
+                CBPerfil2.Text = dgvUsuarios.CurrentRow.Cells(1).Value.ToString()
+                txtDNI2.Text = dgvUsuarios.CurrentRow.Cells(2).Value.ToString()
+                txtNom2.Text = dgvUsuarios.CurrentRow.Cells(3).Value.ToString()
+                txtApe2.Text = dgvUsuarios.CurrentRow.Cells(4).Value.ToString()
+                txtUsua2.Text = dgvUsuarios.CurrentRow.Cells(5).Value.ToString()
+                txtContr2.Text = dgvUsuarios.CurrentRow.Cells(6).Value.ToString()
+                txtEmail2.Text = dgvUsuarios.CurrentRow.Cells(7).Value.ToString()
+                txtTel2.Text = dgvUsuarios.CurrentRow.Cells(8).Value.ToString()
+            Catch ex As Exception
+                MessageBox.Show("no hay usuario seleccionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
 
-            id = dgvUsuarios.CurrentRow.Cells(0).Value.ToString()
-            LblId.Text = Integer.Parse(id)
-            CBPerfil2.Text = dgvUsuarios.CurrentRow.Cells(1).Value.ToString()
-            txtDNI2.Text = dgvUsuarios.CurrentRow.Cells(2).Value.ToString()
-            txtNom2.Text = dgvUsuarios.CurrentRow.Cells(3).Value.ToString()
-            txtApe2.Text = dgvUsuarios.CurrentRow.Cells(4).Value.ToString()
-            txtUsua2.Text = dgvUsuarios.CurrentRow.Cells(5).Value.ToString()
-            txtContr2.Text = dgvUsuarios.CurrentRow.Cells(6).Value.ToString()
-            txtEmail2.Text = dgvUsuarios.CurrentRow.Cells(7).Value.ToString()
-            txtTel2.Text = dgvUsuarios.CurrentRow.Cells(8).Value.ToString()
 
         End Using
 
@@ -64,7 +68,8 @@ Public Class FormUsuarios
         ElseIf Not IsNumeric(txtDNI.Text) Or Not IsNumeric(txtTel.Text) Then
             MsgBox("solo valores numéricos en dni y telefono por favor", MsgBoxStyle.Critical, "Error")
         Else
-            If MsgBox("¿Desea agregar un nuevo usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar Usuario") Then
+            Dim result As MsgBoxResult = MsgBox("¿Desea agregar un nuevo usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar Usuario")
+            If result = MsgBoxResult.Yes Then
                 Dim usuario As New Usuario1(CBPerfil.SelectedValue, txtDNI.Text, txtNom.Text, txtApe.Text, txtUsua.Text, txtContr.Text, txtEmail.Text, txtTel.Text)
                 If usuario.Agregar() Then
                     MessageBox.Show("El Usuario ha sido agregado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -77,9 +82,12 @@ Public Class FormUsuarios
                     txtContr.Clear()
                     txtEmail.Clear()
                     txtTel.Clear()
+                    Mostrar()
                 Else
                     MessageBox.Show("Error al Agregar el Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+            Else
+                pnlAgregarUs.Visible = False
             End If
         End If
     End Sub
@@ -135,7 +143,8 @@ Public Class FormUsuarios
         ElseIf Not IsNumeric(txtDNI2.Text) Or Not IsNumeric(txtTel2.Text) Then
             MsgBox("solo valores numéricos en dni y telefono por favor", MsgBoxStyle.Critical, "Error")
         Else
-            If MsgBox("¿Desea modificar un nuevo usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Modificar Usuario") Then
+            Dim result As MsgBoxResult = MsgBox("¿Desea modificar un nuevo usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Modificar Usuario")
+            If Result = MsgBoxResult.Yes Then
                 Dim usuario As New Usuario1()
                 If usuario.Modificar(LblId.Text, CBPerfil2.SelectedValue, txtDNI2.Text, txtNom2.Text, txtApe2.Text, txtUsua2.Text, txtContr2.Text, txtEmail2.Text, txtTel2.Text) Then
                     MessageBox.Show("El Usuario ha sido modificado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -149,15 +158,100 @@ Public Class FormUsuarios
                     txtEmail.Clear()
                     txtTel.Clear()
                     pnlModifUs.Visible = False
+                    Mostrar()
                 Else
                     MessageBox.Show("Error al Modificar el Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+            Else
+                pnlModifUs.Visible = False
             End If
         End If
     End Sub
 
-    Private Sub dgvUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellContentClick
-        '' Dim dgv As DataGridViewRow = dgvUsuarios.Rows(e.RowIndex)
-        '' LblId.Text = dgv.Cells(0).Value.ToString()
+    Private Sub rbElimin_CheckedChanged(sender As Object, e As EventArgs) Handles rbElimin.CheckedChanged
+        abrir()
+        Dim entrada As String = "SELECT * FROM Usuarios WHERE elim='si'"
+        Dim datos As New DataSet
+        Dim adaptador As New SqlDataAdapter(entrada, connection)
+        adaptador.Fill(datos)
+        cerrar()
+        Try
+            dgvUsuarios.DataSource = datos.Tables(0)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub rbActivos_CheckedChanged(sender As Object, e As EventArgs) Handles rbActivos.CheckedChanged
+        abrir()
+        Dim entrada As String = "SELECT * FROM Usuarios WHERE elim='no'"
+        Dim datos As New DataSet
+        Dim adaptador As New SqlDataAdapter(entrada, connection)
+        adaptador.Fill(datos)
+        cerrar()
+        Try
+            dgvUsuarios.DataSource = datos.Tables(0)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Using usua As New ProyectoTallerEntities2
+            Dim us As New Usuarios
+            Dim id As String
+
+
+            id = dgvUsuarios.CurrentRow.Cells(0).Value.ToString()
+            lvlidsel.Text = Integer.Parse(id)
+            Dim result As MsgBoxResult = MsgBox("Desea eliminar el Usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Eliminar")
+
+            If result = MsgBoxResult.Yes Then
+                Dim usuario As New Usuario1()
+                If usuario.Borrar(lvlidsel.Text) Then
+                    MessageBox.Show("El Usuario ha sido eliminado con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Mostrar()
+                Else
+                    MessageBox.Show("Error al eliminar Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        abrir()
+        Dim entrada As String = "SELECT * FROM Clientes WHERE dni LIKE '%" & TextBox1.Text & "%' or nombre LIKE '%" & TextBox1.Text & "%'"
+        Dim datos As New DataSet
+        Dim adaptador As New SqlDataAdapter(entrada, connection)
+        adaptador.Fill(datos)
+        cerrar()
+        Try
+            dgvUsuarios.DataSource = datos.Tables(0)
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnActivar_Click(sender As Object, e As EventArgs) Handles btnActivar.Click
+        Using usua As New ProyectoTallerEntities2
+            Dim us As New Usuarios
+            Dim id As String
+
+
+            id = dgvUsuarios.CurrentRow.Cells(0).Value.ToString()
+            lvlidsel.Text = Integer.Parse(id)
+            Dim result As MsgBoxResult = MsgBox("Desea activar el Usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Eliminar")
+
+            If result = MsgBoxResult.Yes Then
+                Dim usuario As New Usuario1()
+                If usuario.activar(lvlidsel.Text) Then
+                    MessageBox.Show("El Usuario ha sido activado con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Mostrar()
+                Else
+                    MessageBox.Show("Error al activar Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End Using
     End Sub
 End Class

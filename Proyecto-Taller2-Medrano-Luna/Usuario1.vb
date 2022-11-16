@@ -195,14 +195,30 @@
         End Try
     End Function
 
-    Public Function Borrar(ByVal p_dni As Integer)
+    Public Function Borrar(ByVal p_id As Integer)
         Try
             Using borr As New ProyectoTallerEntities2
                 Dim objetoBorrar = (From q In borr.Usuarios
-                                    Where q.dni = p_dni
+                                    Where q.id_usuario = p_id
                                     Select q).First()
 
-                ''borr.Usuarios.DeleteObject(objetoBorrar)
+                objetoBorrar.elim = "si"
+                borr.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function activar(ByVal p_id As Integer)
+        Try
+            Using borr As New ProyectoTallerEntities2
+                Dim objetoBorrar = (From q In borr.Usuarios
+                                    Where q.id_usuario = p_id
+                                    Select q).First()
+
+                objetoBorrar.elim = "no"
                 borr.SaveChanges()
             End Using
             Return True
@@ -266,6 +282,7 @@
             Return False
         End Try
     End Function
+
 
 #End Region
 End Class

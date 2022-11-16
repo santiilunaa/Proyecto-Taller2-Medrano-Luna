@@ -33,7 +33,8 @@ Public Class FormProductos
         ElseIf Not IsNumeric(txtPCos.Text) Or Not IsNumeric(txtPVent.Text) Or Not IsNumeric(txtStock.text) Or Not IsNumeric(txtStockMin.text) Then
             MsgBox("solo valores numéricos en Precio Costo, Precio Venta, Stock y Stock Min por favor", MsgBoxStyle.Critical, "Error")
         Else
-            If MsgBox("¿Desea agregar un nuevo usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar Usuario") Then
+            Dim result As MsgBoxResult = MsgBox("¿Desea agregar un nuevo usuario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo + vbDefaultButton2, "Agregar Usuario")
+            If result = MsgBoxResult.Yes Then
                 Dim producto As New Producto1(CBCateg2.SelectedValue, txtNom.Text, txtPCos.Text, txtPVent.Text, txtStock.Text, txtStockMin.Text)
                 If producto.Agregar() Then
                     MessageBox.Show("El Producto ha sido agregado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -44,10 +45,13 @@ Public Class FormProductos
                     txtPVent.Clear()
                     txtStock.Clear()
                     txtStockMin.Clear()
-
+                    pnlAgregar.Visible = False
+                    Mostrar()
                 Else
                     MessageBox.Show("Error al Agregar el Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+            Else
+                pnlAgregar.Visible = False
             End If
         End If
     End Sub
@@ -64,7 +68,7 @@ Public Class FormProductos
         Mostrar()
 
         Try
-            Using contexto As New ProyectoTallerEntities
+            Using contexto As New ProyectoTallerEntities2
                 Dim objetoPerfil = (From q In contexto.Categorias
                                     Select q).ToList
 
@@ -77,6 +81,8 @@ Public Class FormProductos
                 CBCateg3.DisplayMember = "descripcion"
                 CBCateg3.ValueMember = "id_categoria"
                 CBCateg3.SelectedValue = -1
+
+
             End Using
         Catch ex As Exception
             MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -113,22 +119,128 @@ Public Class FormProductos
         ElseIf Not IsNumeric(txtPCos2.Text) Or Not IsNumeric(txtPVent2.Text) Or Not IsNumeric(txtStock2.text) Or Not IsNumeric(txtStockMin2.text) Then
             MsgBox("solo valores numéricos en Precio Costo, Precio Venta, Stock y Stock Min por favor", MsgBoxStyle.Critical, "Error")
         Else
-            If MsgBox("¿Desea modificar el producto?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar Usuario") Then
+            Dim result As MsgBoxResult = MsgBox("¿Desea modificar el producto?", MsgBoxStyle.Question + MsgBoxStyle.YesNo + vbDefaultButton2, "Agregar Usuario")
+            If result = MsgBoxResult.Yes Then
                 Dim producto As New Producto1()
                 If producto.Modificar(lblId.Text, CBCateg2.SelectedValue, txtNom2.Text, txtPCos2.Text, txtPVent2.Text, txtStock2.Text, txtStockMin2.Text) Then
                     MessageBox.Show("El Producto ha sido agregado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     CBCateg3.Text = ""
-                    txtPCos.Clear()
-                    txtNom.Clear()
-                    txtPVent.Clear()
-                    txtStock.Clear()
-                    txtStockMin.Clear()
+                    txtPCos2.Clear()
+                    txtNom2.Clear()
+                    txtPVent2.Clear()
+                    txtStock2.Clear()
+                    txtStockMin2.Clear()
+                    pnlModPRo.Visible = False
+                    Mostrar()
 
                 Else
                     MessageBox.Show("Error al Agregar el Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+            Else
+                pnlModPRo.Visible = False
             End If
         End If
+    End Sub
+
+    Private Sub btnCance2_Click(sender As Object, e As EventArgs) Handles btnCance2.Click
+        pnlModPRo.Visible = False
+    End Sub
+
+    Private Sub btnLimp2_Click(sender As Object, e As EventArgs) Handles btnLimp2.Click
+        CBCateg3.Text = ""
+        txtPCos2.Clear()
+        txtNom2.Clear()
+        txtPVent2.Clear()
+        txtStock2.Clear()
+        txtStockMin2.Clear()
+    End Sub
+
+    Private Sub rbActivos_Checked(sender As Object, e As EventArgs) Handles rbActivos.CheckedChanged
+        If rbActivos.Checked = True Then
+            abrir()
+            Dim entrada As String = "SELECT * FROM Productos WHERE elim='no'"
+            Dim datos As New DataSet
+            Dim adaptador As New SqlDataAdapter(entrada, connection)
+            adaptador.Fill(datos)
+            cerrar()
+            Try
+                dgvProductos.DataSource = datos.Tables(0)
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub rbElimin_CheckedChanged(sender As Object, e As EventArgs) Handles rbElimin.CheckedChanged
+        abrir()
+        Dim entrada As String = "SELECT * FROM Productos WHERE elim='si'"
+        Dim datos As New DataSet
+        Dim adaptador As New SqlDataAdapter(entrada, connection)
+        adaptador.Fill(datos)
+        cerrar()
+        Try
+            dgvProductos.DataSource = datos.Tables(0)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Using produ As New ProyectoTallerEntities2
+            Dim pro As New Productos
+            Dim id As String
+
+
+            id = dgvProductos.CurrentRow.Cells(0).Value.ToString()
+            lvlidsel.Text = Integer.Parse(id)
+
+            Dim result As MsgBoxResult = MsgBox("¿Desea eliminar el producto?", MsgBoxStyle.Question + MsgBoxStyle.YesNo + vbDefaultButton2, "Eliminar")
+            If result = MsgBoxResult.Yes Then
+                Dim producto As New Producto1()
+                If producto.Borrar(lvlidsel.Text) Then
+                    MessageBox.Show("El producto ha sido eliminado con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Mostrar()
+                Else
+                    MessageBox.Show("Error al eliminar producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        abrir()
+        Dim entrada As String = "SELECT * FROM Productos WHERE descripcion LIKE '%" & txtBuscar.Text & "%'"
+        Dim datos As New DataSet
+        Dim adaptador As New SqlDataAdapter(entrada, connection)
+        adaptador.Fill(datos)
+        cerrar()
+        Try
+            dgvProductos.DataSource = datos.Tables(0)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnActivar_Click(sender As Object, e As EventArgs) Handles btnActivar.Click
+        Using produ As New ProyectoTallerEntities2
+            Dim pro As New Productos
+            Dim id As String
+
+
+            id = dgvProductos.CurrentRow.Cells(0).Value.ToString()
+            lvlidsel.Text = Integer.Parse(id)
+
+            Dim result As MsgBoxResult = MsgBox("¿Desea activar el producto?", MsgBoxStyle.Question + MsgBoxStyle.YesNo + vbDefaultButton2, "Eliminar")
+            If result = MsgBoxResult.Yes Then
+                Dim producto As New Producto1()
+                If producto.activar(lvlidsel.Text) Then
+                    MessageBox.Show("El producto ha sido activado con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Mostrar()
+                Else
+                    MessageBox.Show("Error al activar producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End Using
     End Sub
 End Class

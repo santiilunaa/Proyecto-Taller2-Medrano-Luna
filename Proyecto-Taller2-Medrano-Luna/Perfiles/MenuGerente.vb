@@ -79,5 +79,6 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblhora.Text = DateTime.Now.ToString("hh:mm:ss")
         lblFecha.Text = DateTime.Now.ToLongDateString()
+        lblBienvenido.Text = "Bienvenido: " + Module1.us
     End Sub
 End Class

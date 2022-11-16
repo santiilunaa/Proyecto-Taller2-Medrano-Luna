@@ -18,7 +18,7 @@ Partial Public Class Clientes
     Public Property email As String
     Public Property domicilio As String
     Public Property telefono As String
-    Public Property eliminado As Nullable(Of Boolean)
+    Public Property elim As String
 
     Public Overridable Property Ventas_cabecera As ICollection(Of Ventas_cabecera) = New HashSet(Of Ventas_cabecera)
 

@@ -93,6 +93,7 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
+        lblBienvenido.Text = "Bienvenido: " + Module1.us
     End Sub
 
 End Class

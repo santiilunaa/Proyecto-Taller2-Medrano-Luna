@@ -31,6 +31,7 @@ Partial Class FormUsuarios
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlModifUs = New System.Windows.Forms.Panel()
+        Me.LblId = New System.Windows.Forms.Label()
         Me.LUsua2 = New System.Windows.Forms.Label()
         Me.txtTel2 = New System.Windows.Forms.TextBox()
         Me.CBPerfil2 = New System.Windows.Forms.ComboBox()
@@ -53,6 +54,7 @@ Partial Class FormUsuarios
         Me.LModif = New System.Windows.Forms.Label()
         Me.BCancelModif = New System.Windows.Forms.Button()
         Me.BGuardarModif = New System.Windows.Forms.Button()
+        Me.lvlidsel = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlAgregarUs = New System.Windows.Forms.Panel()
         Me.LUsua = New System.Windows.Forms.Label()
@@ -78,7 +80,9 @@ Partial Class FormUsuarios
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BGuardar = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.LblId = New System.Windows.Forms.Label()
+        Me.rbActivos = New System.Windows.Forms.RadioButton()
+        Me.rbElimin = New System.Windows.Forms.RadioButton()
+        Me.btnActivar = New System.Windows.Forms.Button()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.pnlModifUs.SuspendLayout()
@@ -93,7 +97,7 @@ Partial Class FormUsuarios
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(336, 9)
+        Me.Label1.Location = New System.Drawing.Point(335, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(122, 30)
         Me.Label1.TabIndex = 0
@@ -107,7 +111,7 @@ Partial Class FormUsuarios
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.Location = New System.Drawing.Point(59, 397)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(138, 38)
+        Me.btnAgregar.Size = New System.Drawing.Size(122, 38)
         Me.btnAgregar.TabIndex = 1
         Me.btnAgregar.Text = "Agregar Usuario"
         Me.btnAgregar.UseVisualStyleBackColor = False
@@ -118,7 +122,7 @@ Partial Class FormUsuarios
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.Location = New System.Drawing.Point(477, 397)
+        Me.btnModificar.Location = New System.Drawing.Point(189, 397)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(122, 38)
         Me.btnModificar.TabIndex = 2
@@ -127,7 +131,7 @@ Partial Class FormUsuarios
         '
         'btnEliminar
         '
-        Me.btnEliminar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnEliminar.BackColor = System.Drawing.Color.IndianRed
         Me.btnEliminar.FlatAppearance.BorderSize = 0
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -151,6 +155,8 @@ Partial Class FormUsuarios
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel1.Controls.Add(Me.pnlModifUs)
+        Me.Panel1.Controls.Add(Me.btnActivar)
+        Me.Panel1.Controls.Add(Me.lvlidsel)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.pnlAgregarUs)
         Me.Panel1.Controls.Add(Me.TextBox1)
@@ -159,6 +165,8 @@ Partial Class FormUsuarios
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.btnAgregar)
+        Me.Panel1.Controls.Add(Me.rbActivos)
+        Me.Panel1.Controls.Add(Me.rbElimin)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -192,11 +200,21 @@ Partial Class FormUsuarios
         Me.pnlModifUs.Controls.Add(Me.LModif)
         Me.pnlModifUs.Controls.Add(Me.BCancelModif)
         Me.pnlModifUs.Controls.Add(Me.BGuardarModif)
-        Me.pnlModifUs.Location = New System.Drawing.Point(443, 26)
+        Me.pnlModifUs.Location = New System.Drawing.Point(443, 39)
         Me.pnlModifUs.Name = "pnlModifUs"
         Me.pnlModifUs.Size = New System.Drawing.Size(299, 409)
         Me.pnlModifUs.TabIndex = 23
         Me.pnlModifUs.Visible = False
+        '
+        'LblId
+        '
+        Me.LblId.AutoSize = True
+        Me.LblId.Location = New System.Drawing.Point(31, 40)
+        Me.LblId.Name = "LblId"
+        Me.LblId.Size = New System.Drawing.Size(45, 13)
+        Me.LblId.TabIndex = 23
+        Me.LblId.Text = "Label2"
+        Me.LblId.Visible = False
         '
         'LUsua2
         '
@@ -402,6 +420,17 @@ Partial Class FormUsuarios
         Me.BGuardarModif.Text = "Guardar"
         Me.BGuardarModif.UseVisualStyleBackColor = False
         '
+        'lvlidsel
+        '
+        Me.lvlidsel.AutoSize = True
+        Me.lvlidsel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvlidsel.Location = New System.Drawing.Point(772, 9)
+        Me.lvlidsel.Name = "lvlidsel"
+        Me.lvlidsel.Size = New System.Drawing.Size(25, 24)
+        Me.lvlidsel.TabIndex = 26
+        Me.lvlidsel.Text = "id"
+        Me.lvlidsel.Visible = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -437,7 +466,7 @@ Partial Class FormUsuarios
         Me.pnlAgregarUs.Controls.Add(Me.LAgregar)
         Me.pnlAgregarUs.Controls.Add(Me.BCancelar)
         Me.pnlAgregarUs.Controls.Add(Me.BGuardar)
-        Me.pnlAgregarUs.Location = New System.Drawing.Point(124, 26)
+        Me.pnlAgregarUs.Location = New System.Drawing.Point(46, 39)
         Me.pnlAgregarUs.Name = "pnlAgregarUs"
         Me.pnlAgregarUs.Size = New System.Drawing.Size(299, 409)
         Me.pnlAgregarUs.TabIndex = 6
@@ -655,14 +684,42 @@ Partial Class FormUsuarios
         Me.TextBox1.Size = New System.Drawing.Size(505, 23)
         Me.TextBox1.TabIndex = 5
         '
-        'LblId
+        'rbActivos
         '
-        Me.LblId.AutoSize = True
-        Me.LblId.Location = New System.Drawing.Point(31, 40)
-        Me.LblId.Name = "LblId"
-        Me.LblId.Size = New System.Drawing.Size(45, 13)
-        Me.LblId.TabIndex = 23
-        Me.LblId.Text = "Label2"
+        Me.rbActivos.AutoSize = True
+        Me.rbActivos.Checked = True
+        Me.rbActivos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbActivos.Location = New System.Drawing.Point(307, 99)
+        Me.rbActivos.Name = "rbActivos"
+        Me.rbActivos.Size = New System.Drawing.Size(67, 17)
+        Me.rbActivos.TabIndex = 24
+        Me.rbActivos.TabStop = True
+        Me.rbActivos.Text = "Activos"
+        Me.rbActivos.UseVisualStyleBackColor = True
+        '
+        'rbElimin
+        '
+        Me.rbElimin.AutoSize = True
+        Me.rbElimin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbElimin.Location = New System.Drawing.Point(405, 99)
+        Me.rbElimin.Name = "rbElimin"
+        Me.rbElimin.Size = New System.Drawing.Size(85, 17)
+        Me.rbElimin.TabIndex = 25
+        Me.rbElimin.Text = "Eliminados"
+        Me.rbElimin.UseVisualStyleBackColor = True
+        '
+        'btnActivar
+        '
+        Me.btnActivar.BackColor = System.Drawing.Color.SeaGreen
+        Me.btnActivar.FlatAppearance.BorderSize = 0
+        Me.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActivar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActivar.Location = New System.Drawing.Point(492, 397)
+        Me.btnActivar.Name = "btnActivar"
+        Me.btnActivar.Size = New System.Drawing.Size(122, 38)
+        Me.btnActivar.TabIndex = 30
+        Me.btnActivar.Text = "Activar"
+        Me.btnActivar.UseVisualStyleBackColor = False
         '
         'FormUsuarios
         '
@@ -741,4 +798,8 @@ Partial Class FormUsuarios
     Friend WithEvents BCancelModif As Button
     Friend WithEvents BGuardarModif As Button
     Friend WithEvents LblId As Label
+    Friend WithEvents rbElimin As RadioButton
+    Friend WithEvents rbActivos As RadioButton
+    Friend WithEvents lvlidsel As Label
+    Friend WithEvents btnActivar As Button
 End Class

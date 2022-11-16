@@ -10,17 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Productos
-    Public Property id_producto As Integer
-    Public Property id_categoria As Integer
-    Public Property descripcion As String
-    Public Property precio_costo As Integer
-    Public Property precio_venta As Integer
+Partial Public Class MOSTRAR_PRODUCTOS_Result
+    Public Property id As Integer
+    Public Property categoria As String
+    Public Property nombre As String
+    Public Property valor As Integer
+    Public Property venta As Integer
     Public Property stock As Integer
-    Public Property stock_min As Integer
-    Public Property elim As String
-
-    Public Overridable Property Categorias As Categorias
-    Public Overridable Property Ventas__detalle As ICollection(Of Ventas__detalle) = New HashSet(Of Ventas__detalle)
+    Public Property stock_minimo As Integer
 
 End Class

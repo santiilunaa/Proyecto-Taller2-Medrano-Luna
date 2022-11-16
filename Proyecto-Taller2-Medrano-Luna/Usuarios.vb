@@ -20,7 +20,7 @@ Partial Public Class Usuarios
     Public Property contraseña As String
     Public Property email As String
     Public Property telefono As String
-    Public Property eliminado As Boolean
+    Public Property elim As String
 
     Public Overridable Property Perfiles As Perfiles
     Public Overridable Property Ventas_cabecera As ICollection(Of Ventas_cabecera) = New HashSet(Of Ventas_cabecera)
