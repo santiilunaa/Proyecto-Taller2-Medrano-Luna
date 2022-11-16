@@ -11,14 +11,14 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class MOSTRAR_USUARIOS_Result
-    Public Property id_usuario As Integer
-    Public Property id_perfil As Integer
-    Public Property dni As String
+    Public Property id As Integer
+    Public Property perfil As String
+    Public Property DNI As Nullable(Of Integer)
     Public Property nombre As String
     Public Property apellido As String
     Public Property usuario As String
     Public Property contraseña As String
     Public Property email As String
-    Public Property telefono As String
+    Public Property Telefono As Integer
 
 End Class

@@ -10,15 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Clientes
-    Public Property id_cliente As Integer
-    Public Property dni As String
+Partial Public Class MOSTRAR_PRODUCTOS_Result
+    Public Property id As Integer
+    Public Property categoria As String
     Public Property nombre As String
-    Public Property apellido As String
-    Public Property email As String
-    Public Property domicilio As String
-    Public Property telefono As String
-    Public Property eliminado As Nullable(Of Boolean)
-    Public Property elim As String
+    Public Property valor As Integer
+    Public Property venta As Integer
+    Public Property stock As Integer
+    Public Property stock_minimo As Integer
 
 End Class

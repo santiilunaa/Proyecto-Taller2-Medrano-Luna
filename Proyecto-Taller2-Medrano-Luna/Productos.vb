@@ -19,8 +19,9 @@ Partial Public Class Productos
     Public Property stock As Integer
     Public Property stock_min As Integer
     Public Property eliminado As Boolean
+    Public Property elim As String
 
     Public Overridable Property Categorias As Categorias
-    Public Overridable Property Ventas__detalle As ICollection(Of Ventas__detalle) = New HashSet(Of Ventas__detalle)
+    Public Overridable Property Ventas_detalle As ICollection(Of Ventas_detalle) = New HashSet(Of Ventas_detalle)
 
 End Class

@@ -51,7 +51,7 @@ Partial Class MenuVendedor
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(140, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 32)
+        Me.Panel1.Size = New System.Drawing.Size(875, 32)
         Me.Panel1.TabIndex = 2
         '
         'lblBienvenido
@@ -81,7 +81,7 @@ Partial Class MenuVendedor
         Me.btnCerrPrinc.FlatAppearance.BorderSize = 0
         Me.btnCerrPrinc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrPrinc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrPrinc.Location = New System.Drawing.Point(764, 3)
+        Me.btnCerrPrinc.Location = New System.Drawing.Point(839, 3)
         Me.btnCerrPrinc.Name = "btnCerrPrinc"
         Me.btnCerrPrinc.Size = New System.Drawing.Size(33, 26)
         Me.btnCerrPrinc.TabIndex = 3
@@ -98,7 +98,7 @@ Partial Class MenuVendedor
         Me.pnlVendedor.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlVendedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlVendedor.Name = "pnlVendedor"
-        Me.pnlVendedor.Size = New System.Drawing.Size(140, 492)
+        Me.pnlVendedor.Size = New System.Drawing.Size(140, 588)
         Me.pnlVendedor.TabIndex = 13
         '
         'btnSalir
@@ -111,7 +111,7 @@ Partial Class MenuVendedor
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(5, 430)
+        Me.btnSalir.Location = New System.Drawing.Point(5, 526)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(135, 50)
         Me.btnSalir.TabIndex = 14
@@ -181,7 +181,7 @@ Partial Class MenuVendedor
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(140, 32)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(800, 460)
+        Me.pnlContenedor.Size = New System.Drawing.Size(875, 556)
         Me.pnlContenedor.TabIndex = 14
         '
         'lblhora
@@ -213,7 +213,7 @@ Partial Class MenuVendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(940, 492)
+        Me.ClientSize = New System.Drawing.Size(1015, 588)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlVendedor)

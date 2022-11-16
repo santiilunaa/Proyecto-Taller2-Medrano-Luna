@@ -26,7 +26,6 @@
         btnBkp.BackColor = Color.White
         btnClientes.BackColor = Color.CornflowerBlue
         btnVentas.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.CornflowerBlue
         btnProduc.BackColor = Color.CornflowerBlue
     End Sub
 
@@ -36,7 +35,6 @@
         btnBkp.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.White
         btnVentas.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.CornflowerBlue
         btnProduc.BackColor = Color.CornflowerBlue
     End Sub
 
@@ -46,17 +44,6 @@
         btnBkp.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.CornflowerBlue
         btnVentas.BackColor = Color.White
-        btnReport.BackColor = Color.CornflowerBlue
-        btnProduc.BackColor = Color.CornflowerBlue
-    End Sub
-
-    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
-        AbrirFormHijo(New FormReportes())
-        lblPrincip.Text = "Reportes"
-        btnBkp.BackColor = Color.CornflowerBlue
-        btnClientes.BackColor = Color.CornflowerBlue
-        btnVentas.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.White
         btnProduc.BackColor = Color.CornflowerBlue
     End Sub
 
@@ -66,7 +53,6 @@
         btnBkp.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.CornflowerBlue
         btnVentas.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.CornflowerBlue
         btnProduc.BackColor = Color.White
     End Sub
 

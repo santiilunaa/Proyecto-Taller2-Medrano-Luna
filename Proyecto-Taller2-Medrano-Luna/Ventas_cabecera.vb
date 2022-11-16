@@ -13,12 +13,12 @@ Imports System.Collections.Generic
 Partial Public Class Ventas_cabecera
     Public Property id_venta As Integer
     Public Property id_usuario As Integer
-    Public Property id_cliente As Integer
+    Public Property id_numero As Integer
     Public Property fecha_venta As Date
-    Public Property total_venta As Integer
+    Public Property total_venta As Nullable(Of Decimal)
 
-    Public Overridable Property Clientes As Clientes
+    Public Overridable Property NroFactura As NroFactura
     Public Overridable Property Usuarios As Usuarios
-    Public Overridable Property Ventas__detalle As ICollection(Of Ventas__detalle) = New HashSet(Of Ventas__detalle)
+    Public Overridable Property Ventas_detalle As ICollection(Of Ventas_detalle) = New HashSet(Of Ventas_detalle)
 
 End Class

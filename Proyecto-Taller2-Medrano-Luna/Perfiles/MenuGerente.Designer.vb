@@ -31,14 +31,13 @@ Partial Class MenuGerente
         Me.pnlGerente = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnBkp = New System.Windows.Forms.Button()
-        Me.btnReport = New System.Windows.Forms.Button()
         Me.btnVentas = New System.Windows.Forms.Button()
         Me.btnProduc = New System.Windows.Forms.Button()
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lblhora = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.pnlGerente.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
@@ -95,7 +94,6 @@ Partial Class MenuGerente
         Me.pnlGerente.BackColor = System.Drawing.Color.LightCyan
         Me.pnlGerente.Controls.Add(Me.btnSalir)
         Me.pnlGerente.Controls.Add(Me.btnBkp)
-        Me.pnlGerente.Controls.Add(Me.btnReport)
         Me.pnlGerente.Controls.Add(Me.btnVentas)
         Me.pnlGerente.Controls.Add(Me.btnProduc)
         Me.pnlGerente.Controls.Add(Me.btnClientes)
@@ -133,31 +131,13 @@ Partial Class MenuGerente
         Me.btnBkp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBkp.Image = CType(resources.GetObject("btnBkp.Image"), System.Drawing.Image)
         Me.btnBkp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBkp.Location = New System.Drawing.Point(5, 294)
+        Me.btnBkp.Location = New System.Drawing.Point(5, 238)
         Me.btnBkp.Name = "btnBkp"
         Me.btnBkp.Size = New System.Drawing.Size(135, 50)
         Me.btnBkp.TabIndex = 15
         Me.btnBkp.Text = "BackUP"
         Me.btnBkp.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnBkp.UseVisualStyleBackColor = False
-        '
-        'btnReport
-        '
-        Me.btnReport.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnReport.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnReport.FlatAppearance.BorderSize = 0
-        Me.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.Image = CType(resources.GetObject("btnReport.Image"), System.Drawing.Image)
-        Me.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReport.Location = New System.Drawing.Point(5, 238)
-        Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(135, 50)
-        Me.btnReport.TabIndex = 14
-        Me.btnReport.Text = "Reportes"
-        Me.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnReport.UseVisualStyleBackColor = False
         '
         'btnVentas
         '
@@ -246,6 +226,9 @@ Partial Class MenuGerente
         Me.lblFecha.TabIndex = 2
         Me.lblFecha.Text = "Fecha"
         '
+        'Timer1
+        '
+        '
         'MenuGerente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -275,7 +258,6 @@ Partial Class MenuGerente
     Friend WithEvents btnClientes As Button
     Friend WithEvents btnProduc As Button
     Friend WithEvents btnVentas As Button
-    Friend WithEvents btnReport As Button
     Friend WithEvents btnBkp As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents Timer1 As Timer

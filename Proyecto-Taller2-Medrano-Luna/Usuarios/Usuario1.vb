@@ -7,13 +7,15 @@
     Private contraseña As String
     Private email As String
     Private telefono As Integer
+    Private eliminado As Integer
+    Private elim As String
 
 #Region "Constructores"
 
     Public Sub New()
     End Sub
 
-    Public Sub New(ByVal p_perfil As Integer, ByVal p_dni As Integer, ByVal p_nombre As String, ByVal p_ape As String, ByVal p_usua As String, ByVal p_contra As String, ByVal p_email As String, ByVal p_tel As Integer)
+    Public Sub New(ByVal p_perfil As Integer, ByVal p_dni As Integer, ByVal p_nombre As String, ByVal p_ape As String, ByVal p_usua As String, ByVal p_contra As String, ByVal p_email As String, ByVal p_tel As Integer, ByVal p_eliminado As Integer, ByVal p_elim As String)
         setPerfil(p_perfil)
         setDni(p_dni)
         setNombre(p_nombre)
@@ -22,19 +24,10 @@
         setContra(p_contra)
         setEmail(p_email)
         setTel(p_tel)
+        setEliminado(p_eliminado)
+        setElim(p_elim)
     End Sub
 
-    Public Sub New(ByVal p_isbn As Integer)
-        ''setIsbn(p_isbn)
-        ''setNombre("")
-        ''setAutor(0)
-        ''setAnio(0)
-        ''setGenero(0)
-        ''setEditorial(0)
-        '' setPais(0)
-        ''   setPrecio(0)
-        ''     setStock(0)
-    End Sub
 
 #End Region
 
@@ -73,6 +66,14 @@
         Return telefono
     End Function
 
+    Public Function getEliminado()
+        Return eliminado
+    End Function
+
+    Public Function getElim()
+        Return elim
+    End Function
+
 #End Region
 
 #Region "Set"
@@ -108,6 +109,14 @@
         telefono = p_tel
     End Sub
 
+    Private Sub setEliminado(ByVal p_eliminado As Integer)
+        eliminado = p_eliminado
+    End Sub
+
+    Private Sub setElim(ByVal p_elim As String)
+        elim = p_elim
+    End Sub
+
 #End Region
 
 #End Region
@@ -116,7 +125,7 @@
 
     Public Function mostrarusuarios(ByVal grid As DataGridView)
         Try
-            Using mstr As New ProyectoTallerEntities2
+            Using mstr As New ProyectoTallerEntities5
                 Dim objetoMostrar = (From q In mstr.Usuarios
                                      Select Perfil = q.id_perfil,
                                      DNI = q.dni,
@@ -137,7 +146,7 @@
 
     Public Function Verificar(ByVal p_dni As Integer)
         Try
-            Using verif As New ProyectoTallerEntities2
+            Using verif As New ProyectoTallerEntities5
                 Dim objetoVerificar = (From q In verif.Usuarios
                                        Where q.dni = p_dni
                                        Select q).First
@@ -150,7 +159,7 @@
 
     Public Function Agregar()
         Try
-            Using Agg As New ProyectoTallerEntities2
+            Using Agg As New ProyectoTallerEntities5
                 Dim datos As New Usuarios
                 With datos
                     .id_perfil = getPerfil()
@@ -161,6 +170,8 @@
                     .contraseña = getContra()
                     .email = getEmail()
                     .telefono = getTel()
+                    .eliminado = 0
+                    .elim = "no"
                 End With
 
                 Agg.Usuarios.Add(datos)
@@ -174,7 +185,7 @@
 
     Public Function Modificar(ByVal p_id_usuario As Integer, ByVal p_perfil As Integer, ByVal p_dni As Integer, ByVal p_nombre As String, ByVal p_ape As String, ByVal p_usuario As String, ByVal p_contraseña As String, ByVal p_email As String, ByVal p_tel As Integer)
         Try
-            Using MDF As New ProyectoTallerEntities2
+            Using MDF As New ProyectoTallerEntities5
                 Dim objetoModificar = (From q In MDF.Usuarios
                                        Where q.id_usuario = p_id_usuario
                                        Select q).First
@@ -195,14 +206,30 @@
         End Try
     End Function
 
-    Public Function Borrar(ByVal p_dni As Integer)
+    Public Function Borrar(ByVal p_id As Integer)
         Try
-            Using borr As New ProyectoTallerEntities2
+            Using borr As New ProyectoTallerEntities5
                 Dim objetoBorrar = (From q In borr.Usuarios
-                                    Where q.dni = p_dni
+                                    Where q.id_usuario = p_id
                                     Select q).First()
 
-                ''borr.Usuarios.DeleteObject(objetoBorrar)
+                objetoBorrar.elim = "si"
+                borr.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function activar(ByVal p_id As Integer)
+        Try
+            Using borr As New ProyectoTallerEntities5
+                Dim objetoBorrar = (From q In borr.Usuarios
+                                    Where q.id_usuario = p_id
+                                    Select q).First()
+
+                objetoBorrar.elim = "no"
                 borr.SaveChanges()
             End Using
             Return True
@@ -213,10 +240,7 @@
 
     Public Function CargarBorrar(ByVal combo As ComboBox)
         Try
-            Using Base As New ProyectoTallerEntities2
-                ''Dim qLibros = (From q In Base.Usuarios Select New With {.idef = q.isbn, .nombrel = q.isbn & ": " & q.nombre}).ToList
-
-                ''combo.DataSource = qLibros
+            Using Base As New ProyectoTallerEntities5
                 combo.DisplayMember = "nombrel"
                 combo.ValueMember = "idef"
                 combo.SelectedValue = -1
@@ -229,7 +253,7 @@
 
     Public Function ObtenerDatos(ByVal p_dni As Integer)
         Try
-            Using dts As New ProyectoTallerEntities2
+            Using dts As New ProyectoTallerEntities5
                 Dim datos As Usuarios = (From q In dts.Usuarios Where (p_dni = q.dni) Select q).First()
 
                 setPerfil(datos.id_perfil)
@@ -250,7 +274,7 @@
 
     Public Function MostrarPerfiles(ByVal p_id As Integer, ByVal grid As DataGridView)
         Try
-            Using Mostrar As New ProyectoTallerEntities2
+            Using Mostrar As New ProyectoTallerEntities5
                 Dim objMostrar = (From q In Mostrar.Usuarios Where p_id = q.Perfiles.id_perfil
                                   Select DNI = q.dni, Nombre = q.nombre, Apellido = q.apellido, Usuario = q.usuario,
                                   Contraseña = q.contraseña, Email = q.email, Telefono = q.telefono).ToList

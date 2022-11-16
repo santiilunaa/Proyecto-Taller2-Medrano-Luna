@@ -23,6 +23,25 @@ Partial Class FormProductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PProductos = New System.Windows.Forms.Panel()
+        Me.pnlModPRo = New System.Windows.Forms.Panel()
+        Me.lblId = New System.Windows.Forms.Label()
+        Me.CBCateg3 = New System.Windows.Forms.ComboBox()
+        Me.btnLimp2 = New System.Windows.Forms.Button()
+        Me.txtStockMin2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtStock2 = New System.Windows.Forms.TextBox()
+        Me.txtNom2 = New System.Windows.Forms.TextBox()
+        Me.txtPVent2 = New System.Windows.Forms.TextBox()
+        Me.txtPCos2 = New System.Windows.Forms.TextBox()
+        Me.btnGuarMod = New System.Windows.Forms.Button()
+        Me.btnCance2 = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lvlidsel = New System.Windows.Forms.Label()
         Me.pnlAgregar = New System.Windows.Forms.Panel()
         Me.CBCateg2 = New System.Windows.Forms.ComboBox()
         Me.BBorrar = New System.Windows.Forms.Button()
@@ -40,58 +59,244 @@ Partial Class FormProductos
         Me.btnGuardarP = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.LBuscar = New System.Windows.Forms.Label()
-        Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.LProductos = New System.Windows.Forms.Label()
-        Me.pnlModPRo = New System.Windows.Forms.Panel()
-        Me.CBCateg3 = New System.Windows.Forms.ComboBox()
-        Me.btnLimp2 = New System.Windows.Forms.Button()
-        Me.txtStockMin2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtStock2 = New System.Windows.Forms.TextBox()
-        Me.txtNom2 = New System.Windows.Forms.TextBox()
-        Me.txtPVent2 = New System.Windows.Forms.TextBox()
-        Me.txtPCos2 = New System.Windows.Forms.TextBox()
-        Me.btnGuarMod = New System.Windows.Forms.Button()
-        Me.btnCance2 = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblId = New System.Windows.Forms.Label()
+        Me.rbElimin = New System.Windows.Forms.RadioButton()
+        Me.rbActivos = New System.Windows.Forms.RadioButton()
+        Me.btnActivar = New System.Windows.Forms.Button()
         Me.PProductos.SuspendLayout()
+        Me.pnlModPRo.SuspendLayout()
         Me.pnlAgregar.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlModPRo.SuspendLayout()
         Me.SuspendLayout()
         '
         'PProductos
         '
         Me.PProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PProductos.Controls.Add(Me.pnlModPRo)
+        Me.PProductos.Controls.Add(Me.lvlidsel)
         Me.PProductos.Controls.Add(Me.pnlAgregar)
-        Me.PProductos.Controls.Add(Me.Label2)
         Me.PProductos.Controls.Add(Me.LBuscar)
-        Me.PProductos.Controls.Add(Me.CBCateg)
         Me.PProductos.Controls.Add(Me.txtBuscar)
         Me.PProductos.Controls.Add(Me.dgvProductos)
         Me.PProductos.Controls.Add(Me.btnEliminar)
         Me.PProductos.Controls.Add(Me.btnModificar)
         Me.PProductos.Controls.Add(Me.btnAgregar)
         Me.PProductos.Controls.Add(Me.LProductos)
+        Me.PProductos.Controls.Add(Me.rbElimin)
+        Me.PProductos.Controls.Add(Me.rbActivos)
+        Me.PProductos.Controls.Add(Me.btnActivar)
         Me.PProductos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PProductos.Location = New System.Drawing.Point(0, 0)
         Me.PProductos.Name = "PProductos"
         Me.PProductos.Size = New System.Drawing.Size(800, 460)
         Me.PProductos.TabIndex = 0
+        '
+        'pnlModPRo
+        '
+        Me.pnlModPRo.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pnlModPRo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlModPRo.Controls.Add(Me.lblId)
+        Me.pnlModPRo.Controls.Add(Me.CBCateg3)
+        Me.pnlModPRo.Controls.Add(Me.btnLimp2)
+        Me.pnlModPRo.Controls.Add(Me.txtStockMin2)
+        Me.pnlModPRo.Controls.Add(Me.Label3)
+        Me.pnlModPRo.Controls.Add(Me.Label4)
+        Me.pnlModPRo.Controls.Add(Me.Label5)
+        Me.pnlModPRo.Controls.Add(Me.Label6)
+        Me.pnlModPRo.Controls.Add(Me.Label7)
+        Me.pnlModPRo.Controls.Add(Me.Label8)
+        Me.pnlModPRo.Controls.Add(Me.txtStock2)
+        Me.pnlModPRo.Controls.Add(Me.txtNom2)
+        Me.pnlModPRo.Controls.Add(Me.txtPVent2)
+        Me.pnlModPRo.Controls.Add(Me.txtPCos2)
+        Me.pnlModPRo.Controls.Add(Me.btnGuarMod)
+        Me.pnlModPRo.Controls.Add(Me.btnCance2)
+        Me.pnlModPRo.Controls.Add(Me.Label9)
+        Me.pnlModPRo.Location = New System.Drawing.Point(373, 19)
+        Me.pnlModPRo.Name = "pnlModPRo"
+        Me.pnlModPRo.Size = New System.Drawing.Size(299, 393)
+        Me.pnlModPRo.TabIndex = 24
+        Me.pnlModPRo.Visible = False
+        '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblId.Location = New System.Drawing.Point(46, 61)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(17, 13)
+        Me.lblId.TabIndex = 21
+        Me.lblId.Text = "id"
+        Me.lblId.Visible = False
+        '
+        'CBCateg3
+        '
+        Me.CBCateg3.FormattingEnabled = True
+        Me.CBCateg3.Location = New System.Drawing.Point(137, 132)
+        Me.CBCateg3.Name = "CBCateg3"
+        Me.CBCateg3.Size = New System.Drawing.Size(101, 21)
+        Me.CBCateg3.TabIndex = 20
+        '
+        'btnLimp2
+        '
+        Me.btnLimp2.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnLimp2.FlatAppearance.BorderSize = 0
+        Me.btnLimp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimp2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimp2.Location = New System.Drawing.Point(112, 347)
+        Me.btnLimp2.Name = "btnLimp2"
+        Me.btnLimp2.Size = New System.Drawing.Size(75, 23)
+        Me.btnLimp2.TabIndex = 17
+        Me.btnLimp2.Text = "Borrar"
+        Me.btnLimp2.UseVisualStyleBackColor = False
+        '
+        'txtStockMin2
+        '
+        Me.txtStockMin2.Location = New System.Drawing.Point(137, 276)
+        Me.txtStockMin2.Name = "txtStockMin2"
+        Me.txtStockMin2.Size = New System.Drawing.Size(100, 20)
+        Me.txtStockMin2.TabIndex = 16
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(46, 279)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(64, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Stock Min"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(46, 242)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Stock"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(46, 171)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(79, 13)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Precio Costo"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(46, 206)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Precio Venta"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(46, 135)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(63, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Categoría"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(46, 99)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(50, 13)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Nombre"
+        '
+        'txtStock2
+        '
+        Me.txtStock2.Location = New System.Drawing.Point(137, 239)
+        Me.txtStock2.Name = "txtStock2"
+        Me.txtStock2.Size = New System.Drawing.Size(100, 20)
+        Me.txtStock2.TabIndex = 9
+        '
+        'txtNom2
+        '
+        Me.txtNom2.Location = New System.Drawing.Point(137, 96)
+        Me.txtNom2.Name = "txtNom2"
+        Me.txtNom2.Size = New System.Drawing.Size(100, 20)
+        Me.txtNom2.TabIndex = 7
+        '
+        'txtPVent2
+        '
+        Me.txtPVent2.Location = New System.Drawing.Point(137, 203)
+        Me.txtPVent2.Name = "txtPVent2"
+        Me.txtPVent2.Size = New System.Drawing.Size(100, 20)
+        Me.txtPVent2.TabIndex = 6
+        '
+        'txtPCos2
+        '
+        Me.txtPCos2.Location = New System.Drawing.Point(137, 168)
+        Me.txtPCos2.Name = "txtPCos2"
+        Me.txtPCos2.Size = New System.Drawing.Size(100, 20)
+        Me.txtPCos2.TabIndex = 4
+        '
+        'btnGuarMod
+        '
+        Me.btnGuarMod.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnGuarMod.FlatAppearance.BorderSize = 0
+        Me.btnGuarMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuarMod.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuarMod.Location = New System.Drawing.Point(21, 347)
+        Me.btnGuarMod.Name = "btnGuarMod"
+        Me.btnGuarMod.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuarMod.TabIndex = 1
+        Me.btnGuarMod.Text = "Guardar"
+        Me.btnGuarMod.UseVisualStyleBackColor = False
+        '
+        'btnCance2
+        '
+        Me.btnCance2.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnCance2.FlatAppearance.BorderSize = 0
+        Me.btnCance2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCance2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCance2.Location = New System.Drawing.Point(203, 347)
+        Me.btnCance2.Name = "btnCance2"
+        Me.btnCance2.Size = New System.Drawing.Size(75, 23)
+        Me.btnCance2.TabIndex = 2
+        Me.btnCance2.Text = "Cancelar"
+        Me.btnCance2.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(66, 23)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(167, 24)
+        Me.Label9.TabIndex = 3
+        Me.Label9.Text = "Modificar Producto"
+        '
+        'lvlidsel
+        '
+        Me.lvlidsel.AutoSize = True
+        Me.lvlidsel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvlidsel.Location = New System.Drawing.Point(763, 9)
+        Me.lvlidsel.Name = "lvlidsel"
+        Me.lvlidsel.Size = New System.Drawing.Size(25, 24)
+        Me.lvlidsel.TabIndex = 28
+        Me.lvlidsel.Text = "id"
+        Me.lvlidsel.Visible = False
         '
         'pnlAgregar
         '
@@ -113,7 +318,7 @@ Partial Class FormProductos
         Me.pnlAgregar.Controls.Add(Me.btnGuardarP)
         Me.pnlAgregar.Controls.Add(Me.btnCancelar)
         Me.pnlAgregar.Controls.Add(Me.Label1)
-        Me.pnlAgregar.Location = New System.Drawing.Point(12, 33)
+        Me.pnlAgregar.Location = New System.Drawing.Point(27, 19)
         Me.pnlAgregar.Name = "pnlAgregar"
         Me.pnlAgregar.Size = New System.Drawing.Size(299, 393)
         Me.pnlAgregar.TabIndex = 6
@@ -271,38 +476,20 @@ Partial Class FormProductos
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Agregar Producto"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.75!)
-        Me.Label2.Location = New System.Drawing.Point(381, 89)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 15)
-        Me.Label2.TabIndex = 23
-        Me.Label2.Text = "Seleccionar Categoria:"
-        '
         'LBuscar
         '
         Me.LBuscar.AutoSize = True
         Me.LBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.75!)
-        Me.LBuscar.Location = New System.Drawing.Point(34, 89)
+        Me.LBuscar.Location = New System.Drawing.Point(217, 90)
         Me.LBuscar.Name = "LBuscar"
-        Me.LBuscar.Size = New System.Drawing.Size(118, 15)
+        Me.LBuscar.Size = New System.Drawing.Size(48, 15)
         Me.LBuscar.TabIndex = 22
-        Me.LBuscar.Text = "Buscar Por Nombre:"
-        '
-        'CBCateg
-        '
-        Me.CBCateg.FormattingEnabled = True
-        Me.CBCateg.Location = New System.Drawing.Point(518, 87)
-        Me.CBCateg.Name = "CBCateg"
-        Me.CBCateg.Size = New System.Drawing.Size(142, 21)
-        Me.CBCateg.TabIndex = 21
+        Me.LBuscar.Text = "Buscar:"
         '
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(158, 86)
+        Me.txtBuscar.Location = New System.Drawing.Point(270, 87)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(174, 22)
         Me.txtBuscar.TabIndex = 7
@@ -318,11 +505,11 @@ Partial Class FormProductos
         '
         'btnEliminar
         '
-        Me.btnEliminar.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnEliminar.BackColor = System.Drawing.Color.IndianRed
         Me.btnEliminar.FlatAppearance.BorderSize = 0
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.Location = New System.Drawing.Point(626, 332)
+        Me.btnEliminar.Location = New System.Drawing.Point(626, 409)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(162, 34)
         Me.btnEliminar.TabIndex = 4
@@ -335,7 +522,7 @@ Partial Class FormProductos
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.Location = New System.Drawing.Point(626, 266)
+        Me.btnModificar.Location = New System.Drawing.Point(626, 215)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(162, 34)
         Me.btnModificar.TabIndex = 3
@@ -348,7 +535,7 @@ Partial Class FormProductos
         Me.btnAgregar.FlatAppearance.BorderSize = 0
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(626, 201)
+        Me.btnAgregar.Location = New System.Drawing.Point(626, 175)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(162, 34)
         Me.btnAgregar.TabIndex = 2
@@ -365,194 +552,42 @@ Partial Class FormProductos
         Me.LProductos.TabIndex = 0
         Me.LProductos.Text = "Productos"
         '
-        'pnlModPRo
+        'rbElimin
         '
-        Me.pnlModPRo.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.pnlModPRo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlModPRo.Controls.Add(Me.lblId)
-        Me.pnlModPRo.Controls.Add(Me.CBCateg3)
-        Me.pnlModPRo.Controls.Add(Me.btnLimp2)
-        Me.pnlModPRo.Controls.Add(Me.txtStockMin2)
-        Me.pnlModPRo.Controls.Add(Me.Label3)
-        Me.pnlModPRo.Controls.Add(Me.Label4)
-        Me.pnlModPRo.Controls.Add(Me.Label5)
-        Me.pnlModPRo.Controls.Add(Me.Label6)
-        Me.pnlModPRo.Controls.Add(Me.Label7)
-        Me.pnlModPRo.Controls.Add(Me.Label8)
-        Me.pnlModPRo.Controls.Add(Me.txtStock2)
-        Me.pnlModPRo.Controls.Add(Me.txtNom2)
-        Me.pnlModPRo.Controls.Add(Me.txtPVent2)
-        Me.pnlModPRo.Controls.Add(Me.txtPCos2)
-        Me.pnlModPRo.Controls.Add(Me.btnGuarMod)
-        Me.pnlModPRo.Controls.Add(Me.btnCance2)
-        Me.pnlModPRo.Controls.Add(Me.Label9)
-        Me.pnlModPRo.Location = New System.Drawing.Point(406, 33)
-        Me.pnlModPRo.Name = "pnlModPRo"
-        Me.pnlModPRo.Size = New System.Drawing.Size(299, 393)
-        Me.pnlModPRo.TabIndex = 24
-        Me.pnlModPRo.Visible = False
+        Me.rbElimin.AutoSize = True
+        Me.rbElimin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbElimin.Location = New System.Drawing.Point(605, 137)
+        Me.rbElimin.Name = "rbElimin"
+        Me.rbElimin.Size = New System.Drawing.Size(85, 17)
+        Me.rbElimin.TabIndex = 27
+        Me.rbElimin.Text = "Eliminados"
+        Me.rbElimin.UseVisualStyleBackColor = True
         '
-        'CBCateg3
+        'rbActivos
         '
-        Me.CBCateg3.FormattingEnabled = True
-        Me.CBCateg3.Location = New System.Drawing.Point(137, 132)
-        Me.CBCateg3.Name = "CBCateg3"
-        Me.CBCateg3.Size = New System.Drawing.Size(101, 21)
-        Me.CBCateg3.TabIndex = 20
+        Me.rbActivos.AutoSize = True
+        Me.rbActivos.Checked = True
+        Me.rbActivos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbActivos.Location = New System.Drawing.Point(605, 114)
+        Me.rbActivos.Name = "rbActivos"
+        Me.rbActivos.Size = New System.Drawing.Size(67, 17)
+        Me.rbActivos.TabIndex = 26
+        Me.rbActivos.TabStop = True
+        Me.rbActivos.Text = "Activos"
+        Me.rbActivos.UseVisualStyleBackColor = True
         '
-        'btnLimp2
+        'btnActivar
         '
-        Me.btnLimp2.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnLimp2.FlatAppearance.BorderSize = 0
-        Me.btnLimp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimp2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLimp2.Location = New System.Drawing.Point(112, 347)
-        Me.btnLimp2.Name = "btnLimp2"
-        Me.btnLimp2.Size = New System.Drawing.Size(75, 23)
-        Me.btnLimp2.TabIndex = 17
-        Me.btnLimp2.Text = "Borrar"
-        Me.btnLimp2.UseVisualStyleBackColor = False
-        '
-        'txtStockMin2
-        '
-        Me.txtStockMin2.Location = New System.Drawing.Point(137, 276)
-        Me.txtStockMin2.Name = "txtStockMin2"
-        Me.txtStockMin2.Size = New System.Drawing.Size(100, 20)
-        Me.txtStockMin2.TabIndex = 16
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(46, 279)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 13)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Stock Min"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(46, 242)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "Stock"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(46, 171)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 13)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Precio Costo"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(46, 206)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 13)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Precio Venta"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(46, 135)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(63, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Categoría"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(46, 99)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(50, 13)
-        Me.Label8.TabIndex = 10
-        Me.Label8.Text = "Nombre"
-        '
-        'txtStock2
-        '
-        Me.txtStock2.Location = New System.Drawing.Point(137, 239)
-        Me.txtStock2.Name = "txtStock2"
-        Me.txtStock2.Size = New System.Drawing.Size(100, 20)
-        Me.txtStock2.TabIndex = 9
-        '
-        'txtNom2
-        '
-        Me.txtNom2.Location = New System.Drawing.Point(137, 96)
-        Me.txtNom2.Name = "txtNom2"
-        Me.txtNom2.Size = New System.Drawing.Size(100, 20)
-        Me.txtNom2.TabIndex = 7
-        '
-        'txtPVent2
-        '
-        Me.txtPVent2.Location = New System.Drawing.Point(137, 203)
-        Me.txtPVent2.Name = "txtPVent2"
-        Me.txtPVent2.Size = New System.Drawing.Size(100, 20)
-        Me.txtPVent2.TabIndex = 6
-        '
-        'txtPCos2
-        '
-        Me.txtPCos2.Location = New System.Drawing.Point(137, 168)
-        Me.txtPCos2.Name = "txtPCos2"
-        Me.txtPCos2.Size = New System.Drawing.Size(100, 20)
-        Me.txtPCos2.TabIndex = 4
-        '
-        'btnGuarMod
-        '
-        Me.btnGuarMod.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnGuarMod.FlatAppearance.BorderSize = 0
-        Me.btnGuarMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuarMod.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuarMod.Location = New System.Drawing.Point(21, 347)
-        Me.btnGuarMod.Name = "btnGuarMod"
-        Me.btnGuarMod.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuarMod.TabIndex = 1
-        Me.btnGuarMod.Text = "Guardar"
-        Me.btnGuarMod.UseVisualStyleBackColor = False
-        '
-        'btnCance2
-        '
-        Me.btnCance2.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnCance2.FlatAppearance.BorderSize = 0
-        Me.btnCance2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCance2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCance2.Location = New System.Drawing.Point(203, 347)
-        Me.btnCance2.Name = "btnCance2"
-        Me.btnCance2.Size = New System.Drawing.Size(75, 23)
-        Me.btnCance2.TabIndex = 2
-        Me.btnCance2.Text = "Cancelar"
-        Me.btnCance2.UseVisualStyleBackColor = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(66, 23)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(167, 24)
-        Me.Label9.TabIndex = 3
-        Me.Label9.Text = "Modificar Producto"
-        '
-        'lblId
-        '
-        Me.lblId.AutoSize = True
-        Me.lblId.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblId.Location = New System.Drawing.Point(46, 61)
-        Me.lblId.Name = "lblId"
-        Me.lblId.Size = New System.Drawing.Size(50, 13)
-        Me.lblId.TabIndex = 21
-        Me.lblId.Text = "Nombre"
+        Me.btnActivar.BackColor = System.Drawing.Color.SeaGreen
+        Me.btnActivar.FlatAppearance.BorderSize = 0
+        Me.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActivar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActivar.Location = New System.Drawing.Point(626, 359)
+        Me.btnActivar.Name = "btnActivar"
+        Me.btnActivar.Size = New System.Drawing.Size(162, 34)
+        Me.btnActivar.TabIndex = 29
+        Me.btnActivar.Text = "Activar"
+        Me.btnActivar.UseVisualStyleBackColor = False
         '
         'FormProductos
         '
@@ -565,11 +600,11 @@ Partial Class FormProductos
         Me.Text = "Productos"
         Me.PProductos.ResumeLayout(False)
         Me.PProductos.PerformLayout()
+        Me.pnlModPRo.ResumeLayout(False)
+        Me.pnlModPRo.PerformLayout()
         Me.pnlAgregar.ResumeLayout(False)
         Me.pnlAgregar.PerformLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlModPRo.ResumeLayout(False)
-        Me.pnlModPRo.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -597,9 +632,7 @@ Partial Class FormProductos
     Friend WithEvents LStockMin As Label
     Friend WithEvents BBorrar As Button
     Friend WithEvents CBCateg2 As ComboBox
-    Friend WithEvents CBCateg As ComboBox
     Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents LBuscar As Label
     Friend WithEvents pnlModPRo As Panel
     Friend WithEvents CBCateg3 As ComboBox
@@ -619,4 +652,8 @@ Partial Class FormProductos
     Friend WithEvents btnCance2 As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents lblId As Label
+    Friend WithEvents rbElimin As RadioButton
+    Friend WithEvents rbActivos As RadioButton
+    Friend WithEvents lvlidsel As Label
+    Friend WithEvents btnActivar As Button
 End Class

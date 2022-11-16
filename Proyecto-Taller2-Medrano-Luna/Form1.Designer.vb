@@ -31,16 +31,15 @@ Partial Class Form1
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.btnProduc = New System.Windows.Forms.Button()
         Me.btnVentas = New System.Windows.Forms.Button()
-        Me.btnReport = New System.Windows.Forms.Button()
         Me.btnBkp = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.pnlAdmin = New System.Windows.Forms.Panel()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblhora = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.pnlAdmin.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
@@ -147,24 +146,6 @@ Partial Class Form1
         Me.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVentas.UseVisualStyleBackColor = False
         '
-        'btnReport
-        '
-        Me.btnReport.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnReport.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnReport.FlatAppearance.BorderSize = 0
-        Me.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.Image = CType(resources.GetObject("btnReport.Image"), System.Drawing.Image)
-        Me.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReport.Location = New System.Drawing.Point(5, 294)
-        Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(135, 50)
-        Me.btnReport.TabIndex = 8
-        Me.btnReport.Text = "Reportes"
-        Me.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnReport.UseVisualStyleBackColor = False
-        '
         'btnBkp
         '
         Me.btnBkp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -175,7 +156,7 @@ Partial Class Form1
         Me.btnBkp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBkp.Image = CType(resources.GetObject("btnBkp.Image"), System.Drawing.Image)
         Me.btnBkp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBkp.Location = New System.Drawing.Point(5, 350)
+        Me.btnBkp.Location = New System.Drawing.Point(5, 294)
         Me.btnBkp.Name = "btnBkp"
         Me.btnBkp.Size = New System.Drawing.Size(135, 50)
         Me.btnBkp.TabIndex = 9
@@ -209,7 +190,6 @@ Partial Class Form1
         Me.pnlAdmin.Controls.Add(Me.btnClientes)
         Me.pnlAdmin.Controls.Add(Me.btnProduc)
         Me.pnlAdmin.Controls.Add(Me.btnVentas)
-        Me.pnlAdmin.Controls.Add(Me.btnReport)
         Me.pnlAdmin.Controls.Add(Me.btnBkp)
         Me.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlAdmin.Location = New System.Drawing.Point(0, 0)
@@ -247,6 +227,14 @@ Partial Class Form1
         Me.pnlContenedor.Size = New System.Drawing.Size(800, 460)
         Me.pnlContenedor.TabIndex = 13
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(117, 61)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(576, 279)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
         'lblhora
         '
         Me.lblhora.AutoSize = True
@@ -271,14 +259,6 @@ Partial Class Form1
         '
         'Timer1
         '
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(117, 61)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(576, 279)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
@@ -308,7 +288,6 @@ Partial Class Form1
     Friend WithEvents btnClientes As Button
     Friend WithEvents btnProduc As Button
     Friend WithEvents btnVentas As Button
-    Friend WithEvents btnReport As Button
     Friend WithEvents btnBkp As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents pnlAdmin As Panel

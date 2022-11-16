@@ -23,6 +23,15 @@
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="domicilio" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="eliminado" Type="bit" />
+          <Property Name="elim" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NroFactura">
+          <Key>
+            <PropertyRef Name="id_numero" />
+          </Key>
+          <Property Name="id_numero" Type="int" Nullable="false" />
+          <Property Name="ultimo" Type="int" />
         </EntityType>
         <EntityType Name="Perfiles">
           <Key>
@@ -37,11 +46,13 @@
           </Key>
           <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="precio_costo" Type="int" Nullable="false" />
           <Property Name="precio_venta" Type="int" Nullable="false" />
           <Property Name="stock" Type="int" Nullable="false" />
           <Property Name="stock_min" Type="int" Nullable="false" />
+          <Property Name="eliminado" Type="bit" Nullable="false" />
+          <Property Name="elim" Type="varchar" MaxLength="2" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -58,34 +69,36 @@
             <PropertyRef Name="id_usuario" />
           </Key>
           <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_perfil" Type="int" Nullable="false" />
-          <Property Name="dni" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="id_perfil" Type="int" />
+          <Property Name="dni" Type="int" />
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Ventas _detalle">
-          <Key>
-            <PropertyRef Name="id_detalle" />
-          </Key>
-          <Property Name="id_detalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_venta" Type="int" Nullable="false" />
-          <Property Name="id_producto" Type="int" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-          <Property Name="sub_total" Type="int" Nullable="false" />
+          <Property Name="telefono" Type="int" Nullable="false" />
+          <Property Name="eliminado" Type="bit" Nullable="false" />
+          <Property Name="elim" Type="varchar" MaxLength="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Ventas_cabecera">
           <Key>
             <PropertyRef Name="id_venta" />
           </Key>
-          <Property Name="id_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_venta" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="id_numero" Type="int" Nullable="false" />
           <Property Name="fecha_venta" Type="date" Nullable="false" />
-          <Property Name="total_venta" Type="int" Nullable="false" />
+          <Property Name="total_venta" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Ventas_detalle">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="int" Nullable="false" />
+          <Property Name="id_venta" Type="int" />
+          <Property Name="id_producto" Type="int" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="sub_total" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <Association Name="FK_Productos_Categorias">
           <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
@@ -100,7 +113,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuarios_Perfiles">
-          <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="0..1" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Perfiles">
@@ -111,39 +124,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ventas _detalle_Productos">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
-          <End Role="Ventas _detalle" Type="Self.Ventas _detalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="id_producto" />
-            </Principal>
-            <Dependent Role="Ventas _detalle">
-              <PropertyRef Name="id_producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Ventas _detalle_Ventas_cabecera">
-          <End Role="Ventas_cabecera" Type="Self.Ventas_cabecera" Multiplicity="1" />
-          <End Role="Ventas _detalle" Type="Self.Ventas _detalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ventas_cabecera">
-              <PropertyRef Name="id_venta" />
-            </Principal>
-            <Dependent Role="Ventas _detalle">
-              <PropertyRef Name="id_venta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Ventas_cabecera_Clientes">
-          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+        <Association Name="FK_Ventas_cabecera_NroFactura">
+          <End Role="NroFactura" Type="Self.NroFactura" Multiplicity="1" />
           <End Role="Ventas_cabecera" Type="Self.Ventas_cabecera" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Clientes">
-              <PropertyRef Name="id_cliente" />
+            <Principal Role="NroFactura">
+              <PropertyRef Name="id_numero" />
             </Principal>
             <Dependent Role="Ventas_cabecera">
-              <PropertyRef Name="id_cliente" />
+              <PropertyRef Name="id_numero" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -159,6 +148,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VentasDetalle_Productos">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+          <End Role="Ventas_detalle" Type="Self.Ventas_detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="Ventas_detalle">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasDetalle_VentasCabecera">
+          <End Role="Ventas_cabecera" Type="Self.Ventas_cabecera" Multiplicity="0..1" />
+          <End Role="Ventas_detalle" Type="Self.Ventas_detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ventas_cabecera">
+              <PropertyRef Name="id_venta" />
+            </Principal>
+            <Dependent Role="Ventas_detalle">
+              <PropertyRef Name="id_venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="INSERTAR_CLIENTES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="dni" Type="varchar" Mode="In" />
@@ -168,8 +181,13 @@
           <Parameter Name="domicilio" Type="varchar" Mode="In" />
           <Parameter Name="telefono" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="INSERTAR_PERFIL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="INSERTAR_PRODUCTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_categoria" Type="int" Mode="In" />
           <Parameter Name="descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="precio_costo" Type="int" Mode="In" />
+          <Parameter Name="precio_venta" Type="int" Mode="In" />
+          <Parameter Name="stock" Type="int" Mode="In" />
+          <Parameter Name="stock_min" Type="int" Mode="In" />
         </Function>
         <Function Name="INSERTAR_USUARIOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_perfil" Type="int" Mode="In" />
@@ -182,7 +200,12 @@
           <Parameter Name="telefono" Type="varchar" Mode="In" />
         </Function>
         <Function Name="MOSTRAR_CLIENTES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MOSTRAR_PRODUCTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="MOSTRAR_USUARIOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="RESGUARDAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ubicacion" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -216,12 +239,13 @@
         <EntityContainer Name="ProyectoTallerModel1StoreContainer">
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NroFactura" EntityType="Self.NroFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Perfiles" EntityType="Self.Perfiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ventas _detalle" EntityType="Self.Ventas _detalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ventas_cabecera" EntityType="Self.Ventas_cabecera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ventas_detalle" EntityType="Self.Ventas_detalle" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Productos_Categorias" Association="Self.FK_Productos_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Productos" EntitySet="Productos" />
@@ -230,21 +254,21 @@
             <End Role="Perfiles" EntitySet="Perfiles" />
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ventas _detalle_Productos" Association="Self.FK_Ventas _detalle_Productos">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="Ventas _detalle" EntitySet="Ventas _detalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ventas _detalle_Ventas_cabecera" Association="Self.FK_Ventas _detalle_Ventas_cabecera">
-            <End Role="Ventas_cabecera" EntitySet="Ventas_cabecera" />
-            <End Role="Ventas _detalle" EntitySet="Ventas _detalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ventas_cabecera_Clientes" Association="Self.FK_Ventas_cabecera_Clientes">
-            <End Role="Clientes" EntitySet="Clientes" />
+          <AssociationSet Name="FK_Ventas_cabecera_NroFactura" Association="Self.FK_Ventas_cabecera_NroFactura">
+            <End Role="NroFactura" EntitySet="NroFactura" />
             <End Role="Ventas_cabecera" EntitySet="Ventas_cabecera" />
           </AssociationSet>
           <AssociationSet Name="FK_Ventas_cabecera_Usuarios" Association="Self.FK_Ventas_cabecera_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Ventas_cabecera" EntitySet="Ventas_cabecera" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasDetalle_Productos" Association="Self.FK_VentasDetalle_Productos">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Ventas_detalle" EntitySet="Ventas_detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasDetalle_VentasCabecera" Association="Self.FK_VentasDetalle_VentasCabecera">
+            <End Role="Ventas_cabecera" EntitySet="Ventas_cabecera" />
+            <End Role="Ventas_detalle" EntitySet="Ventas_detalle" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -271,7 +295,16 @@
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Ventas_cabecera" Relationship="Self.FK_Ventas_cabecera_Clientes" FromRole="Clientes" ToRole="Ventas_cabecera" />
+          <Property Name="eliminado" Type="Boolean" />
+          <Property Name="elim" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NroFactura">
+          <Key>
+            <PropertyRef Name="id_numero" />
+          </Key>
+          <Property Name="id_numero" Type="Int32" Nullable="false" />
+          <Property Name="ultimo" Type="Int32" />
+          <NavigationProperty Name="Ventas_cabecera" Relationship="Self.FK_Ventas_cabecera_NroFactura" FromRole="NroFactura" ToRole="Ventas_cabecera" />
         </EntityType>
         <EntityType Name="Perfiles">
           <Key>
@@ -287,13 +320,15 @@
           </Key>
           <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_categoria" Type="Int32" Nullable="false" />
-          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="precio_costo" Type="Int32" Nullable="false" />
           <Property Name="precio_venta" Type="Int32" Nullable="false" />
           <Property Name="stock" Type="Int32" Nullable="false" />
           <Property Name="stock_min" Type="Int32" Nullable="false" />
+          <Property Name="eliminado" Type="Boolean" Nullable="false" />
+          <Property Name="elim" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Categorias" Relationship="Self.FK_Productos_Categorias" FromRole="Productos" ToRole="Categorias" />
-          <NavigationProperty Name="Ventas__detalle" Relationship="Self.FK_Ventas__detalle_Productos" FromRole="Productos" ToRole="Ventas__detalle" />
+          <NavigationProperty Name="Ventas_detalle" Relationship="Self.FK_VentasDetalle_Productos" FromRole="Productos" ToRole="Ventas_detalle" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -310,41 +345,43 @@
             <PropertyRef Name="id_usuario" />
           </Key>
           <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_perfil" Type="Int32" Nullable="false" />
-          <Property Name="dni" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_perfil" Type="Int32" />
+          <Property Name="dni" Type="Int32" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="Int32" Nullable="false" />
+          <Property Name="eliminado" Type="Boolean" Nullable="false" />
+          <Property Name="elim" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Perfiles" Relationship="Self.FK_Usuarios_Perfiles" FromRole="Usuarios" ToRole="Perfiles" />
           <NavigationProperty Name="Ventas_cabecera" Relationship="Self.FK_Ventas_cabecera_Usuarios" FromRole="Usuarios" ToRole="Ventas_cabecera" />
-        </EntityType>
-        <EntityType Name="Ventas__detalle">
-          <Key>
-            <PropertyRef Name="id_detalle" />
-          </Key>
-          <Property Name="id_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_venta" Type="Int32" Nullable="false" />
-          <Property Name="id_producto" Type="Int32" Nullable="false" />
-          <Property Name="cantidad" Type="Int32" Nullable="false" />
-          <Property Name="sub_total" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK_Ventas__detalle_Productos" FromRole="Ventas__detalle" ToRole="Productos" />
-          <NavigationProperty Name="Ventas_cabecera" Relationship="Self.FK_Ventas__detalle_Ventas_cabecera" FromRole="Ventas__detalle" ToRole="Ventas_cabecera" />
         </EntityType>
         <EntityType Name="Ventas_cabecera">
           <Key>
             <PropertyRef Name="id_venta" />
           </Key>
-          <Property Name="id_venta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_venta" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="id_numero" Type="Int32" Nullable="false" />
           <Property Name="fecha_venta" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="total_venta" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Clientes" Relationship="Self.FK_Ventas_cabecera_Clientes" FromRole="Ventas_cabecera" ToRole="Clientes" />
+          <Property Name="total_venta" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="NroFactura" Relationship="Self.FK_Ventas_cabecera_NroFactura" FromRole="Ventas_cabecera" ToRole="NroFactura" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK_Ventas_cabecera_Usuarios" FromRole="Ventas_cabecera" ToRole="Usuarios" />
-          <NavigationProperty Name="Ventas__detalle" Relationship="Self.FK_Ventas__detalle_Ventas_cabecera" FromRole="Ventas_cabecera" ToRole="Ventas__detalle" />
+          <NavigationProperty Name="Ventas_detalle" Relationship="Self.FK_VentasDetalle_VentasCabecera" FromRole="Ventas_cabecera" ToRole="Ventas_detalle" />
+        </EntityType>
+        <EntityType Name="Ventas_detalle">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="Int32" Nullable="false" />
+          <Property Name="id_venta" Type="Int32" />
+          <Property Name="id_producto" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="sub_total" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK_VentasDetalle_Productos" FromRole="Ventas_detalle" ToRole="Productos" />
+          <NavigationProperty Name="Ventas_cabecera" Relationship="Self.FK_VentasDetalle_VentasCabecera" FromRole="Ventas_detalle" ToRole="Ventas_cabecera" />
         </EntityType>
         <Association Name="FK_Productos_Categorias">
           <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
@@ -358,20 +395,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ventas_cabecera_Clientes">
-          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+        <Association Name="FK_Ventas_cabecera_NroFactura">
+          <End Role="NroFactura" Type="Self.NroFactura" Multiplicity="1" />
           <End Role="Ventas_cabecera" Type="Self.Ventas_cabecera" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Clientes">
-              <PropertyRef Name="id_cliente" />
+            <Principal Role="NroFactura">
+              <PropertyRef Name="id_numero" />
             </Principal>
             <Dependent Role="Ventas_cabecera">
-              <PropertyRef Name="id_cliente" />
+              <PropertyRef Name="id_numero" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuarios_Perfiles">
-          <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="0..1" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Perfiles">
@@ -382,14 +419,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ventas__detalle_Productos">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
-          <End Role="Ventas__detalle" Type="Self.Ventas__detalle" Multiplicity="*" />
+        <Association Name="FK_VentasDetalle_Productos">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+          <End Role="Ventas_detalle" Type="Self.Ventas_detalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Productos">
               <PropertyRef Name="id_producto" />
             </Principal>
-            <Dependent Role="Ventas__detalle">
+            <Dependent Role="Ventas_detalle">
               <PropertyRef Name="id_producto" />
             </Dependent>
           </ReferentialConstraint>
@@ -406,50 +443,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ventas__detalle_Ventas_cabecera">
-          <End Role="Ventas_cabecera" Type="Self.Ventas_cabecera" Multiplicity="1" />
-          <End Role="Ventas__detalle" Type="Self.Ventas__detalle" Multiplicity="*" />
+        <Association Name="FK_VentasDetalle_VentasCabecera">
+          <End Role="Ventas_cabecera" Type="Self.Ventas_cabecera" Multiplicity="0..1" />
+          <End Role="Ventas_detalle" Type="Self.Ventas_detalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ventas_cabecera">
               <PropertyRef Name="id_venta" />
             </Principal>
-            <Dependent Role="Ventas__detalle">
+            <Dependent Role="Ventas_detalle">
               <PropertyRef Name="id_venta" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoTallerEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProyectoTallerEntities5" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categorias" EntityType="Self.Categorias" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+          <EntitySet Name="NroFactura" EntityType="Self.NroFactura" />
           <EntitySet Name="Perfiles" EntityType="Self.Perfiles" />
           <EntitySet Name="Productos" EntityType="Self.Productos" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
-          <EntitySet Name="Ventas__detalle" EntityType="Self.Ventas__detalle" />
           <EntitySet Name="Ventas_cabecera" EntityType="Self.Ventas_cabecera" />
+          <EntitySet Name="Ventas_detalle" EntityType="Self.Ventas_detalle" />
           <AssociationSet Name="FK_Productos_Categorias" Association="Self.FK_Productos_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ventas_cabecera_Clientes" Association="Self.FK_Ventas_cabecera_Clientes">
-            <End Role="Clientes" EntitySet="Clientes" />
+          <AssociationSet Name="FK_Ventas_cabecera_NroFactura" Association="Self.FK_Ventas_cabecera_NroFactura">
+            <End Role="NroFactura" EntitySet="NroFactura" />
             <End Role="Ventas_cabecera" EntitySet="Ventas_cabecera" />
           </AssociationSet>
           <AssociationSet Name="FK_Usuarios_Perfiles" Association="Self.FK_Usuarios_Perfiles">
             <End Role="Perfiles" EntitySet="Perfiles" />
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ventas__detalle_Productos" Association="Self.FK_Ventas__detalle_Productos">
+          <AssociationSet Name="FK_VentasDetalle_Productos" Association="Self.FK_VentasDetalle_Productos">
             <End Role="Productos" EntitySet="Productos" />
-            <End Role="Ventas__detalle" EntitySet="Ventas__detalle" />
+            <End Role="Ventas_detalle" EntitySet="Ventas_detalle" />
           </AssociationSet>
           <AssociationSet Name="FK_Ventas_cabecera_Usuarios" Association="Self.FK_Ventas_cabecera_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Ventas_cabecera" EntitySet="Ventas_cabecera" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ventas__detalle_Ventas_cabecera" Association="Self.FK_Ventas__detalle_Ventas_cabecera">
+          <AssociationSet Name="FK_VentasDetalle_VentasCabecera" Association="Self.FK_VentasDetalle_VentasCabecera">
             <End Role="Ventas_cabecera" EntitySet="Ventas_cabecera" />
-            <End Role="Ventas__detalle" EntitySet="Ventas__detalle" />
+            <End Role="Ventas_detalle" EntitySet="Ventas_detalle" />
           </AssociationSet>
           <FunctionImport Name="INSERTAR_CLIENTES" ReturnType="Collection(Decimal)">
             <Parameter Name="dni" Mode="In" Type="String" />
@@ -459,8 +497,13 @@
             <Parameter Name="domicilio" Mode="In" Type="String" />
             <Parameter Name="telefono" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="INSERTAR_PERFIL" ReturnType="Collection(Decimal)">
+          <FunctionImport Name="INSERTAR_PRODUCTOS">
+            <Parameter Name="id_categoria" Mode="In" Type="Int32" />
             <Parameter Name="descripcion" Mode="In" Type="String" />
+            <Parameter Name="precio_costo" Mode="In" Type="Int32" />
+            <Parameter Name="precio_venta" Mode="In" Type="Int32" />
+            <Parameter Name="stock" Mode="In" Type="Int32" />
+            <Parameter Name="stock_min" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="INSERTAR_USUARIOS" ReturnType="Collection(Decimal)">
             <Parameter Name="id_perfil" Mode="In" Type="Int32" />
@@ -473,7 +516,12 @@
             <Parameter Name="telefono" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MOSTRAR_CLIENTES" ReturnType="Collection(ProyectoTallerModel1.MOSTRAR_CLIENTES_Result)" />
+          <FunctionImport Name="MOSTRAR_PRODUCTOS" ReturnType="Collection(ProyectoTallerModel1.MOSTRAR_PRODUCTOS_Result)" />
           <FunctionImport Name="MOSTRAR_USUARIOS" ReturnType="Collection(ProyectoTallerModel1.MOSTRAR_USUARIOS_Result)" />
+          <FunctionImport Name="RESGUARDAR">
+            <Parameter Name="ubicacion" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -490,11 +538,11 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition">
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ProyectoTallerModel1.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams">
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ProyectoTallerModel1.sp_helpdiagrams_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -514,23 +562,43 @@
           <Property Type="String" Name="domicilio" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="telefono" Nullable="false" MaxLength="20" />
         </ComplexType>
+        <ComplexType Name="MOSTRAR_PRODUCTOS_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="categoria" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="valor" Nullable="false" />
+          <Property Type="Int32" Name="venta" Nullable="false" />
+          <Property Type="Int32" Name="stock" Nullable="false" />
+          <Property Type="Int32" Name="stock_minimo" Nullable="false" />
+        </ComplexType>
         <ComplexType Name="MOSTRAR_USUARIOS_Result">
-          <Property Type="Int32" Name="id_usuario" Nullable="false" />
-          <Property Type="Int32" Name="id_perfil" Nullable="false" />
-          <Property Type="String" Name="dni" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="perfil" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="DNI" Nullable="true" />
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="apellido" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="usuario" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="contraseña" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="telefono" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Telefono" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProyectoTallerModel1StoreContainer" CdmEntityContainer="ProyectoTallerEntities2">
+        <EntityContainerMapping StorageEntityContainer="ProyectoTallerModel1StoreContainer" CdmEntityContainer="ProyectoTallerEntities5">
           <EntitySetMapping Name="Categorias">
             <EntityTypeMapping TypeName="ProyectoTallerModel1.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
@@ -549,6 +617,16 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="domicilio" ColumnName="domicilio" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="eliminado" ColumnName="eliminado" />
+                <ScalarProperty Name="elim" ColumnName="elim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NroFactura">
+            <EntityTypeMapping TypeName="ProyectoTallerModel1.NroFactura">
+              <MappingFragment StoreEntitySet="NroFactura">
+                <ScalarProperty Name="id_numero" ColumnName="id_numero" />
+                <ScalarProperty Name="ultimo" ColumnName="ultimo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -570,6 +648,8 @@
                 <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
                 <ScalarProperty Name="stock" ColumnName="stock" />
                 <ScalarProperty Name="stock_min" ColumnName="stock_min" />
+                <ScalarProperty Name="eliminado" ColumnName="eliminado" />
+                <ScalarProperty Name="elim" ColumnName="elim" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -596,17 +676,8 @@
                 <ScalarProperty Name="contraseña" ColumnName="contraseña" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ventas__detalle">
-            <EntityTypeMapping TypeName="ProyectoTallerModel1.Ventas__detalle">
-              <MappingFragment StoreEntitySet="Ventas _detalle">
-                <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
-                <ScalarProperty Name="id_venta" ColumnName="id_venta" />
-                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+                <ScalarProperty Name="eliminado" ColumnName="eliminado" />
+                <ScalarProperty Name="elim" ColumnName="elim" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -615,14 +686,25 @@
               <MappingFragment StoreEntitySet="Ventas_cabecera">
                 <ScalarProperty Name="id_venta" ColumnName="id_venta" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_numero" ColumnName="id_numero" />
                 <ScalarProperty Name="fecha_venta" ColumnName="fecha_venta" />
                 <ScalarProperty Name="total_venta" ColumnName="total_venta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Ventas_detalle">
+            <EntityTypeMapping TypeName="ProyectoTallerModel1.Ventas_detalle">
+              <MappingFragment StoreEntitySet="Ventas_detalle">
+                <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+                <ScalarProperty Name="id_venta" ColumnName="id_venta" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="INSERTAR_CLIENTES" FunctionName="ProyectoTallerModel1.Store.INSERTAR_CLIENTES" />
-          <FunctionImportMapping FunctionImportName="INSERTAR_PERFIL" FunctionName="ProyectoTallerModel1.Store.INSERTAR_PERFIL" />
+          <FunctionImportMapping FunctionImportName="INSERTAR_PRODUCTOS" FunctionName="ProyectoTallerModel1.Store.INSERTAR_PRODUCTOS" />
           <FunctionImportMapping FunctionImportName="INSERTAR_USUARIOS" FunctionName="ProyectoTallerModel1.Store.INSERTAR_USUARIOS" />
           <FunctionImportMapping FunctionImportName="MOSTRAR_CLIENTES" FunctionName="ProyectoTallerModel1.Store.MOSTRAR_CLIENTES">
             <ResultMapping>
@@ -637,26 +719,57 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MOSTRAR_PRODUCTOS" FunctionName="ProyectoTallerModel1.Store.MOSTRAR_PRODUCTOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoTallerModel1.MOSTRAR_PRODUCTOS_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="venta" ColumnName="venta" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="stock_minimo" ColumnName="stock minimo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="MOSTRAR_USUARIOS" FunctionName="ProyectoTallerModel1.Store.MOSTRAR_USUARIOS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ProyectoTallerModel1.MOSTRAR_USUARIOS_Result">
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="id_perfil" ColumnName="id_perfil" />
-                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="perfil" ColumnName="perfil" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="contraseña" ColumnName="contraseña" />
                 <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RESGUARDAR" FunctionName="ProyectoTallerModel1.Store.RESGUARDAR" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ProyectoTallerModel1.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ProyectoTallerModel1.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ProyectoTallerModel1.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ProyectoTallerModel1.Store.sp_helpdiagramdefinition" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ProyectoTallerModel1.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ProyectoTallerModel1.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoTallerModel1.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ProyectoTallerModel1.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoTallerModel1.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ProyectoTallerModel1.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ProyectoTallerModel1.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>

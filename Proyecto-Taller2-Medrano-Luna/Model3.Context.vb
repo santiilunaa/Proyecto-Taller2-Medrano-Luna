@@ -13,11 +13,11 @@ Imports System.Data.Entity.Infrastructure
 Imports System.Data.Entity.Core.Objects
 Imports System.Linq
 
-Partial Public Class ProyectoTallerEntities2
+Partial Public Class ProyectoTallerEntities3
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=ProyectoTallerEntities2")
+        MyBase.New("name=ProyectoTallerEntities3")
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
@@ -26,6 +26,7 @@ Partial Public Class ProyectoTallerEntities2
 
     Public Overridable Property Categorias() As DbSet(Of Categorias)
     Public Overridable Property Clientes() As DbSet(Of Clientes)
+    Public Overridable Property NroFactura() As DbSet(Of NroFactura)
     Public Overridable Property Perfiles() As DbSet(Of Perfiles)
     Public Overridable Property Productos() As DbSet(Of Productos)
     Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
@@ -49,10 +50,20 @@ Partial Public Class ProyectoTallerEntities2
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Decimal))("INSERTAR_CLIENTES", dniParameter, nombreParameter, apellidoParameter, emailParameter, domicilioParameter, telefonoParameter)
     End Function
 
-    Public Overridable Function INSERTAR_PERFIL(descripcion As String) As ObjectResult(Of Nullable(Of Decimal))
+    Public Overridable Function INSERTAR_PRODUCTOS(id_categoria As Nullable(Of Integer), descripcion As String, precio_costo As Nullable(Of Integer), precio_venta As Nullable(Of Integer), stock As Nullable(Of Integer), stock_min As Nullable(Of Integer)) As Integer
+        Dim id_categoriaParameter As ObjectParameter = If(id_categoria.HasValue, New ObjectParameter("id_categoria", id_categoria), New ObjectParameter("id_categoria", GetType(Integer)))
+
         Dim descripcionParameter As ObjectParameter = If(descripcion IsNot Nothing, New ObjectParameter("descripcion", descripcion), New ObjectParameter("descripcion", GetType(String)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Decimal))("INSERTAR_PERFIL", descripcionParameter)
+        Dim precio_costoParameter As ObjectParameter = If(precio_costo.HasValue, New ObjectParameter("precio_costo", precio_costo), New ObjectParameter("precio_costo", GetType(Integer)))
+
+        Dim precio_ventaParameter As ObjectParameter = If(precio_venta.HasValue, New ObjectParameter("precio_venta", precio_venta), New ObjectParameter("precio_venta", GetType(Integer)))
+
+        Dim stockParameter As ObjectParameter = If(stock.HasValue, New ObjectParameter("stock", stock), New ObjectParameter("stock", GetType(Integer)))
+
+        Dim stock_minParameter As ObjectParameter = If(stock_min.HasValue, New ObjectParameter("stock_min", stock_min), New ObjectParameter("stock_min", GetType(Integer)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("INSERTAR_PRODUCTOS", id_categoriaParameter, descripcionParameter, precio_costoParameter, precio_ventaParameter, stockParameter, stock_minParameter)
     End Function
 
     Public Overridable Function INSERTAR_USUARIOS(id_perfil As Nullable(Of Integer), dni As String, nombre As String, apellido As String, usuario As String, contraseña As String, email As String, telefono As String) As ObjectResult(Of Nullable(Of Decimal))
@@ -79,8 +90,20 @@ Partial Public Class ProyectoTallerEntities2
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of MOSTRAR_CLIENTES_Result)("MOSTRAR_CLIENTES")
     End Function
 
+    Public Overridable Function MOSTRAR_PRODUCTOS() As ObjectResult(Of MOSTRAR_PRODUCTOS_Result)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of MOSTRAR_PRODUCTOS_Result)("MOSTRAR_PRODUCTOS")
+    End Function
+
     Public Overridable Function MOSTRAR_USUARIOS() As ObjectResult(Of MOSTRAR_USUARIOS_Result)
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of MOSTRAR_USUARIOS_Result)("MOSTRAR_USUARIOS")
+    End Function
+
+    Public Overridable Function RESGUARDAR(ubicacion As String, nombre As String) As Integer
+        Dim ubicacionParameter As ObjectParameter = If(ubicacion IsNot Nothing, New ObjectParameter("ubicacion", ubicacion), New ObjectParameter("ubicacion", GetType(String)))
+
+        Dim nombreParameter As ObjectParameter = If(nombre IsNot Nothing, New ObjectParameter("nombre", nombre), New ObjectParameter("nombre", GetType(String)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("RESGUARDAR", ubicacionParameter, nombreParameter)
     End Function
 
     Public Overridable Function sp_alterdiagram(diagramname As String, owner_id As Nullable(Of Integer), version As Nullable(Of Integer), definition As Byte()) As Integer
@@ -115,20 +138,20 @@ Partial Public Class ProyectoTallerEntities2
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter)
     End Function
 
-    Public Overridable Function sp_helpdiagramdefinition(diagramname As String, owner_id As Nullable(Of Integer)) As Integer
+    Public Overridable Function sp_helpdiagramdefinition(diagramname As String, owner_id As Nullable(Of Integer)) As ObjectResult(Of sp_helpdiagramdefinition_Result)
         Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
 
         Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of sp_helpdiagramdefinition_Result)("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter)
     End Function
 
-    Public Overridable Function sp_helpdiagrams(diagramname As String, owner_id As Nullable(Of Integer)) As Integer
+    Public Overridable Function sp_helpdiagrams(diagramname As String, owner_id As Nullable(Of Integer)) As ObjectResult(Of sp_helpdiagrams_Result)
         Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
 
         Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of sp_helpdiagrams_Result)("sp_helpdiagrams", diagramnameParameter, owner_idParameter)
     End Function
 
     Public Overridable Function sp_renamediagram(diagramname As String, owner_id As Nullable(Of Integer), new_diagramname As String) As Integer

@@ -14,7 +14,6 @@
         AbrirFormHijo(New FormBkp())
         lblPrincip.Text = "Back Up"
         btnBkp.BackColor = Color.White
-        btnReport.BackColor = Color.CornflowerBlue
         btnUsuarios.BackColor = Color.CornflowerBlue
         btnProduc.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.CornflowerBlue
@@ -30,23 +29,11 @@
         End
     End Sub
 
-    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
-        AbrirFormHijo(New FormReportes())
-        lblPrincip.Text = "Reportes"
-        btnReport.BackColor = Color.White
-        btnBkp.BackColor = Color.CornflowerBlue
-        btnUsuarios.BackColor = Color.CornflowerBlue
-        btnProduc.BackColor = Color.CornflowerBlue
-        btnClientes.BackColor = Color.CornflowerBlue
-        btnVentas.BackColor = Color.CornflowerBlue
-
-    End Sub
     Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
         AbrirFormHijo(New FormUsuarios())
         lblPrincip.Text = "Usuarios"
         btnUsuarios.BackColor = Color.White
         btnBkp.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.CornflowerBlue
         btnProduc.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.CornflowerBlue
         btnVentas.BackColor = Color.CornflowerBlue
@@ -57,7 +44,6 @@
         lblPrincip.Text = "Productos"
         btnProduc.BackColor = Color.White
         btnBkp.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.CornflowerBlue
         btnUsuarios.BackColor = Color.CornflowerBlue
         btnClientes.BackColor = Color.CornflowerBlue
         btnVentas.BackColor = Color.CornflowerBlue
@@ -69,7 +55,6 @@
         lblPrincip.Text = "Clientes"
         btnClientes.BackColor = Color.White
         btnBkp.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.CornflowerBlue
         btnProduc.BackColor = Color.CornflowerBlue
         btnVentas.BackColor = Color.CornflowerBlue
         btnUsuarios.BackColor = Color.CornflowerBlue
@@ -81,7 +66,6 @@
         btnVentas.BackColor = Color.White
         btnClientes.BackColor = Color.CornflowerBlue
         btnBkp.BackColor = Color.CornflowerBlue
-        btnReport.BackColor = Color.CornflowerBlue
         btnProduc.BackColor = Color.CornflowerBlue
         btnUsuarios.BackColor = Color.CornflowerBlue
     End Sub

@@ -6,32 +6,26 @@
     Private precio_venta As Integer
     Private stock As Integer
     Private stock_min As Integer
+    Private eliminado As Integer
+    Private elim As String
 
 #Region "Constructores"
 
     Public Sub New()
     End Sub
 
-    Public Sub New(ByVal p_categ As Integer, ByVal p_descrip As String, ByVal p_costo As Integer, ByVal p_venta As Integer, ByVal p_stock As Integer, ByVal p_stockmin As Integer)
+    Public Sub New(ByVal p_categ As Integer, ByVal p_descrip As String, ByVal p_costo As Integer, ByVal p_venta As Integer, ByVal p_stock As Integer, ByVal p_stockmin As Integer, ByVal p_eliminado As Integer, ByVal p_elim As String)
         setCateg(p_categ)
         setDescrip(p_descrip)
         setCosto(p_costo)
         setVenta(p_venta)
         setStock(p_stock)
         setStockMin(p_stockmin)
+        setEliminado(p_eliminado)
+        SetElim(p_elim)
+
     End Sub
 
-    Public Sub New(ByVal p_isbn As Integer)
-        ''setIsbn(p_isbn)
-        ''setNombre("")
-        ''setAutor(0)
-        ''setAnio(0)
-        ''setGenero(0)
-        ''setEditorial(0)
-        '' setPais(0)
-        ''   setPrecio(0)
-        ''     setStock(0)
-    End Sub
 
 #End Region
 
@@ -66,6 +60,14 @@
         Return stock_min
     End Function
 
+    Public Function getEliminado()
+        Return eliminado
+    End Function
+
+    Public Function getElim()
+        Return elim
+    End Function
+
 #End Region
 
 #Region "Set"
@@ -97,34 +99,24 @@
         stock_min = p_stockmin
     End Sub
 
+    Private Sub setEliminado(ByVal p_eliminado As Integer)
+        eliminado = p_eliminado
+    End Sub
+
+    Private Sub setElim(ByVal p_elim As String)
+        elim = p_elim
+    End Sub
 #End Region
 
 #End Region
 
 #Region "Procedimientos"
 
-    Public Function mostrarProductos(ByVal grid As DataGridView)
-        Try
-            Using mstr As New ProyectoTallerEntities2
-                Dim objetoMostrar = (From q In mstr.Productos
-                                     Select Categoria = q.id_categoria,
-                                     Descripcion = q.descripcion,
-                                     PrecioCosto = q.precio_costo,
-                                     PrecioVenta = q.precio_venta,
-                                     Stock = q.stock,
-                                     StockMin = q.stock_min).ToList
 
-                grid.DataSource = objetoMostrar
-            End Using
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
 
     Public Function Verificar(ByVal p_dni As Integer)
         Try
-            Using verif As New ProyectoTallerEntities2
+            Using verif As New ProyectoTallerEntities5
                 Dim objetoVerificar = (From q In verif.Usuarios
                                        Where q.dni = p_dni
                                        Select q).First
@@ -137,7 +129,7 @@
 
     Public Function Agregar()
         Try
-            Using Agg As New ProyectoTallerEntities2
+            Using Agg As New ProyectoTallerEntities5
                 Dim datos As New Productos
                 With datos
                     .id_categoria = getCateg()
@@ -146,6 +138,8 @@
                     .precio_venta = getVenta()
                     .stock = getStock()
                     .stock_min = getStockMin()
+                    .eliminado = 0
+                    .elim = "no"
                 End With
 
                 Agg.Productos.Add(datos)
@@ -159,7 +153,7 @@
 
     Public Function Modificar(ByVal p_prod As Integer, ByVal p_categ As Integer, ByVal p_descrip As String, ByVal p_costo As Integer, ByVal p_venta As Integer, ByVal p_stock As Integer, ByVal p_stockmin As Integer)
         Try
-            Using modif As New ProyectoTallerEntities2
+            Using modif As New ProyectoTallerEntities5
                 Dim objetoModificar = (From q In modif.Productos
                                        Where q.id_producto = p_prod
                                        Select q).First
@@ -181,12 +175,12 @@
 
     Public Function Borrar(ByVal p_prod As Integer)
         Try
-            Using borr As New ProyectoTallerEntities2
+            Using borr As New ProyectoTallerEntities5
                 Dim objetoBorrar = (From q In borr.Productos
                                     Where q.id_producto = p_prod
                                     Select q).First()
 
-                ''borr.Usuarios.DeleteObject(objetoBorrar)
+                objetoBorrar.elim = "si"
                 borr.SaveChanges()
             End Using
             Return True
@@ -195,25 +189,10 @@
         End Try
     End Function
 
-    Public Function CargarBorrar(ByVal combo As ComboBox)
-        Try
-            Using Base As New ProyectoTallerEntities2
-                ''Dim qLibros = (From q In Base.Usuarios Select New With {.idef = q.isbn, .nombrel = q.isbn & ": " & q.nombre}).ToList
-
-                ''combo.DataSource = qLibros
-                combo.DisplayMember = "nombrel"
-                combo.ValueMember = "idef"
-                combo.SelectedValue = -1
-            End Using
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
 
     Public Function ObtenerDatos(ByVal p_prod As Integer)
         Try
-            Using dts As New ProyectoTallerEntities2
+            Using dts As New ProyectoTallerEntities5
                 Dim datos As Productos = (From q In dts.Productos Where (p_prod = q.id_producto) Select q).First()
 
                 setCateg(datos.id_categoria)
@@ -230,11 +209,62 @@
         End Try
     End Function
 
-    Public Function MostrarProductos(ByVal p_id As Integer, ByVal grid As DataGridView)
+    Public Function ConsultarStock(ByVal p_prod As Integer, ByVal p_cantidad As Integer)
+        Using consulstock As New ProyectoTallerEntities5
+            Dim producto = (From q In consulstock.Productos Where q.id_producto = p_prod Select q).First
+
+            If producto.stock >= p_cantidad Then
+                Return True
+            Else
+                Return False
+            End If
+        End Using
+    End Function
+
+
+
+    Public Function ActualizarStock(ByVal p_prod As Integer, ByVal p_cantidad As Integer)
         Try
-            Using Mostrar As New ProyectoTallerEntities2
-                Dim objMostrar = (From q In Mostrar.Productos Where p_id = q.Categorias.id_categoria
-                                  Select Categoria = q.id_categoria, Nombre = q.descripcion, Precio_Costo = q.precio_costo, Precio_Venta = q.precio_venta, Stock = q.stock, Stock_Min = q.stock_min).ToList
+            Using ActStock As New ProyectoTallerEntities5
+                Dim producto = (From q In ActStock.Productos Where q.id_producto = p_prod Select q).First
+
+                Dim nuevo = producto.stock - p_cantidad
+                producto.stock = nuevo
+                ActStock.SaveChanges()
+                Return True
+            End Using
+        Catch Ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function MostrarProductos(ByVal grid As DataGridView)
+        Try
+            Using mostr As New ProyectoTallerEntities5
+                Dim objetoMostrar = (From q In mostr.Productos
+                                     Select IDProducto = q.id_producto,
+                                     Categoria = q.id_categoria,
+                                     Nombre = q.descripcion,
+                                     Precio_Costo = q.precio_costo,
+                                     Precio_Venta = q.precio_venta,
+                                     Stock = q.stock,
+                                     Stock_Min = q.stock_min,
+                                     Eliminado = q.elim).ToList
+
+                grid.DataSource = objetoMostrar
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function MostrarNombre(ByVal p_nombre As String, ByVal grid As DataGridView)
+        Try
+            Using Mostrar As New ProyectoTallerEntities5
+                Dim objMostrar = (From q In Mostrar.Productos Where q.descripcion.StartsWith(p_nombre)
+                                  Select IDProducto = q.id_producto, Nombre = q.descripcion, Precio_Costo = q.precio_costo,
+                                      Precio_Venta = q.precio_venta, Stock = q.stock, Stock_Min = q.stock_min).ToList
 
                 If objMostrar.Count <> 0 Then
                     grid.DataSource = objMostrar
@@ -248,9 +278,10 @@
         End Try
     End Function
 
+
     Public Function MostrarCategorias(ByVal p_id As Integer, ByVal grid As DataGridView)
         Try
-            Using Mostrar As New ProyectoTallerEntities2
+            Using Mostrar As New ProyectoTallerEntities5
                 Dim objMostrar = (From q In Mostrar.Usuarios Where p_id = q.Perfiles.id_perfil
                                   Select DNI = q.dni, Nombre = q.nombre, Apellido = q.apellido, Usuario = q.usuario,
                                   Contraseña = q.contraseña, Email = q.email, Telefono = q.telefono).ToList
@@ -260,6 +291,22 @@
                 Else
                     grid.DataSource = Nothing
                 End If
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function activar(ByVal p_id As Integer)
+        Try
+            Using borr As New ProyectoTallerEntities5
+                Dim objetoBorrar = (From q In borr.Productos
+                                    Where q.id_producto = p_id
+                                    Select q).First()
+
+                objetoBorrar.elim = "no"
+                borr.SaveChanges()
             End Using
             Return True
         Catch ex As Exception

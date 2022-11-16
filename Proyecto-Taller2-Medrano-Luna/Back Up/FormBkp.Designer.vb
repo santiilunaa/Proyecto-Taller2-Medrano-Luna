@@ -25,6 +25,8 @@ Partial Class FormBkp
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBkp))
         Me.btnBkp = New System.Windows.Forms.Button()
         Me.lblBkp = New System.Windows.Forms.Label()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.lblActual = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -33,11 +35,11 @@ Partial Class FormBkp
         Me.btnBkp.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnBkp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBkp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBkp.Location = New System.Drawing.Point(340, 321)
+        Me.btnBkp.Location = New System.Drawing.Point(355, 229)
         Me.btnBkp.Name = "btnBkp"
-        Me.btnBkp.Size = New System.Drawing.Size(121, 41)
+        Me.btnBkp.Size = New System.Drawing.Size(127, 47)
         Me.btnBkp.TabIndex = 0
-        Me.btnBkp.Text = "BackUp"
+        Me.btnBkp.Text = "Back Up"
         Me.btnBkp.UseVisualStyleBackColor = False
         '
         'lblBkp
@@ -50,15 +52,19 @@ Partial Class FormBkp
         Me.lblBkp.TabIndex = 1
         Me.lblBkp.Text = resources.GetString("lblBkp.Text")
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'lblActual
         '
         Me.lblActual.AutoSize = True
-        Me.lblActual.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblActual.Location = New System.Drawing.Point(174, 239)
+        Me.lblActual.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.lblActual.Location = New System.Drawing.Point(22, 243)
         Me.lblActual.Name = "lblActual"
-        Me.lblActual.Size = New System.Drawing.Size(166, 18)
+        Me.lblActual.Size = New System.Drawing.Size(327, 18)
         Me.lblActual.TabIndex = 2
-        Me.lblActual.Text = "Última Actualización:"
+        Me.lblActual.Text = "Presione el boton para realizar el back up:"
         '
         'FormBkp
         '
@@ -79,5 +85,7 @@ Partial Class FormBkp
 
     Friend WithEvents btnBkp As Button
     Friend WithEvents lblBkp As Label
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents lblActual As Label
 End Class

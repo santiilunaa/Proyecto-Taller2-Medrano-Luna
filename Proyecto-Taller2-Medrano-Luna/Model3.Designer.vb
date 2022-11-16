@@ -1,4 +1,4 @@
-﻿' La generación de código T4 está habilitada para el modelo 'd:\documentos\visual studio 2015\Projects\Proyecto-Taller2-Medrano-Luna\Proyecto-Taller2-Medrano-Luna\Model2.edmx'. 
+﻿' La generación de código T4 está habilitada para el modelo 'C:\Users\franc\source\proyecto taller\Proyecto-Taller2-Medrano-Luna\Proyecto-Taller2-Medrano-Luna\Model3.edmx'. 
 ' Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 ' por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 ' el modelo en el diseñador.

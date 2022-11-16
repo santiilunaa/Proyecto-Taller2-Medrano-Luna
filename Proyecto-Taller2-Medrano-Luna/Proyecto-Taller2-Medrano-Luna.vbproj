@@ -55,6 +55,11 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -85,15 +90,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categorias.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clientes\Cliente1.vb" />
     <Compile Include="Clientes.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
-    <Compile Include="FormClientes.Designer.vb">
+    <Compile Include="Detalle1.vb" />
+    <Compile Include="Exportar.vb" />
+    <Compile Include="Factura1.vb" />
+    <Compile Include="Clientes\FormClientes.Designer.vb">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormClientes.vb">
+    <Compile Include="Clientes\FormClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
@@ -110,16 +119,10 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBkp.Designer.vb">
+    <Compile Include="Back Up\FormBkp.Designer.vb">
       <DependentUpon>FormBkp.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormBkp.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReportes.Designer.vb">
-      <DependentUpon>FormReportes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormReportes.vb">
+    <Compile Include="Back Up\FormBkp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
@@ -143,26 +146,61 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model2.Context.vb">
+    <Compile Include="Model3.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.Context.tt</DependentUpon>
+      <DependentUpon>Model3.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model2.Designer.vb">
+    <Compile Include="Model3.Designer.vb">
+      <DependentUpon>Model3.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model2.vb">
+    <Compile Include="Model3.vb" />
+    <Compile Include="Model31.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model4.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model4.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model4.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model4.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model5.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model5.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model5.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model5.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="MOSTRAR_CLIENTES_Result.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MOSTRAR_PRODUCTOS_Result.vb">
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="MOSTRAR_USUARIOS_Result.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -179,8 +217,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NroFactura.vb">
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
     <Compile Include="Perfiles.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="Perfiles\MenuGerente.Designer.vb">
       <DependentUpon>MenuGerente.vb</DependentUpon>
@@ -194,9 +235,9 @@
     <Compile Include="Perfiles\MenuVendedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Producto1.vb" />
+    <Compile Include="Productos\Producto1.vb" />
     <Compile Include="Productos.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="Productos\AgregarProducto.Designer.vb">
       <DependentUpon>AgregarProducto.vb</DependentUpon>
@@ -210,18 +251,19 @@
     <Compile Include="Productos\FormProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Back Up\Resguardo.vb" />
     <Compile Include="sp_helpdiagramdefinition_Result.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
-    <Compile Include="Usuario1.vb" />
+    <Compile Include="Usuarios\Usuario1.vb" />
     <Compile Include="Usuarios.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\AgregarUsuario.Designer.vb">
       <DependentUpon>AgregarUsuario.vb</DependentUpon>
@@ -242,14 +284,17 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas_cabecera.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas_detalle.vb">
+      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="Ventas__detalle.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormClientes.resx">
+    <EmbeddedResource Include="Clientes\FormClientes.resx">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
@@ -258,11 +303,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBkp.resx">
+    <EmbeddedResource Include="Back Up\FormBkp.resx">
       <DependentUpon>FormBkp.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReportes.resx">
-      <DependentUpon>FormReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -303,12 +345,26 @@
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="Model2.edmx">
+    <EntityDeploy Include="Model3.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model2.Designer.vb</LastGenOutput>
+      <LastGenOutput>Model3.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model2.edmx.diagram">
-      <DependentUpon>Model2.edmx</DependentUpon>
+    <None Include="Model3.edmx.diagram">
+      <DependentUpon>Model3.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model4.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model4.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model4.edmx.diagram">
+      <DependentUpon>Model4.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model5.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model5.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model5.edmx.diagram">
+      <DependentUpon>Model5.edmx</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -338,15 +394,33 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.vb</LastGenOutput>
     </Content>
-    <Content Include="Model2.Context.tt">
+    <Content Include="Model3.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.Context.vb</LastGenOutput>
+      <LastGenOutput>Model3.Context.vb</LastGenOutput>
     </Content>
-    <Content Include="Model2.tt">
+    <Content Include="Model3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.vb</LastGenOutput>
+      <LastGenOutput>Model31.vb</LastGenOutput>
+    </Content>
+    <Content Include="Model4.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model4.edmx</DependentUpon>
+      <LastGenOutput>Model4.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Model4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model4.edmx</DependentUpon>
+      <LastGenOutput>Model4.vb</LastGenOutput>
+    </Content>
+    <Content Include="Model5.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model5.edmx</DependentUpon>
+      <LastGenOutput>Model5.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Model5.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model5.edmx</DependentUpon>
+      <LastGenOutput>Model5.vb</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
