@@ -48,13 +48,13 @@ Partial Class Factura
         Me.LBCant = New System.Windows.Forms.Label()
         Me.btnGuardarPro = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LCliente = New System.Windows.Forms.Label()
         Me.LVendedor = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LBVendedor = New System.Windows.Forms.Label()
+        Me.LBCliente = New System.Windows.Forms.Label()
         Me.LBFecha = New System.Windows.Forms.Label()
         Me.LFactura = New System.Windows.Forms.Label()
-        Me.LBCliente = New System.Windows.Forms.Label()
-        Me.LCliente = New System.Windows.Forms.Label()
         Me.PFactura.SuspendLayout()
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvFact, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -279,7 +279,7 @@ Partial Class Factura
         Me.LCant.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LCant.AutoSize = True
         Me.LCant.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCant.Location = New System.Drawing.Point(67, 172)
+        Me.LCant.Location = New System.Drawing.Point(71, 172)
         Me.LCant.Name = "LCant"
         Me.LCant.Size = New System.Drawing.Size(14, 13)
         Me.LCant.TabIndex = 29
@@ -377,6 +377,16 @@ Partial Class Factura
         Me.Panel2.Size = New System.Drawing.Size(600, 35)
         Me.Panel2.TabIndex = 4
         '
+        'LCliente
+        '
+        Me.LCliente.AutoSize = True
+        Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCliente.Location = New System.Drawing.Point(454, 12)
+        Me.LCliente.Name = "LCliente"
+        Me.LCliente.Size = New System.Drawing.Size(45, 13)
+        Me.LCliente.TabIndex = 24
+        Me.LCliente.Text = "cliente"
+        '
         'LVendedor
         '
         Me.LVendedor.AutoSize = True
@@ -407,6 +417,16 @@ Partial Class Factura
         Me.LBVendedor.TabIndex = 1
         Me.LBVendedor.Text = "Vendedor:"
         '
+        'LBCliente
+        '
+        Me.LBCliente.AutoSize = True
+        Me.LBCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBCliente.Location = New System.Drawing.Point(398, 12)
+        Me.LBCliente.Name = "LBCliente"
+        Me.LBCliente.Size = New System.Drawing.Size(50, 13)
+        Me.LBCliente.TabIndex = 21
+        Me.LBCliente.Text = "Cliente:"
+        '
         'LBFecha
         '
         Me.LBFecha.AutoSize = True
@@ -429,26 +449,6 @@ Partial Class Factura
         Me.LFactura.Size = New System.Drawing.Size(107, 31)
         Me.LFactura.TabIndex = 3
         Me.LFactura.Text = "Factura"
-        '
-        'LBCliente
-        '
-        Me.LBCliente.AutoSize = True
-        Me.LBCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBCliente.Location = New System.Drawing.Point(419, 12)
-        Me.LBCliente.Name = "LBCliente"
-        Me.LBCliente.Size = New System.Drawing.Size(50, 13)
-        Me.LBCliente.TabIndex = 21
-        Me.LBCliente.Text = "Cliente:"
-        '
-        'LCliente
-        '
-        Me.LCliente.AutoSize = True
-        Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCliente.Location = New System.Drawing.Point(475, 12)
-        Me.LCliente.Name = "LCliente"
-        Me.LCliente.Size = New System.Drawing.Size(45, 13)
-        Me.LCliente.TabIndex = 24
-        Me.LCliente.Text = "cliente"
         '
         'Factura
         '
@@ -479,6 +479,7 @@ Partial Class Factura
     Friend WithEvents BConfir As Button
     Friend WithEvents PProducto As Panel
     Friend WithEvents btnGuardarPro As Button
+    Friend WithEvents LBCliente As Label
     Friend WithEvents LBDescrip As Label
     Friend WithEvents LBCant As Label
     Friend WithEvents LBSubTot As Label
@@ -497,11 +498,10 @@ Partial Class Factura
     Friend WithEvents BCancel As Button
     Friend WithEvents LSubTot As Label
     Friend WithEvents LVendedor As Label
+    Friend WithEvents LCliente As Label
     Friend WithEvents LID As Label
     Friend WithEvents LBID As Label
     Friend WithEvents BSumar As Button
     Friend WithEvents BRestar As Button
     Friend WithEvents LFecha As Label
-    Friend WithEvents LCliente As Label
-    Friend WithEvents LBCliente As Label
 End Class
